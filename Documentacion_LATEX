@@ -36,8 +36,8 @@
 \newcommand{\tipodocumento}{Documentación de proyecto}
 \newcommand{\autorA}{Luis Joshua Rodríguez Urbano}
 \newcommand{\autorB}{Pablo Moisés García Gutiérrez}
-\newcommand{\autorC}{[Nombre completo del autor 3]}
-\newcommand{\autorD}{[Nombre completo del autor 4]}
+\newcommand{\autorC}{Gabriel Alejandro Ramirez Palmeros}
+\newcommand{\autorD}{Raziel Isaac Rios Jimenez}
 \newcommand{\programa}{Licenciatura en Matemática Algorítmica}
 \newcommand{\unidad}{Construcción Matemática}
 \newcommand{\profesor}{Juan Manuel Figueroa Flores}
@@ -225,7 +225,338 @@ En esta sección definimos qué información del alumno vamos a utilizar para ev
 Aquí documentamos cómo se organizan y almacenan los datos del alumno. Incluimos el diseño de la estructura de datos (tablas, campos y relaciones), ejemplos de inserción de registros y fragmentos de código de referencia para trabajar con el mismo formato.
 
 \section{Modelo matemático}
+\subsection{Idea general}
+La idea se resume en tres pasos: describir a cada alumno mediante sus características, darle más importancia a las que más influyen en el resultado y medir qué tan lejos está de la situación ideal, que es la que nos indica cuánto riesgo tiene de reprobar.
 
+Para lograrlo nos apoyaremos en el álgebra lineal, que nos da un lenguaje sencillo para trabajar con muchas características a la vez. Podemos pensar en cada alumno como un punto en un mapa: su posición depende de cómo le va en sus parciales, su asistencia, sus tareas y el resto de sus características. En ese mapa marcamos el origen como el alumno ideal, aquel al que todo le va perfecto. Entre más cerca del origen se encuentre un alumno, menor es su riesgo de reprobar; entre más se aleje, mayor es.
+\subsection{Representación del alumno}
+
+La idea es representar a cada alumno mediante las $11$ características que definimos, reunidas en un mismo registro o arreglo de información que resume cómo va en el curso. Lo expresamos como un conjunto ordenado de datos:
+\begin{equation*}
+    \renewcommand{\arraystretch}{1.25}
+    \mathbf{x} =
+    \begin{bmatrix}
+        x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \\ x_6 \\ x_7 \\ x_8 \\ x_9 \\ x_{10} \\ x_{11}
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        \text{Parcial 1} \\
+        \text{Parcial 2} \\
+        \text{Parcial 3} \\
+        \text{Asistencia} \\
+        \text{Participaciones (\%)} \\
+        \text{¿Recursador?} \\
+        \text{Tareas (\%)} \\
+        \text{Notas} \\
+        \text{Cantidad de materias} \\
+        \text{Trabajo} \\
+        \text{Tiempo de traslado}
+    \end{bmatrix}
+\end{equation*}
+
+\subsection{Ponderación de las características}
+
+No todos estos aspectos influyen igual en el resultado final. Por ejemplo, un mal desempeño en un parcial suele preocuparnos más que un traslado un poco largo. Para reflejar esto, asignamos a cada característica $x_i$ un \emph{peso} $w_i$ que indica qué tanto cuenta dentro de nuestra evaluación, y ajustamos la característica multiplicándola por ese peso.
+
+La idea es la misma que al calcular una calificación final, donde un examen vale más que una tarea: lo que consideramos más decisivo recibe un peso mayor y lo que aporta de forma secundaria recibe uno menor. Así, un cambio en una característica importante mueve mucho al alumno en nuestra medición, mientras que un cambio en una secundaria lo mueve poco.
+
+\subsection{Medición del riesgo}
+
+Para medir el riesgo de reprobar, tomamos como referencia el origen del espacio vectorial en el que viven nuestros alumnos.
+
+\begin{definicion}[Origen de referencia]
+Cada alumno es un vector $\mathbf{x}\in\mathbb{R}^{11}$. Con las características normalizadas al intervalo $[0,1]$ (donde $0$ es lo ideal y $1$ el peor caso), el alumno se mueve dentro del cubo $[0,1]^{11}$. El vector nulo $\mathbf{0}=(0,0,\dots,0)$, que es el origen de este espacio, representa el escenario ideal: equivale a una calificación de $10$, donde todo está en orden.
+\end{definicion}
+
+Conforme avanza el curso, el alumno describe una trayectoria $\mathbf{x}(t)$ dentro de este espacio, y lo que observamos es cuánto se aleja del origen, es decir, la distancia $\lVert\mathbf{x}(t)\rVert$:
+\begin{itemize}
+    \item \textbf{Riesgo bajo:} el alumno se mantiene cerca del origen, lo que significa que va bien.
+    \item \textbf{Riesgo creciente:} el alumno se aleja cada vez más del origen a medida que pasa el curso; el rezago aumenta y con ello el riesgo de reprobar.
+\end{itemize}
+
+Como no es posible dibujar once dimensiones, la Figura~\ref{fig:origen} muestra el mismo comportamiento proyectado en dos de ellas, $x_1$ y $x_2$.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=4, >=stealth]
+    % Región permitida [0,1]^2
+    \fill[grisSuave] (0,0) rectangle (1,1);
+    \draw[guindaIPN, thick] (0,0) rectangle (1,1);
+
+    % Ejes
+    \draw[->, thick, grisOscuro] (-0.08,0) -- (1.17,0) node[right] {$x_1$};
+    \draw[->, thick, grisOscuro] (0,-0.08) -- (0,1.17) node[above] {$x_2$};
+    \node[below] at (1,0) {\small $1$};
+    \node[left]  at (0,1) {\small $1$};
+
+    % Arcos de distancia al origen
+    \begin{scope}
+        \clip (0,0) rectangle (1,1);
+        \draw[dotted, grisMedio] (0.27,0)  arc (0:90:0.27);
+        \draw[dotted, grisMedio] (0.59,0)  arc (0:90:0.59);
+        \draw[dotted, grisMedio] (1.06,0)  arc (0:90:1.06);
+    \end{scope}
+
+    % Distancia al origen (alumno con riesgo creciente)
+    \draw[dashed, doradoAcento, thick] (0,0) -- (0.80,0.70);
+    \node[doradoAcento!70!black, font=\scriptsize, sloped, above] at (0.40,0.35) {$\lVert\mathbf{x}\rVert$};
+
+    % Alumno con riesgo bajo
+    \fill[grisMedio] (0.18,0.15) circle (0.028);
+
+    % Alumno con riesgo creciente
+    \fill[guindaIPN] (0.80,0.70) circle (0.028);
+
+    % Origen
+    \fill[doradoAcento] (0,0) circle (0.022);
+    \node[below left] at (0,0) {$\mathbf{0}$};
+
+    % Leyenda
+    \node[anchor=west, guindaIPN, font=\small\sffamily, align=left] at (1.25,0.75) {Lejos del origen:\\riesgo alto};
+    \node[anchor=west, grisMedio, font=\small\sffamily, align=left] at (1.25,0.22) {Cerca del origen:\\riesgo bajo};
+\end{tikzpicture}
+\caption{Proyección en dos de las $11$ dimensiones. El origen $\mathbf{0}$ es el escenario ideal y cada punto representa a un alumno dentro de $[0,1]^2$. Las líneas punteadas marcan puntos a la misma distancia del origen.}
+\label{fig:origen}
+\end{figure}
+\newpage
+\begin{figure}[!t]
+\centering
+\begin{tikzpicture}[scale=7, >=stealth]
+    % Zonas según la distancia al origen
+    \fill[guindaIPN!10] (0,0) rectangle (1,1);
+    \begin{scope}
+        \clip (0,0) rectangle (1,1);
+        \fill[doradoAcento!20] (0,0) circle (0.75);
+        \fill[green!40!black!12] (0,0) circle (0.35);
+        \draw[dotted, grisMedio, thick] (0.35,0) arc (0:90:0.35);
+        \draw[dotted, grisMedio, thick] (0.75,0) arc (0:90:0.75);
+    \end{scope}
+    \draw[guindaIPN, thick] (0,0) rectangle (1,1);
+
+    % Ejes
+    \draw[->, thick, grisOscuro] (-0.04,0) -- (1.06,0) node[right] {$x_1$};
+    \draw[->, thick, grisOscuro] (0,-0.04) -- (0,1.06) node[above] {$x_2$};
+    \node[below] at (1,0) {\small $1$};
+    \node[left]  at (0,1) {\small $1$};
+
+    % Distancia de cada alumno al origen
+    \foreach \x/\y in {0.92/0.85, 0.15/0.10, 0.30/0.45, 0.65/0.30,
+                       0.45/0.80, 0.10/0.30, 0.80/0.10, 0.40/0.25}
+        \draw[grisMedio, thin, dashed] (0,0) -- (\x,\y);
+
+    % Alumnos en zona ideal
+    \fill[green!40!black] (0.15,0.10) circle (0.018);
+    \fill[green!40!black] (0.10,0.30) circle (0.018);
+    \node[above right, font=\small] at (0.15,0.10) {$a_2$};
+    \node[above right, font=\small] at (0.10,0.30) {$a_6$};
+
+    % Alumnos en zona regular
+    \fill[doradoAcento!70!black] (0.30,0.45) circle (0.018);
+    \fill[doradoAcento!70!black] (0.65,0.30) circle (0.018);
+    \fill[doradoAcento!70!black] (0.40,0.25) circle (0.018);
+    \node[above right, font=\small] at (0.30,0.45) {$a_3$};
+    \node[above right, font=\small] at (0.65,0.30) {$a_4$};
+    \node[above right, font=\small] at (0.40,0.25) {$a_8$};
+
+    % Alumnos en zona de riesgo alto
+    \fill[guindaIPN] (0.92,0.85) circle (0.018);
+    \fill[guindaIPN] (0.45,0.80) circle (0.018);
+    \fill[guindaIPN] (0.80,0.10) circle (0.018);
+    \node[below left,  font=\small] at (0.92,0.85) {$a_1$};
+    \node[above right, font=\small] at (0.45,0.80) {$a_5$};
+    \node[above right, font=\small] at (0.80,0.10) {$a_7$};
+
+    % Origen
+    \fill[doradoAcento] (0,0) circle (0.018);
+    \node[below left] at (0,0) {$\mathbf{0}$};
+
+    % Leyenda de zonas
+    \fill[green!40!black!12] (1.10,0.86) rectangle ++(0.035,0.035);
+    \draw[grisMedio] (1.10,0.86) rectangle ++(0.035,0.035);
+    \node[anchor=west, font=\small\sffamily] at (1.15,0.878) {Zona ideal};
+    \fill[doradoAcento!20] (1.10,0.78) rectangle ++(0.035,0.035);
+    \draw[grisMedio] (1.10,0.78) rectangle ++(0.035,0.035);
+    \node[anchor=west, font=\small\sffamily] at (1.15,0.798) {Zona regular};
+    \fill[guindaIPN!10] (1.10,0.70) rectangle ++(0.035,0.035);
+    \draw[grisMedio] (1.10,0.70) rectangle ++(0.035,0.035);
+    \node[anchor=west, font=\small\sffamily] at (1.15,0.718) {Riesgo alto};
+\end{tikzpicture}
+\caption{Ocho alumnos ($a_1,\dots,a_8$) representados en dos de las $11$ dimensiones. El origen $\mathbf{0}$ es el escenario ideal; entre más lejos está un punto, mayor es el riesgo de reprobar. Las líneas punteadas curvas separan las zonas y las rectas discontinuas muestran la distancia de cada alumno al origen.}
+\label{fig:zonas}
+\end{figure}
+
+\noindent La Figura~\ref{fig:zonas} muestra a ocho alumnos como puntos en el mapa. Lo que importa es qué tan lejos queda cada uno del origen, que es la situación ideal, y en cuál de las tres zonas cae:
+
+\begin{itemize}[itemsep=1pt, topsep=2pt, parsep=0pt]
+    \small
+    \item $a_1$ se encuentra muy lejos del origen, casi en la esquina opuesta. Esto quiere decir que se está alejando muchísimo de la zona ideal en ambas características y que tampoco está cerca de la zona regular: es el caso de mayor riesgo de reprobar.
+    \item $a_2$ está prácticamente pegado al origen. Va muy bien en todo y su riesgo es mínimo.
+    \item $a_6$ también está en la zona ideal, aunque en una de sus características ya se despega un poco del origen. Va bien, pero conviene vigilarlo.
+    \item $a_3$ y $a_8$ están en la zona regular. No están en riesgo alto, pero tampoco en la situación ideal: $a_8$ está más cerca de la zona ideal y $a_3$ ya se encuentra a la mitad del camino.
+    \item $a_4$ sigue en la zona regular, pero está justo en el borde de la zona de riesgo alto. Todavía no es un caso grave, pero si se aleja un poco más cruzará esa frontera.
+    \item $a_5$ cae en la zona de riesgo alto. Su característica del eje horizontal es moderada, pero la del eje vertical es muy alta y lo aleja del origen.
+    \item $a_7$ también está en riesgo alto, aunque por la razón contraria: le va bien en la característica vertical, pero tan mal en la horizontal que basta para alejarlo de la zona ideal. Esto muestra que una sola característica muy mala puede ser suficiente para elevar el riesgo.
+\end{itemize}
+\subsection{Asignación de pesos}
+
+No todas las características influyen igual en el riesgo de reprobar, así que a cada una le asignamos un \emph{peso} que indica qué tanto cuenta. Los pesos se expresan como porcentajes y suman $100$, igual que en una calificación final donde cada rubro vale una parte del total: entre más peso tiene una característica, más se nota en el resultado cuando el alumno mejora o empeora en ella.
+
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{0.8\textwidth}{@{}l X c@{}}
+    \toprule
+    \textbf{Símbolo} & \textbf{Característica} & \textbf{Peso} $w_i$ \\
+    \midrule
+    \multicolumn{3}{@{}l}{\sffamily\bfseries\color{guindaIPN} Desempeño académico} \\
+    $x_1$ & Parcial 1 & 18 \\
+    $x_2$ & Parcial 2 & 22 \\
+    $x_3$ & Parcial 3 & 25 \\
+    \midrule
+    \multicolumn{3}{@{}l}{\sffamily\bfseries\color{guindaIPN} Constancia} \\
+    $x_4$ & Asistencia & 10 \\
+    $x_5$ & Participaciones (\%) & 4 \\
+    $x_7$ & Tareas (\%) & 6 \\
+    \midrule
+    \multicolumn{3}{@{}l}{\sffamily\bfseries\color{guindaIPN} Contexto y otros factores} \\
+    $x_6$ & ¿Recursador? & 7 \\
+    $x_8$ & Notas & 2 \\
+    $x_9$ & Cantidad de materias & 3 \\
+    $x_{10}$ & Trabajo & 2 \\
+    $x_{11}$ & Tiempo de traslado & 1 \\
+    \midrule
+    & \textbf{Total} & \textbf{100} \\
+    \bottomrule
+\end{tabularx}
+\caption{Pesos asignados a cada característica del alumno.}
+\label{tab:pesos}
+\end{table}
+
+En forma de vectores, las características del alumno y sus pesos son
+\begin{equation*}
+    \mathbf{x} = (x_1, x_2, \dots, x_{11})^{T}, \qquad
+    \mathbf{w} = (18,\, 22,\, 25,\, 10,\, 4,\, 7,\, 6,\, 2,\, 3,\, 2,\, 1)^{T},
+    \qquad \sum_{i=1}^{11} w_i = 100,
+\end{equation*}
+donde $w_i$ es el peso de la característica $x_i$.
+
+La distribución responde a la siguiente lógica:
+\begin{itemize}
+    \item \textbf{Desempeño académico ($65\%$).} Los tres parciales son la evidencia más directa de cómo va el alumno, por lo que concentran la mayor parte del peso. El tercer parcial pesa más que el primero porque es el más reciente y el más cercano al resultado final del curso.
+    \item \textbf{Constancia ($20\%$).} La asistencia, las tareas y las participaciones muestran el compromiso del alumno con el curso. Pesan menos que los parciales, pero son una señal temprana de rezago.
+    \item \textbf{Contexto y otros factores ($15\%$).} Ser recursador, la cantidad de materias, el trabajo y el tiempo de traslado no miden el desempeño en sí, sino las condiciones en las que el alumno estudia. Influyen, aunque de forma secundaria, y por eso reciben los pesos más bajos.
+\end{itemize}
+
+\begin{nota}[Sobre los pesos]
+Es importante mencionar que esta ponderación o asignación de pesos a cada rubro fue en base a nuestro criterio. No podemos asegurar que las características influyan exactamente en esos porcentajes, pero es lo que estimamos. Con herramientas de probabilidad y estadística, y con datos reales de alumnos, estos pesos podrían calibrarse más adelante (con las herramientas adecuadas) para acercarlos a la realidad.
+\end{nota}
+Para esto definimos la transformación lineal $T: \mathbb{R}^{11} \to \mathbb{R}^{11}$, que asigna a cada componente su peso correspondiente:
+\begin{equation*}
+    T\begin{pmatrix}
+        x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \\ x_6 \\ x_7 \\ x_8 \\ x_9 \\ x_{10} \\ x_{11}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        18x_1 \\ 22x_2 \\ 25x_3 \\ 10x_4 \\ 4x_5 \\ 7x_6 \\ 6x_7 \\ 2x_8 \\ 3x_9 \\ 2x_{10} \\ 1x_{11}
+    \end{pmatrix}
+\end{equation*}
+\newpage
+\subsection{Ejemplo con un alumno}
+
+Para ver cómo funciona el modelo, tomemos a un alumno al que apenas le han evaluado el primer parcial. Los parciales 2 y 3 aún no existen, así que los dejamos vacíos y, al no haber información todavía, no aportan distancia al origen (su valor es $0$). En este momento del curso, lo ideal es que el alumno haya juntado $10$ puntos en el Parcial 1, y nada más.
+
+Cada característica se expresa como qué tanto se aleja de lo ideal, con un valor entre $0$ (ideal) y $1$ (el peor caso). Por ejemplo, un $7$ en el parcial equivale a $x_1 = 1 - 7/10 = 0.3$, y una asistencia de $90\%$ a $x_4 = 1 - 0.90 = 0.10$.
+
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}l c c r r@{}}
+    \toprule
+    \textbf{Característica} & \textbf{Dato} & $x_i$ & $w_i$ & $w_i x_i$ \\
+    \midrule
+    Parcial 1                & $7$      & $0.30$ & $18$ & $5.4$ \\
+    Parcial 2                & vacío    & $0$    & $22$ & $0$   \\
+    Parcial 3                & vacío    & $0$    & $25$ & $0$   \\
+    Asistencia               & $90\%$   & $0.10$ & $10$ & $1.0$ \\
+    Participaciones (\%)     & $50\%$   & $0.50$ & $4$  & $2.0$ \\
+    ¿Recursador?             & No       & $0$    & $7$  & $0$   \\
+    Tareas (\%)              & $80\%$   & $0.20$ & $6$  & $1.2$ \\
+    Notas                    & ---      & $0.40$ & $2$  & $0.8$ \\
+    Cantidad de materias     & ---      & $0.60$ & $3$  & $1.8$ \\
+    Trabajo                  & ---      & $0.50$ & $2$  & $1.0$ \\
+    Tiempo de traslado       & ---      & $0.30$ & $1$  & $0.3$ \\
+    \bottomrule
+\end{tabular}
+\caption{Alumno de ejemplo con solo el Parcial 1 evaluado. Para Notas, Cantidad de materias, Trabajo y Tiempo de traslado se muestra directamente el valor ya normalizado.}
+\label{tab:ejemplo}
+\end{table}
+
+Al aplicar la transformación $T$ al vector del alumno obtenemos sus componentes ya ponderadas:
+\begin{equation*}
+    T(\mathbf{x}) = (5.4,\; 0,\; 0,\; 1.0,\; 2.0,\; 0,\; 1.2,\; 0.8,\; 1.8,\; 1.0,\; 0.3)^{T}.
+\end{equation*}
+Su distancia al origen, que es la medida de su riesgo, es
+\begin{equation*}
+    \lVert T(\mathbf{x}) \rVert
+    = \sqrt{5.4^2 + 1.0^2 + 2.0^2 + 1.2^2 + 0.8^2 + 1.8^2 + 1.0^2 + 0.3^2}
+    = \sqrt{40.57} \approx 6.37.
+\end{equation*}
+Para visualizar con mayor claridad este resultado, la Figura~\ref{fig:ejemplo_alumno} muestra la representación gráfica de este alumno dentro del plano ponderado.
+\begin{figure}[h]
+\centering
+\begin{minipage}[c]{0.46\textwidth}
+\centering
+\begin{tikzpicture}[scale=0.19, >=stealth]
+    % Región permitida en este momento del curso: [0, 18] x [0, 14.80]
+    \fill[grisSuave] (0,0) rectangle (18,14.80);
+    \draw[guindaIPN, thick] (0,0) rectangle (18,14.80);
+
+    % Ejes
+    \draw[->, thick, grisOscuro] (-1.2,0) -- (20.8,0) node[right, font=\scriptsize] {$w_1 x_1$};
+    \draw[->, thick, grisOscuro] (0,-1.2) -- (0,17.2) node[above, font=\scriptsize] {Resto};
+    \node[below, font=\scriptsize] at (18,0) {$18$};
+    \node[left,  font=\scriptsize] at (0,14.80) {$14.8$};
+
+    % Arcos de igual distancia al origen
+    \begin{scope}
+        \clip (0,0) rectangle (18,14.80);
+        \draw[dotted, grisMedio] (6.37,0)  arc (0:90:6.37);
+        \draw[dotted, grisMedio] (12.0,0)  arc (0:90:12.0);
+        \draw[dotted, grisMedio] (18.0,0)  arc (0:90:18.0);
+    \end{scope}
+
+    % Referencia al peor caso posible
+    \draw[dotted, grisMedio!70, thin] (0,0) -- (18,14.80);
+    \fill[grisMedio] (18,14.80) circle (0.50);
+
+    % Distancia al origen del alumno: (5.4, 3.38)
+    \draw[dashed, doradoAcento, thick] (0,0) -- node[doradoAcento!70!black, font=\tiny, sloped, above] {$\approx 6.37$} (5.4,3.38);
+
+    % Proyecciones del alumno sobre los ejes
+    \draw[dotted, guindaIPN!60] (5.4,0) -- (5.4,3.38) -- (0,3.38);
+    \node[below, font=\tiny, guindaIPN] at (5.4,0) {$5.4$};
+    \node[left,  font=\tiny, guindaIPN] at (0,3.38) {$3.38$};
+
+    % Punto del alumno y origen
+    \fill[guindaIPN] (5.4,3.38) circle (0.52);
+    \fill[doradoAcento] (0,0) circle (0.45);
+    \node[below left, font=\scriptsize] at (0,0) {$\mathbf{0}$};
+\end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.50\textwidth}
+\small
+El eje horizontal muestra el aporte del Parcial~1 ($w_1 x_1 = 5.4$) y el eje vertical agrupa la norma del resto de las características evaluadas ($\approx 3.38$), conservando la distancia exacta al origen:
+\begin{itemize}
+    \item \textcolor{doradoAcento!80!black}{\textbf{Origen $\mathbf{0}$:}} escenario ideal ($10$ en el parcial y sin rezagos).
+    \item \textcolor{guindaIPN}{\textbf{Alumno de ejemplo:}} se ubica en $(5.4,\, 3.38)$ con $\lVert T(\mathbf{x})\rVert \approx 6.37$ (riesgo moderado).
+    \item \textcolor{grisMedio}{\textbf{Peor caso actual:}} esquina superior en $(18,\, 14.8)$, con $\lVert T(\mathbf{x})\rVert_{\max} \approx 23.30$.
+\end{itemize}
+\end{minipage}
+\caption{Representación del alumno de ejemplo en el plano ponderado frente al peor caso posible tras el Parcial~1.}
+\label{fig:ejemplo_alumno}
+\end{figure}
+\newpage
 \subsection{Fórmulas}
 Aquí se detallan de forma explícita las ecuaciones y expresiones matemáticas empleadas en el modelo, junto con el significado exacto de cada parámetro, índice, vector, matriz o variable involucrada, para evitar ambigüedades al programarlas.
 \newpage
