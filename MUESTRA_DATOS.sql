@@ -1,2603 +1,509 @@
-USE Proyecto;
-
--- ============================================================================
--- 1. INSERCIÓN DE MATERIAS (Licenciatura en Matemática Algorítmica - IPN)
--- ============================================================================
-INSERT INTO Materias (nombre_materia, grupo) VALUES
-('Cálculo I', '1AV1'),
-('Álgebra Superior', '1AV1'),
-('Geometría Analítica', '1AV1'),
-('Matemáticas Discretas', '1AV2'),
-('Introducción a la Programación', '1AV2'),
-('Contextos: Tiempos Modernos', '1AV2'),
-('Cálculo II', '2AV1'),
-('Álgebra Lineal I', '2AV1'),
-('Estructuras de Datos', '2AV1'),
-('Lógica Matemática', '2AV2'),
-('Probabilidad', '2AV2'),
-('Bases de Datos', '2AV2'),
-('Cálculo III', '3AV1'),
-('Álgebra Lineal II', '3AV1'),
-('Análisis de Algoritmos', '3AV1'),
-('Estadística Inferencial', '3AV2'),
-('Ecuaciones Diferenciales Ordinarias', '3AV2'),
-('Programación Orientada a Objetos', '3AV2'),
-('Análisis Matemático I', '4AV1'),
-('Álgebra Moderna I', '4AV1'),
-('Métodos Numéricos I', '4AV1'),
-('Teoría de Gráficas', '4AV2'),
-('Investigación de Operaciones', '4AV2'),
-('Variable Compleja', '4AV2'),
-('Análisis Matemático II', '5AV1'),
-('Métodos Numéricos II', '5AV1'),
-('Optimización Lineal', '5AV1'),
-('Procesos Estocásticos', '5AV2'),
-('Teoría de la Computación', '5AV2'),
-('Criptografía', '5AV2'),
-('Aprendizaje Automático', '6AV1'),
-('Optimización No Lineal', '6AV1'),
-('Compiladores', '6AV1'),
-('Análisis Funcional', '6AV2'),
-('Minería de Datos', '6AV2'),
-('Sistemas Distribuidos', '6AV2');
-
--- ============================================================================
--- 2. INSERCIÓN DE 200 ALUMNOS (Licenciatura en Matemática Algorítmica)
--- ============================================================================
-INSERT INTO Alumnos (boleta, nombre, carrera, trabaja, traslado, total_materias, cantidad_materias) VALUES
-('2022631825', 'López Gutiérrez Luis Fernando', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 6),
-('2022632287', 'Rodríguez Romero Sofía Alejandra', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 4),
-('2022639675', 'Cruz Herrera Carlos Alberto', 'Licenciatura en Matemática Algorítmica', 1, 0, 6, 5),
-('2022633812', 'Morales Salazar Mariana', 'Licenciatura en Matemática Algorítmica', 1, 0, 6, 5),
-('2022638929', 'Jiménez Muñoz Diego Armando', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 5),
-('2022630107', 'Gutiérrez Bautista Valeria Montserrat', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 4),
-('2022635575', 'Aguilar Carrillo José Manuel', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 6),
-('2022631675', 'Castillo Miranda Daniela Fernanda', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 6),
-('2022639892', 'Méndez Pacheco Ángel Gabriel', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 6),
-('2022638786', 'Juárez Zamora Camila Isabel', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 6),
-('2022639045', 'Medina Arellano Alejandro', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 6),
-('2022639460', 'Ortega Barajas Natalia Sofía', 'Licenciatura en Matemática Algorítmica', 1, 0, 6, 6),
-('2022634742', 'Salazar Saucedo Eduardo Daniel', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 2),
-('2022634555', 'Guzmán Rubio Paula Andrea', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 5),
-('2022636066', 'Luna Téllez Jorge Enrique', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 5),
-('2022639981', 'Delgado Barrera Ximena Guadalupe', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 5),
-('2022632678', 'Ríos Cornejo Fernando Javier', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 5),
-('2022635314', 'Meza Rentería Renata', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 4),
-('2022635169', 'Vega Delgadillo Ricardo Iván', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 5),
-('2022633484', 'Carrillo Corona Andrea Michelle', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 4),
-('2022632341', 'Espinoza Rodríguez Héctor Miguel', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 6),
-('2022639578', 'Santana Vázquez Gabriela Estefanía', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 5),
-('2022633594', 'Cárdenas Mendoza Adrián', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 2),
-('2022631490', 'Serrano Méndez Regina Victoria', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 4),
-('2022636917', 'Núñez Ramos Sebastián', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 5),
-('2022638670', 'Velázquez De la Cruz Lucía Fernanda', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 6),
-('2022631877', 'Zamora Delgado Óscar Eduardo', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 4),
-('2022635574', 'Arias Cortés María José', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 6),
-('2022630054', 'Zúñiga Fuentes Rodrigo Alejandro', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 2),
-('2022638318', 'Escobar Cárdenas Ana Karen', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 3),
-('2022632505', 'Soto Ibarra Emiliano', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 5),
-('2022639814', 'Galván Trejo Carolina Beatriz', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 6),
-('2022635039', 'Padilla Escobar Leonardo David', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 6),
-('2022631404', 'Saucedo Ocampo Fátima Lizeth', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 4),
-('2022632104', 'Paredes Figueroa Iván Antonio', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 4),
-('2022633471', 'Arredondo Godínez Samantha', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 3),
-('2022636538', 'Godínez Alarcón César Augusto', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 2),
-('2022638480', 'Peralta Bustamante Abril Alejandra', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 5),
-('2022635540', 'Montiel Villegas Kevin Alexis', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 6),
-('2022630118', 'Santillán Calderón Melissa Paola', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 6),
-('2023631105', 'Barrera Alvarado Bruno Nicolás', 'Licenciatura en Matemática Algorítmica', 1, 0, 6, 3),
-('2023634563', 'Zepeda García Diana Laura', 'Licenciatura en Matemática Algorítmica', 1, 0, 6, 4),
-('2023639356', 'Reséndiz Ramírez Jesús Alberto', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 5),
-('2023636670', 'Villegas Jiménez Karla Patricia', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 6),
-('2023635805', 'Solórzano Ortiz Mauricio', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 5),
-('2023631613', 'Mora Rivera Itzel Guadalupe', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 6),
-('2023634074', 'Tapia Ortega Rafael Ernesto', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 6),
-('2023636913', 'Delgadillo Franco Miriam Abigail', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 6),
-('2023637261', 'Aguirre León Alan Mauricio', 'Licenciatura en Matemática Algorítmica', 1, 0, 6, 4),
-('2023631529', 'Quintero Vega Jessica Denisse', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 3),
-('2023637887', 'García Solís Francisco Javier', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 6),
-('2023632698', 'González Rosas Brenda Lizbeth', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 5),
-('2023637455', 'Sánchez Velázquez Sergio Andrés', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 6),
-('2023632537', 'Flores Lozano Monserrat', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 6),
-('2023639490', 'Vázquez Orozco Arturo Benjamín', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 4),
-('2023630937', 'Torres Padilla Tania Carolina', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 6),
-('2023630932', 'Ruiz Beltrán Guillermo', 'Licenciatura en Matemática Algorítmica', 1, 0, 6, 2),
-('2023631123', 'Ortiz Valdés Paulina Alejandra', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 5),
-('2023636616', 'Romero Santillán Cristian Omar', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 6),
-('2023639486', 'Chávez Olvera Estefanía', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 5),
-('2023639563', 'Domínguez Medrano Marco Antonio', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 5),
-('2023633347', 'Ramos Tapia Jimena Nicole', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 4),
-('2023636485', 'Vargas Avila Erick Eduardo', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 6),
-('2023635181', 'Rojas López Liliana Fabiola', 'Licenciatura en Matemática Algorítmica', 1, 0, 6, 3),
-('2023631201', 'Franco Flores Víctor Hugo', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 5),
-('2023635719', 'Muñoz Díaz Alejandra Noemí', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 3),
-('2023637180', 'Contreras Castillo Manuel Alejandro', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 4),
-('2023639087', 'Estrada Domínguez Cynthia Valeria', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 6),
-('2023634334', 'Cortés Santiago Brayan Alexis', 'Licenciatura en Matemática Algorítmica', 1, 0, 6, 6),
-('2023634463', 'Guerrero Luna Araceli', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 6),
-('2023633336', 'Peña Estrada Salvador Enrique', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 4),
-('2023630833', 'Solís Lara Adriana Cecilia', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 6),
-('2023630723', 'Miranda Santana Jonathan Israel', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 6),
-('2023632648', 'Maldonado Acosta Fernanda Guadalupe', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 4),
-('2023639190', 'Acosta Cervantes Gerardo', 'Licenciatura en Matemática Algorítmica', 1, 0, 6, 6),
-('2023638939', 'Ibarra Zúñiga Mariana Lizeth', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 6),
-('2023637042', 'Molina Duarte Raúl Esteban', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 6),
-('2023635863', 'Montoya Castañeda Ingrid Vanessa', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 6),
-('2023635795', 'Lozano Arredondo Edgar Alfonso', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 4),
-('2023633879', 'Arellano Ochoa Rocío del Carmen', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 3),
-('2024630407', 'Gallegos Becerra Mateo Sebastián', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 6),
-('2024634066', 'Duarte Reséndiz Lorena Beatriz', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 6),
-('2024636268', 'Ocampo Palacios Gustavo Adolfo', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 3),
-('2024635729', 'Bernal Camacho Evelyn Sofía', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 6),
-('2024633653', 'Robles Quintero Axel Gabriel', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 6),
-('2024634565', 'Beltrán Pérez Claudia Patricia', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 3),
-('2024638786', 'Rubio Morales Rubén Darío', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 6),
-('2024632926', 'Arroyo Ruiz Pamela Alejandra', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 5),
-('2024631777', 'Ochoa Álvarez Santiago', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 5),
-('2024637150', 'Alarcón Medina Marisol', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 5),
-('2024639447', 'Lugo Rojas Alberto Carlos', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 6),
-('2024630028', 'Granados Cabrera Verónica', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 5),
-('2024635968', 'Olvera Meza Daniel Alejandro', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 5),
-('2024635144', 'Cornejo Peña Alma Rosa', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 4),
-('2024638309', 'Ponce Valdez Enrique Alonso', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 6),
-('2024634845', 'Palacios Núñez Dulce María', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 5),
-('2024632852', 'Calderón Montoya Mario Alberto', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 5),
-('2024634979', 'Rosales Villalobos Ana Sofía', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 6),
-('2024637619', 'Marín Galván Ulises', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 5),
-('2024632781', 'Avila Robles Valeria Nicole', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 4),
-('2024631531', 'Corona Esparza Pablo Andrés', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 4),
-('2024633263', 'Martínez Montiel Regina Isabel', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 6),
-('2024631194', 'Pérez Granados Luis Ángel', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 5),
-('2024636292', 'Ramírez Quiroz Cecilia Fernanda', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 5),
-('2024631747', 'Gómez Mora Rodrigo', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 4),
-('2024630823', 'Reyes Marín Natalia', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 5),
-('2024637479', 'Díaz Hernández José Antonio', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 6),
-('2024637252', 'Mendoza Sánchez Andrea Guadalupe', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 5),
-('2024638977', 'Moreno Reyes Alexis Eduardo', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 5),
-('2024637374', 'Álvarez Aguilar Mariana Sofía', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 6),
-('2024638541', 'Rivera Chávez Roberto Carlos', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 5),
-('2024631270', 'Herrera Castro Karen Lizeth', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 4),
-('2024635239', 'Castro Guzmán David Alejandro', 'Licenciatura en Matemática Algorítmica', 1, 0, 6, 3),
-('2024633789', 'Santiago Contreras Sofía Valentina', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 5),
-('2024631053', 'De la Cruz Campos Miguel Ángel', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 5),
-('2024636813', 'Silva Espinoza Daniela Alejandra', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 6),
-('2024639570', 'Cabrera Maldonado Fernando', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 3),
-('2024637815', 'León Sandoval Camila', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 6),
-('2024636866', 'Bautista Arias Juan Pablo', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 5),
-('2024638000', 'Campos Gallegos Paola Andrea', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 6),
-('2025636372', 'Lara Villaseñor Emmanuel', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 6),
-('2025632705', 'Fuentes Paredes Ximena', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 4),
-('2025636456', 'Navarro Arroyo Carlos Daniel', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 5),
-('2025637023', 'Valdez Esquivel Gabriela', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 6),
-('2025634263', 'Rosas Zepeda Adrián Alejandro', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 5),
-('2025635530', 'Pacheco Ponce Lucía', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 4),
-('2025634134', 'Sandoval Naranjo Héctor', 'Licenciatura en Matemática Algorítmica', 1, 0, 6, 4),
-('2025635734', 'Cervantes Aguirre Renata Sofía', 'Licenciatura en Matemática Algorítmica', 1, 0, 6, 6),
-('2025630509', 'Trejo Martínez Diego', 'Licenciatura en Matemática Algorítmica', 1, 0, 6, 3),
-('2025632497', 'Pineda Cruz María Fernanda', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 6),
-('2025639241', 'Villalobos Torres Jorge Luis', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 3),
-('2025636044', 'Orozco Moreno Ana Paula', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 6),
-('2025632684', 'Barajas Juárez Óscar Iván', 'Licenciatura en Matemática Algorítmica', 1, 0, 6, 2),
-('2025635112', 'Villaseñor Vargas Alejandra', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 5),
-('2025636499', 'Castañeda Silva Sebastián Andrés', 'Licenciatura en Matemática Algorítmica', 1, 0, 6, 3),
-('2025631670', 'Figueroa Ríos Carolina', 'Licenciatura en Matemática Algorítmica', 1, 0, 6, 4),
-('2025639273', 'Salgado Guerrero Leonardo', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 4),
-('2025636072', 'Esparza Navarro Fátima', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 6),
-('2025636883', 'Valdés Serrano Iván', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 4),
-('2025637533', 'Téllez Molina Samantha Nicole', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 4),
-('2025638818', 'Esquivel Pineda César', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 4),
-('2025635281', 'Becerra Soto Abril', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 3),
-('2025633996', 'Bustamante Bernal Kevin', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 4),
-('2025635512', 'Murillo Salgado Melissa', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 6),
-('2025637989', 'Quiroz Peralta Bruno', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 6),
-('2025634582', 'Medrano Lugo Diana', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 3),
-('2025638465', 'Rentería Murillo Jesús', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 3),
-('2025638005', 'Naranjo Solórzano Karla', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 5),
-('2025638042', 'Camacho Rosales Mauricio Alejandro', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 5),
-('2025633631', 'Alvarado Benítez Itzel', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 5),
-('2025637754', 'Benítez González Rafael', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 5),
-('2025635765', 'Hernández Gómez Miriam', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 4),
-('2025633778', 'López Gutiérrez Alan', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 6),
-('2025638780', 'Rodríguez Romero Jessica', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 2),
-('2025634531', 'Cruz Herrera Francisco', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 4),
-('2025631648', 'Morales Salazar Brenda', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 4),
-('2025632940', 'Jiménez Muñoz Sergio', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 6),
-('2025634495', 'Gutiérrez Bautista Monserrat Guadalupe', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 6),
-('2025632069', 'Aguilar Carrillo Arturo', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 5),
-('2025630201', 'Castillo Miranda Tania', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 5),
-('2026635583', 'Méndez Pacheco Guillermo Antonio', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 6),
-('2026631870', 'Juárez Zamora Paulina', 'Licenciatura en Matemática Algorítmica', 1, 0, 6, 4),
-('2026639454', 'Medina Arellano Cristian', 'Licenciatura en Matemática Algorítmica', 1, 0, 6, 5),
-('2026639222', 'Ortega Barajas Estefanía Isabel', 'Licenciatura en Matemática Algorítmica', 1, 0, 6, 3),
-('2026631941', 'Salazar Saucedo Marco', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 5),
-('2026638562', 'Guzmán Rubio Jimena', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 5),
-('2026639643', 'Luna Téllez Erick', 'Licenciatura en Matemática Algorítmica', 1, 0, 6, 2),
-('2026639989', 'Delgado Barrera Liliana', 'Licenciatura en Matemática Algorítmica', 1, 0, 6, 2),
-('2026633458', 'Ríos Cornejo Víctor', 'Licenciatura en Matemática Algorítmica', 1, 0, 6, 6),
-('2026632848', 'Meza Rentería Alejandra Sofía', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 5),
-('2026637382', 'Vega Delgadillo Manuel', 'Licenciatura en Matemática Algorítmica', 1, 0, 6, 4),
-('2026633793', 'Carrillo Corona Cynthia', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 6),
-('2026631167', 'Espinoza Rodríguez Brayan', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 4),
-('2026636966', 'Santana Vázquez Araceli Guadalupe', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 6),
-('2026634353', 'Cárdenas Mendoza Salvador', 'Licenciatura en Matemática Algorítmica', 1, 0, 6, 4),
-('2026635040', 'Serrano Méndez Adriana', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 5),
-('2026637196', 'Núñez Ramos Jonathan', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 6),
-('2026634461', 'Velázquez De la Cruz Fernanda', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 5),
-('2026639799', 'Zamora Delgado Gerardo Daniel', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 6),
-('2026639892', 'Arias Cortés Mariana Isabel', 'Licenciatura en Matemática Algorítmica', 1, 0, 6, 6),
-('2026634416', 'Zúñiga Fuentes Raúl', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 5),
-('2026637709', 'Escobar Cárdenas Ingrid', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 5),
-('2026632974', 'Soto Ibarra Edgar', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 2),
-('2026631495', 'Galván Trejo Rocío', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 5),
-('2026631714', 'Padilla Escobar Mateo', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 3),
-('2026634723', 'Saucedo Ocampo Lorena', 'Licenciatura en Matemática Algorítmica', 1, 0, 6, 4),
-('2026637452', 'Paredes Figueroa Gustavo', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 6),
-('2026636623', 'Arredondo Godínez Evelyn', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 3),
-('2026636771', 'Godínez Alarcón Axel', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 6),
-('2026637243', 'Peralta Bustamante Claudia', 'Licenciatura en Matemática Algorítmica', 1, 0, 6, 4),
-('2026634720', 'Montiel Villegas Rubén', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 5),
-('2026630473', 'Santillán Calderón Pamela', 'Licenciatura en Matemática Algorítmica', 1, 0, 6, 2),
-('2026632595', 'Barrera Alvarado Santiago Daniel', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 6),
-('2026631528', 'Zepeda García Marisol Andrea', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 6),
-('2026637561', 'Reséndiz Ramírez Alberto', 'Licenciatura en Matemática Algorítmica', 1, 0, 6, 3),
-('2026638166', 'Villegas Jiménez Verónica Beatriz', 'Licenciatura en Matemática Algorítmica', 1, 1, 6, 3),
-('2026636808', 'Solórzano Ortiz Daniel', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 4),
-('2026636285', 'Mora Rivera Alma', 'Licenciatura en Matemática Algorítmica', 0, 0, 6, 6),
-('2026631144', 'Tapia Ortega Enrique', 'Licenciatura en Matemática Algorítmica', 0, 1, 6, 6),
-('2026635569', 'Delgadillo Franco Dulce', 'Licenciatura en Matemática Algorítmica', 1, 0, 6, 3);
-
--- ============================================================================
--- 3. INSERCIÓN DE EVALUACIONES EN ALUMNOS_MATERIAS
--- ============================================================================
-
--- Alumno 1
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(1, 1, 7.33, 7.46, 7.44, 40, 33, 18, 12, 14, 10, 0, 0),
-(1, 2, 7.78, 7.28, 7.25, 40, 36, 15, 9, 14, 9, 0, 0),
-(1, 3, 6.69, 8.05, 7.26, 36, 34, 10, 9, 14, 9, 0, 0),
-(1, 4, 7.58, 7.27, 7.72, 36, 28, 15, 11, 12, 11, 0, 1),
-(1, 5, 7.54, 7.61, 7.99, 48, 44, 15, 12, 14, 13, 0, 1),
-(1, 6, 6.55, 6.80, 7.68, 40, 33, 18, 10, 14, 9, 0, 0);
-
--- Alumno 2
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(2, 7, 8.98, 7.88, 9.03, 40, 37, 14, 13, 10, 8, 0, 1),
-(2, 10, 8.42, 8.61, 9.03, 36, 32, 10, 10, 10, 9, 0, 1),
-(2, 11, 8.99, 8.02, 8.57, 40, 38, 14, 10, 14, 13, 0, 1),
-(2, 12, 8.64, 8.04, 8.54, 40, 39, 14, 13, 12, 11, 0, 1);
-
--- Alumno 3
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(3, 13, 7.02, 7.16, 7.85, 40, 30, 18, 15, 12, 7, 0, 0),
-(3, 14, 7.19, 7.40, 6.53, 48, 47, 15, 11, 10, 10, 0, 0),
-(3, 15, 6.49, 6.63, 6.81, 48, 48, 18, 11, 8, 5, 1, 0),
-(3, 16, 6.82, 7.17, 7.49, 36, 31, 14, 13, 10, 7, 1, 0),
-(3, 17, 6.97, 7.72, 7.20, 40, 32, 14, 14, 12, 12, 0, 0);
-
--- Alumno 4
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(4, 19, 9.24, 9.72, 9.80, 48, 44, 10, 10, 8, 7, 0, 1),
-(4, 21, 8.95, 8.99, 9.39, 48, 44, 16, 15, 12, 10, 0, 1),
-(4, 22, 9.16, 9.01, 9.32, 48, 44, 16, 13, 8, 8, 0, 1),
-(4, 23, 9.39, 9.62, 8.87, 40, 35, 12, 9, 8, 7, 0, 1),
-(4, 24, 9.64, 8.51, 8.78, 48, 43, 15, 14, 12, 12, 0, 1);
-
--- Alumno 5
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(5, 25, 9.21, 9.60, 9.39, 40, 35, 18, 15, 10, 9, 0, 1),
-(5, 27, 8.90, 8.76, 9.04, 48, 44, 16, 14, 8, 7, 0, 1),
-(5, 28, 8.64, 9.79, 9.86, 40, 35, 18, 14, 8, 6, 0, 1),
-(5, 29, 9.41, 8.77, 8.71, 48, 43, 10, 8, 10, 8, 0, 1),
-(5, 30, 8.72, 8.64, 9.79, 36, 33, 12, 10, 12, 10, 0, 1);
-
--- Alumno 6
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(6, 31, 7.73, 7.57, 6.87, 40, 30, 12, 11, 14, 13, 0, 0),
-(6, 32, 6.72, 6.84, 7.48, 40, 38, 16, 9, 14, 13, 0, 0),
-(6, 35, 6.88, 7.61, 7.87, 48, 44, 14, 14, 8, 5, 0, 0),
-(6, 36, 8.05, 7.94, 7.45, 36, 34, 18, 16, 8, 5, 0, 1);
-
--- Alumno 7
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(7, 1, 8.28, 8.60, 8.23, 48, 46, 14, 13, 14, 11, 0, 1),
-(7, 2, 8.59, 7.76, 8.62, 48, 47, 12, 12, 14, 12, 0, 1),
-(7, 3, 8.02, 8.76, 8.26, 48, 42, 14, 13, 12, 12, 0, 1),
-(7, 4, 7.78, 8.94, 8.66, 40, 35, 10, 7, 8, 7, 0, 1),
-(7, 5, 7.54, 8.63, 8.84, 48, 42, 16, 16, 12, 12, 0, 1),
-(7, 6, 7.58, 8.10, 8.63, 40, 40, 10, 9, 12, 11, 0, 1);
-
--- Alumno 8
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(8, 7, 8.64, 9.09, 8.57, 40, 39, 12, 12, 8, 8, 0, 1),
-(8, 8, 9.50, 9.47, 8.78, 36, 33, 18, 15, 12, 11, 0, 1),
-(8, 9, 8.12, 9.53, 9.20, 40, 35, 12, 9, 8, 8, 0, 1),
-(8, 10, 8.91, 8.84, 9.05, 36, 33, 14, 12, 8, 6, 0, 1),
-(8, 11, 8.34, 9.37, 8.48, 36, 33, 15, 14, 14, 14, 0, 1),
-(8, 12, 8.73, 8.61, 9.13, 40, 38, 10, 9, 14, 13, 0, 1);
-
--- Alumno 9
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(9, 13, 7.47, 7.32, 7.42, 40, 35, 10, 5, 14, 14, 0, 0),
-(9, 14, 6.24, 7.00, 6.67, 48, 46, 14, 8, 14, 14, 1, 0),
-(9, 15, 6.08, 7.54, 7.56, 48, 42, 16, 14, 14, 11, 1, 0),
-(9, 16, 6.08, 6.70, 7.47, 48, 43, 18, 14, 8, 8, 0, 0),
-(9, 17, 6.41, 7.07, 7.08, 40, 34, 18, 14, 10, 8, 0, 0),
-(9, 18, 6.16, 7.14, 7.09, 36, 32, 14, 9, 10, 6, 1, 0);
-
--- Alumno 10
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(10, 19, 9.38, 9.29, 9.53, 48, 45, 18, 17, 12, 12, 0, 1),
-(10, 20, 8.91, 9.26, 9.40, 48, 44, 14, 14, 8, 7, 0, 1),
-(10, 21, 9.20, 9.07, 9.37, 36, 33, 14, 10, 8, 8, 0, 1),
-(10, 22, 9.33, 9.18, 9.55, 48, 42, 15, 15, 10, 9, 0, 1),
-(10, 23, 9.35, 9.34, 10.00, 40, 35, 14, 10, 10, 8, 0, 1),
-(10, 24, 8.81, 9.25, 9.36, 48, 46, 12, 11, 12, 11, 0, 1);
-
--- Alumno 11
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(11, 25, 5.75, 6.76, 6.31, 48, 46, 16, 10, 12, 7, 0, 0),
-(11, 26, 5.82, 6.30, 7.26, 48, 46, 15, 9, 8, 7, 0, 0),
-(11, 27, 6.58, 6.27, 6.09, 48, 47, 18, 17, 8, 8, 0, 0),
-(11, 28, 5.64, 6.24, 7.24, 40, 37, 12, 7, 10, 7, 1, 0),
-(11, 29, 6.88, 5.95, 6.99, 48, 44, 10, 10, 12, 11, 1, 0),
-(11, 30, 6.18, 6.04, 7.07, 48, 48, 12, 11, 14, 9, 0, 0);
-
--- Alumno 12
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(12, 31, 6.51, 7.70, 7.55, 36, 32, 18, 18, 14, 12, 0, 0),
-(12, 32, 7.32, 7.05, 7.04, 36, 30, 16, 10, 12, 7, 0, 0),
-(12, 33, 7.46, 7.13, 6.59, 48, 37, 14, 8, 10, 8, 0, 0),
-(12, 34, 6.92, 7.51, 6.58, 36, 34, 14, 7, 14, 9, 0, 0),
-(12, 35, 6.71, 6.89, 6.56, 36, 27, 14, 8, 12, 8, 1, 0),
-(12, 36, 6.58, 7.51, 7.42, 36, 34, 15, 7, 8, 5, 1, 0);
-
--- Alumno 13
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(13, 2, 9.32, 9.20, 9.80, 36, 33, 10, 7, 10, 9, 0, 1),
-(13, 5, 9.37, 9.48, 8.80, 40, 39, 16, 12, 10, 10, 0, 1);
-
--- Alumno 14
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(14, 7, 6.79, 7.30, 6.59, 40, 31, 16, 16, 8, 8, 0, 0),
-(14, 8, 6.24, 6.91, 6.99, 48, 36, 14, 8, 12, 8, 0, 0),
-(14, 9, 7.11, 7.45, 7.50, 40, 32, 10, 7, 12, 12, 1, 0),
-(14, 10, 7.34, 7.02, 7.44, 48, 38, 12, 6, 14, 9, 1, 0),
-(14, 12, 6.24, 6.65, 6.53, 40, 38, 15, 15, 14, 11, 1, 0);
-
--- Alumno 15
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(15, 13, 8.67, 8.54, 8.99, 40, 40, 15, 14, 12, 10, 0, 1),
-(15, 14, 8.91, 9.07, 9.76, 48, 44, 10, 10, 8, 7, 0, 1),
-(15, 15, 9.07, 9.52, 9.23, 40, 35, 10, 9, 12, 11, 0, 1),
-(15, 17, 8.84, 9.37, 8.70, 40, 37, 15, 11, 12, 12, 0, 1),
-(15, 18, 9.67, 8.75, 9.84, 36, 31, 18, 18, 14, 13, 0, 1);
-
--- Alumno 16
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(16, 19, 5.61, 6.80, 6.32, 40, 39, 10, 9, 10, 9, 0, 0),
-(16, 20, 6.07, 6.78, 6.61, 48, 41, 15, 12, 12, 8, 0, 0),
-(16, 22, 5.55, 5.97, 6.53, 48, 37, 14, 11, 14, 10, 0, 0),
-(16, 23, 5.94, 6.99, 6.50, 36, 29, 10, 8, 10, 9, 0, 0),
-(16, 24, 6.73, 7.06, 7.19, 48, 41, 18, 10, 12, 9, 0, 0);
-
--- Alumno 17
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(17, 25, 6.09, 6.18, 7.20, 36, 32, 16, 13, 14, 13, 1, 0),
-(17, 26, 7.12, 6.08, 6.65, 48, 47, 15, 15, 14, 12, 0, 0),
-(17, 27, 5.90, 7.35, 6.99, 40, 37, 18, 17, 12, 8, 0, 0),
-(17, 28, 6.96, 6.89, 6.34, 36, 33, 16, 8, 8, 6, 1, 0),
-(17, 30, 6.03, 7.30, 6.41, 48, 40, 10, 7, 10, 10, 1, 0);
-
--- Alumno 18
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(18, 31, 8.34, 8.46, 7.99, 48, 47, 16, 14, 8, 6, 0, 1),
-(18, 33, 7.57, 8.98, 8.83, 40, 40, 12, 12, 8, 7, 0, 1),
-(18, 35, 8.78, 8.41, 8.65, 40, 38, 12, 12, 12, 11, 0, 1),
-(18, 36, 7.56, 7.73, 8.37, 40, 38, 12, 11, 10, 9, 0, 1);
-
--- Alumno 19
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(19, 1, 8.60, 8.18, 8.47, 36, 33, 15, 12, 10, 8, 0, 1),
-(19, 2, 7.91, 9.35, 9.34, 40, 36, 12, 11, 12, 10, 0, 1),
-(19, 3, 8.97, 8.73, 8.85, 40, 37, 15, 11, 8, 7, 0, 1),
-(19, 5, 8.59, 9.38, 8.43, 40, 35, 10, 9, 14, 14, 0, 1),
-(19, 6, 8.26, 8.04, 8.28, 36, 33, 18, 15, 14, 13, 0, 1);
-
--- Alumno 20
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(20, 7, 7.74, 7.80, 8.04, 40, 39, 14, 14, 8, 6, 0, 1),
-(20, 9, 8.66, 7.95, 8.61, 40, 39, 14, 11, 10, 10, 0, 1),
-(20, 10, 7.96, 8.10, 7.56, 36, 36, 14, 13, 14, 12, 0, 1),
-(20, 12, 8.11, 8.12, 7.96, 48, 44, 12, 12, 12, 12, 0, 1);
-
--- Alumno 21
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(21, 13, 8.56, 9.15, 9.68, 48, 44, 18, 18, 8, 8, 0, 1),
-(21, 14, 8.72, 9.56, 9.41, 48, 46, 12, 9, 14, 12, 0, 1),
-(21, 15, 8.80, 9.22, 9.39, 40, 36, 18, 14, 8, 8, 0, 1),
-(21, 16, 9.43, 8.36, 8.34, 40, 38, 12, 12, 10, 9, 0, 1),
-(21, 17, 8.76, 9.07, 8.97, 48, 47, 10, 8, 10, 10, 0, 1),
-(21, 18, 8.50, 9.14, 9.05, 40, 36, 15, 15, 12, 12, 0, 1);
-
--- Alumno 22
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(22, 19, 6.74, 7.81, 7.97, 40, 33, 18, 16, 12, 10, 0, 1),
-(22, 21, 6.81, 7.80, 7.70, 40, 34, 10, 9, 14, 12, 0, 0),
-(22, 22, 7.52, 7.83, 7.72, 40, 30, 14, 8, 12, 10, 0, 1),
-(22, 23, 7.27, 7.54, 6.89, 48, 40, 16, 12, 10, 6, 0, 0),
-(22, 24, 7.21, 7.31, 6.93, 48, 44, 12, 11, 10, 6, 0, 0);
-
--- Alumno 23
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(23, 25, 7.17, 7.61, 6.95, 48, 38, 15, 14, 14, 14, 0, 0),
-(23, 28, 6.76, 8.01, 7.21, 48, 36, 10, 10, 10, 10, 0, 0);
-
--- Alumno 24
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(24, 31, 8.48, 9.71, 9.92, 40, 38, 12, 11, 8, 6, 0, 1),
-(24, 32, 8.67, 9.26, 9.82, 40, 37, 15, 15, 14, 12, 0, 1),
-(24, 34, 9.50, 9.08, 8.79, 36, 33, 12, 12, 12, 12, 0, 1),
-(24, 36, 8.50, 9.45, 9.63, 48, 47, 12, 10, 14, 14, 0, 1);
-
--- Alumno 25
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(25, 1, 6.20, 6.64, 6.64, 40, 36, 12, 9, 12, 9, 1, 0),
-(25, 2, 7.07, 6.21, 7.21, 48, 39, 10, 10, 8, 8, 1, 0),
-(25, 3, 6.60, 6.89, 7.54, 48, 48, 14, 8, 12, 9, 0, 0),
-(25, 4, 6.32, 6.38, 6.50, 48, 45, 14, 13, 14, 13, 0, 0),
-(25, 5, 7.23, 7.26, 7.24, 48, 48, 10, 9, 14, 13, 0, 0);
-
--- Alumno 26
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(26, 7, 7.21, 6.75, 7.18, 48, 45, 15, 8, 14, 9, 0, 0),
-(26, 8, 6.70, 6.77, 6.31, 40, 40, 14, 7, 14, 11, 0, 0),
-(26, 9, 7.05, 6.94, 6.29, 40, 31, 16, 8, 8, 8, 1, 0),
-(26, 10, 6.54, 7.21, 7.30, 48, 46, 15, 12, 14, 12, 0, 0),
-(26, 11, 7.29, 6.66, 7.19, 48, 44, 12, 11, 12, 7, 1, 0),
-(26, 12, 6.74, 6.87, 7.25, 36, 27, 10, 7, 14, 14, 0, 0);
-
--- Alumno 27
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(27, 13, 6.71, 6.78, 7.80, 48, 48, 10, 5, 14, 13, 0, 0),
-(27, 16, 7.52, 6.41, 6.78, 36, 36, 10, 8, 8, 6, 0, 0),
-(27, 17, 6.79, 6.72, 6.79, 36, 29, 16, 12, 10, 10, 1, 0),
-(27, 18, 7.09, 7.33, 6.94, 40, 32, 18, 17, 10, 9, 1, 0);
-
--- Alumno 28
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(28, 19, 6.07, 6.65, 6.38, 48, 41, 18, 15, 14, 10, 1, 0),
-(28, 20, 5.83, 6.50, 6.19, 36, 31, 18, 11, 14, 9, 0, 0),
-(28, 21, 7.00, 6.53, 6.04, 36, 31, 12, 8, 8, 8, 0, 0),
-(28, 22, 5.69, 6.76, 6.12, 40, 36, 18, 18, 8, 5, 1, 0),
-(28, 23, 6.69, 6.76, 6.63, 40, 33, 14, 11, 8, 6, 0, 0),
-(28, 24, 6.99, 5.91, 7.25, 40, 33, 18, 18, 10, 9, 0, 0);
-
--- Alumno 29
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(29, 27, 8.45, 8.83, 8.68, 40, 37, 16, 15, 14, 11, 0, 1),
-(29, 29, 9.08, 9.09, 9.25, 40, 36, 14, 12, 14, 11, 0, 1);
-
--- Alumno 30
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(30, 32, 6.28, 6.47, 6.76, 40, 32, 12, 8, 10, 9, 0, 0),
-(30, 35, 5.82, 6.42, 7.07, 40, 34, 15, 14, 14, 10, 0, 0),
-(30, 36, 5.98, 5.85, 6.52, 36, 35, 18, 9, 8, 5, 0, 0);
-
--- Alumno 31
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(31, 1, 8.45, 9.29, 8.41, 48, 45, 14, 10, 14, 14, 0, 1),
-(31, 2, 8.12, 9.05, 8.98, 36, 35, 18, 15, 12, 10, 0, 1),
-(31, 4, 8.85, 9.28, 9.00, 36, 31, 10, 8, 10, 8, 0, 1),
-(31, 5, 9.03, 8.65, 8.90, 40, 35, 14, 13, 14, 12, 0, 1),
-(31, 6, 9.59, 8.62, 9.36, 36, 36, 18, 13, 8, 7, 0, 1);
-
--- Alumno 32
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(32, 7, 6.93, 6.76, 6.42, 36, 35, 10, 6, 10, 10, 0, 0),
-(32, 8, 5.73, 5.96, 7.26, 48, 45, 18, 9, 10, 8, 1, 0),
-(32, 9, 5.97, 6.06, 7.11, 40, 31, 14, 9, 10, 10, 0, 0),
-(32, 10, 6.24, 7.12, 6.42, 48, 38, 18, 10, 12, 7, 1, 0),
-(32, 11, 6.01, 5.97, 6.81, 48, 45, 15, 12, 8, 7, 0, 0),
-(32, 12, 6.34, 6.18, 6.73, 40, 36, 12, 11, 14, 9, 0, 0);
-
--- Alumno 33
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(33, 13, 7.80, 7.04, 7.47, 40, 31, 10, 5, 12, 10, 0, 0),
-(33, 14, 7.16, 7.20, 7.11, 36, 33, 15, 15, 14, 9, 0, 0),
-(33, 15, 6.66, 7.32, 7.05, 48, 48, 14, 13, 8, 7, 0, 0),
-(33, 16, 7.24, 7.91, 7.93, 48, 39, 16, 16, 10, 9, 0, 1),
-(33, 17, 6.87, 7.20, 7.30, 36, 28, 12, 9, 12, 10, 0, 0),
-(33, 18, 7.07, 7.92, 7.43, 36, 34, 16, 11, 14, 9, 0, 0);
-
--- Alumno 34
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(34, 19, 7.39, 7.79, 7.22, 40, 36, 18, 18, 10, 8, 0, 0),
-(34, 20, 6.94, 7.99, 7.04, 40, 32, 15, 12, 12, 12, 0, 0),
-(34, 21, 7.50, 7.35, 7.57, 36, 32, 15, 11, 14, 11, 0, 0),
-(34, 24, 6.63, 7.45, 7.59, 48, 38, 18, 17, 8, 8, 0, 0);
-
--- Alumno 35
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(35, 26, 8.16, 9.45, 9.47, 48, 45, 12, 11, 10, 9, 0, 1),
-(35, 28, 9.05, 9.26, 9.46, 36, 34, 16, 15, 14, 14, 0, 1),
-(35, 29, 8.88, 9.37, 8.86, 48, 46, 18, 13, 8, 6, 0, 1),
-(35, 30, 9.05, 8.76, 9.27, 36, 35, 18, 18, 14, 13, 0, 1);
-
--- Alumno 36
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(36, 31, 6.05, 6.97, 6.80, 48, 45, 12, 9, 12, 10, 0, 0),
-(36, 34, 6.74, 6.89, 6.23, 36, 34, 10, 7, 14, 9, 1, 0),
-(36, 35, 7.13, 6.12, 6.46, 40, 33, 16, 15, 12, 10, 1, 0);
-
--- Alumno 37
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(37, 4, 6.87, 7.75, 6.88, 40, 40, 10, 10, 10, 7, 0, 0),
-(37, 6, 7.19, 7.39, 7.18, 40, 37, 12, 12, 14, 14, 0, 0);
-
--- Alumno 38
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(38, 7, 9.08, 8.59, 8.66, 36, 36, 12, 10, 12, 12, 0, 1),
-(38, 8, 8.97, 8.05, 8.20, 48, 43, 14, 12, 10, 9, 0, 1),
-(38, 10, 7.93, 8.90, 8.75, 48, 44, 16, 15, 14, 11, 0, 1),
-(38, 11, 8.28, 9.14, 8.92, 48, 47, 14, 14, 8, 8, 0, 1),
-(38, 12, 7.96, 8.13, 8.49, 36, 33, 18, 14, 14, 14, 0, 1);
-
--- Alumno 39
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(39, 13, 8.47, 8.53, 9.13, 48, 43, 15, 13, 10, 8, 0, 1),
-(39, 14, 7.90, 8.26, 7.81, 40, 35, 15, 12, 10, 9, 0, 1),
-(39, 15, 8.88, 8.34, 8.42, 48, 45, 15, 14, 14, 12, 0, 1),
-(39, 16, 7.55, 7.67, 8.80, 40, 35, 14, 11, 12, 10, 0, 1),
-(39, 17, 8.60, 8.42, 8.81, 40, 39, 16, 12, 8, 7, 0, 1),
-(39, 18, 8.59, 8.78, 8.24, 36, 36, 15, 15, 10, 9, 0, 1);
-
--- Alumno 40
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(40, 19, 7.75, 7.33, 8.21, 36, 30, 18, 18, 12, 12, 0, 1),
-(40, 20, 7.44, 7.32, 7.68, 36, 30, 10, 9, 12, 11, 0, 0),
-(40, 21, 6.94, 7.47, 7.27, 48, 40, 14, 11, 8, 6, 0, 0),
-(40, 22, 7.96, 7.82, 8.11, 40, 40, 12, 11, 10, 7, 0, 1),
-(40, 23, 6.74, 7.17, 7.17, 48, 42, 15, 9, 12, 12, 0, 0),
-(40, 24, 7.14, 7.35, 7.71, 36, 33, 16, 12, 12, 10, 0, 0);
-
--- Alumno 41
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(41, 25, 9.45, 8.51, 9.84, 48, 47, 18, 15, 8, 8, 0, 1),
-(41, 27, 8.78, 9.74, 9.63, 40, 37, 14, 12, 12, 12, 0, 1),
-(41, 28, 9.05, 9.17, 9.16, 40, 40, 10, 7, 8, 8, 0, 1);
-
--- Alumno 42
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(42, 31, 6.81, 8.35, 7.39, 48, 43, 18, 15, 10, 9, 0, 1),
-(42, 34, 6.95, 7.51, 7.23, 48, 47, 12, 9, 14, 13, 0, 0),
-(42, 35, 7.90, 8.07, 7.71, 36, 36, 10, 7, 10, 9, 0, 1),
-(42, 36, 6.93, 7.84, 7.84, 40, 35, 10, 9, 8, 7, 0, 1);
-
--- Alumno 43
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(43, 1, 7.73, 6.97, 7.37, 40, 32, 15, 9, 10, 6, 0, 0),
-(43, 2, 7.43, 6.84, 7.84, 40, 35, 18, 12, 10, 9, 0, 0),
-(43, 3, 7.55, 7.45, 7.23, 36, 29, 10, 9, 14, 11, 0, 0),
-(43, 4, 8.07, 7.27, 7.13, 40, 40, 10, 6, 12, 12, 0, 0),
-(43, 6, 6.67, 8.02, 8.16, 36, 35, 16, 16, 10, 9, 0, 1);
-
--- Alumno 44
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(44, 7, 7.13, 6.47, 7.71, 36, 32, 14, 9, 14, 13, 0, 0),
-(44, 8, 6.99, 6.61, 7.13, 36, 27, 16, 9, 8, 7, 1, 0),
-(44, 9, 7.55, 7.70, 7.03, 40, 40, 18, 17, 14, 12, 0, 0),
-(44, 10, 6.29, 7.12, 7.33, 40, 31, 14, 8, 10, 7, 0, 0),
-(44, 11, 6.76, 7.26, 7.64, 48, 46, 10, 7, 14, 14, 0, 0),
-(44, 12, 6.53, 6.71, 7.76, 36, 34, 16, 8, 12, 12, 0, 0);
-
--- Alumno 45
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(45, 13, 7.89, 9.17, 8.67, 48, 44, 12, 11, 10, 10, 0, 1),
-(45, 14, 8.81, 8.22, 9.18, 36, 33, 15, 13, 8, 7, 0, 1),
-(45, 15, 8.71, 8.65, 8.05, 40, 39, 14, 10, 14, 12, 0, 1),
-(45, 16, 8.19, 8.20, 8.08, 48, 47, 18, 13, 10, 10, 0, 1),
-(45, 18, 8.40, 7.90, 9.15, 36, 31, 15, 13, 14, 12, 0, 1);
-
--- Alumno 46
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(46, 19, 7.81, 7.31, 7.14, 40, 35, 16, 12, 10, 8, 0, 0),
-(46, 20, 7.94, 8.30, 8.37, 36, 34, 14, 12, 12, 10, 0, 1),
-(46, 21, 7.56, 6.94, 7.31, 48, 48, 14, 14, 10, 9, 0, 0),
-(46, 22, 7.28, 8.29, 8.43, 36, 36, 16, 13, 10, 8, 0, 1),
-(46, 23, 8.13, 6.96, 7.79, 48, 48, 18, 13, 12, 10, 0, 1),
-(46, 24, 7.87, 7.46, 8.06, 40, 35, 12, 10, 14, 14, 0, 1);
-
--- Alumno 47
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(47, 25, 9.05, 9.45, 9.09, 48, 42, 16, 12, 10, 10, 0, 1),
-(47, 26, 9.50, 8.57, 9.36, 40, 40, 12, 10, 12, 11, 0, 1),
-(47, 27, 9.55, 9.77, 9.12, 48, 44, 14, 13, 12, 10, 0, 1),
-(47, 28, 8.38, 8.75, 9.66, 48, 42, 12, 9, 10, 9, 0, 1),
-(47, 29, 8.97, 9.04, 9.32, 36, 34, 14, 13, 12, 10, 0, 1),
-(47, 30, 8.41, 9.60, 9.00, 48, 47, 16, 12, 10, 9, 0, 1);
-
--- Alumno 48
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(48, 31, 7.96, 9.16, 7.91, 40, 38, 16, 16, 10, 8, 0, 1),
-(48, 32, 8.26, 8.90, 8.07, 36, 31, 12, 10, 10, 9, 0, 1),
-(48, 33, 8.13, 8.65, 8.77, 48, 46, 14, 10, 8, 6, 0, 1),
-(48, 34, 7.87, 8.67, 9.00, 36, 33, 10, 7, 14, 11, 0, 1),
-(48, 35, 7.82, 8.57, 9.02, 40, 38, 10, 10, 14, 12, 0, 1),
-(48, 36, 8.10, 9.04, 8.25, 40, 36, 10, 8, 12, 11, 0, 1);
-
--- Alumno 49
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(49, 1, 6.25, 6.47, 6.88, 48, 39, 18, 17, 8, 8, 0, 0),
-(49, 4, 6.22, 6.64, 6.66, 48, 44, 14, 13, 12, 8, 1, 0),
-(49, 5, 6.58, 5.92, 7.11, 40, 30, 15, 15, 12, 11, 0, 0),
-(49, 6, 7.14, 6.02, 6.90, 40, 38, 18, 9, 10, 10, 0, 0);
-
--- Alumno 50
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(50, 8, 6.85, 7.29, 7.24, 48, 36, 18, 14, 10, 10, 0, 0),
-(50, 9, 7.22, 7.29, 7.62, 48, 40, 12, 9, 8, 5, 1, 0),
-(50, 10, 6.86, 6.19, 6.93, 40, 39, 12, 12, 10, 8, 0, 0);
-
--- Alumno 51
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(51, 13, 9.40, 9.65, 8.93, 48, 45, 16, 12, 12, 11, 0, 1),
-(51, 14, 8.59, 9.68, 9.44, 40, 40, 15, 13, 10, 10, 0, 1),
-(51, 15, 9.56, 9.28, 9.71, 40, 36, 18, 17, 10, 9, 0, 1),
-(51, 16, 8.57, 9.27, 8.59, 48, 42, 18, 17, 14, 11, 0, 1),
-(51, 17, 8.38, 8.76, 9.54, 48, 43, 18, 17, 8, 7, 0, 1),
-(51, 18, 8.32, 9.35, 8.74, 40, 36, 18, 13, 12, 11, 0, 1);
-
--- Alumno 52
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(52, 19, 7.70, 7.73, 6.89, 40, 36, 12, 9, 14, 12, 0, 0),
-(52, 20, 7.05, 7.25, 7.98, 48, 46, 18, 12, 10, 9, 0, 0),
-(52, 21, 6.63, 7.90, 7.23, 40, 34, 10, 5, 12, 8, 0, 0),
-(52, 23, 7.85, 6.95, 6.93, 36, 32, 16, 15, 8, 8, 0, 0),
-(52, 24, 7.93, 6.95, 8.07, 36, 27, 10, 7, 10, 7, 0, 1);
-
--- Alumno 53
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(53, 25, 6.23, 7.16, 7.64, 36, 27, 14, 7, 14, 9, 1, 0),
-(53, 26, 7.15, 7.20, 6.74, 36, 30, 12, 11, 12, 7, 0, 0),
-(53, 27, 6.33, 7.46, 7.12, 48, 40, 10, 10, 14, 10, 0, 0),
-(53, 28, 6.73, 6.62, 6.52, 40, 37, 14, 10, 12, 11, 1, 0),
-(53, 29, 7.29, 7.29, 6.58, 40, 38, 15, 10, 8, 8, 0, 0),
-(53, 30, 6.79, 7.11, 7.67, 40, 39, 12, 9, 12, 7, 0, 0);
-
--- Alumno 54
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(54, 31, 8.69, 8.94, 9.01, 36, 34, 10, 10, 10, 10, 0, 1),
-(54, 32, 8.66, 9.47, 9.19, 48, 48, 10, 7, 14, 14, 0, 1),
-(54, 33, 9.27, 9.84, 9.47, 36, 36, 16, 16, 14, 11, 0, 1),
-(54, 34, 9.06, 8.85, 9.56, 36, 31, 16, 12, 12, 12, 0, 1),
-(54, 35, 9.76, 9.87, 9.11, 48, 45, 16, 16, 14, 11, 0, 1),
-(54, 36, 8.70, 9.20, 9.61, 48, 47, 15, 11, 14, 13, 0, 1);
-
--- Alumno 55
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(55, 1, 7.32, 7.64, 7.69, 40, 37, 14, 13, 8, 6, 0, 1),
-(55, 2, 7.12, 8.48, 7.84, 40, 37, 18, 16, 8, 6, 0, 1),
-(55, 3, 7.58, 8.40, 7.79, 40, 39, 14, 10, 10, 8, 0, 1),
-(55, 6, 7.39, 7.83, 7.41, 48, 46, 10, 8, 10, 8, 0, 1);
-
--- Alumno 56
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(56, 7, 8.06, 9.00, 8.66, 48, 42, 18, 13, 10, 9, 0, 1),
-(56, 8, 8.38, 8.47, 9.29, 40, 39, 16, 14, 12, 10, 0, 1),
-(56, 9, 8.91, 8.21, 9.11, 36, 33, 10, 10, 8, 6, 0, 1),
-(56, 10, 8.93, 8.94, 8.25, 36, 36, 12, 10, 12, 12, 0, 1),
-(56, 11, 8.26, 7.88, 9.04, 48, 42, 15, 12, 10, 10, 0, 1),
-(56, 12, 8.85, 8.16, 8.80, 40, 40, 18, 18, 12, 11, 0, 1);
-
--- Alumno 57
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(57, 15, 7.20, 7.49, 7.90, 48, 45, 16, 12, 8, 8, 0, 1),
-(57, 16, 8.37, 8.42, 8.35, 48, 47, 16, 16, 12, 11, 0, 1);
-
--- Alumno 58
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(58, 19, 9.52, 9.97, 9.23, 48, 47, 14, 11, 10, 10, 0, 1),
-(58, 20, 9.71, 10.00, 9.99, 48, 45, 18, 15, 10, 10, 0, 1),
-(58, 22, 8.60, 9.46, 9.27, 40, 38, 15, 11, 10, 9, 0, 1),
-(58, 23, 9.65, 9.07, 9.61, 40, 40, 14, 14, 12, 10, 0, 1),
-(58, 24, 9.82, 9.99, 9.11, 36, 34, 12, 11, 10, 10, 0, 1);
-
--- Alumno 59
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(59, 25, 8.08, 7.47, 7.87, 40, 35, 15, 11, 8, 7, 0, 1),
-(59, 26, 8.08, 7.65, 8.26, 40, 39, 14, 13, 8, 6, 0, 1),
-(59, 27, 6.96, 7.23, 7.62, 48, 45, 12, 11, 10, 8, 0, 0),
-(59, 28, 7.48, 7.83, 7.30, 48, 42, 10, 10, 12, 10, 0, 1),
-(59, 29, 7.89, 7.19, 8.12, 40, 35, 12, 12, 14, 14, 0, 1),
-(59, 30, 7.39, 7.62, 7.06, 48, 43, 18, 15, 8, 7, 0, 0);
-
--- Alumno 60
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(60, 31, 7.78, 8.58, 8.19, 36, 31, 15, 15, 12, 10, 0, 1),
-(60, 32, 7.51, 7.67, 9.04, 40, 40, 16, 16, 12, 11, 0, 1),
-(60, 33, 8.74, 9.00, 8.19, 40, 37, 12, 10, 14, 11, 0, 1),
-(60, 34, 7.75, 8.63, 7.89, 48, 42, 16, 16, 10, 8, 0, 1),
-(60, 35, 7.96, 8.52, 7.76, 48, 44, 16, 16, 8, 8, 0, 1);
-
--- Alumno 61
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(61, 1, 7.30, 7.70, 7.69, 36, 32, 18, 18, 8, 7, 0, 1),
-(61, 3, 7.36, 7.07, 7.76, 48, 46, 18, 14, 14, 11, 0, 0),
-(61, 4, 7.50, 7.79, 7.43, 36, 34, 12, 10, 12, 12, 0, 1),
-(61, 5, 8.19, 7.43, 7.60, 36, 31, 16, 15, 10, 10, 0, 1),
-(61, 6, 8.13, 7.39, 7.03, 48, 42, 10, 10, 10, 8, 0, 1);
-
--- Alumno 62
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(62, 7, 8.15, 9.03, 8.13, 36, 31, 12, 9, 12, 11, 0, 1),
-(62, 8, 8.66, 8.10, 8.79, 36, 31, 10, 8, 10, 9, 0, 1),
-(62, 11, 8.00, 8.27, 8.63, 48, 42, 14, 12, 10, 8, 0, 1),
-(62, 12, 8.06, 9.01, 8.14, 40, 40, 15, 14, 10, 8, 0, 1);
-
--- Alumno 63
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(63, 13, 8.99, 8.42, 8.80, 40, 39, 10, 8, 14, 14, 0, 1),
-(63, 14, 8.14, 8.75, 8.33, 40, 40, 14, 10, 10, 10, 0, 1),
-(63, 15, 9.28, 8.90, 9.23, 48, 42, 15, 12, 14, 13, 0, 1),
-(63, 16, 8.97, 9.07, 8.48, 48, 46, 10, 7, 10, 10, 0, 1),
-(63, 17, 9.24, 9.36, 9.49, 36, 34, 14, 11, 12, 11, 0, 1),
-(63, 18, 8.05, 8.48, 9.17, 40, 36, 10, 10, 14, 14, 0, 1);
-
--- Alumno 64
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(64, 19, 7.88, 7.65, 6.73, 40, 36, 10, 9, 8, 5, 0, 0),
-(64, 22, 7.60, 7.96, 7.60, 48, 44, 12, 11, 14, 11, 0, 1),
-(64, 23, 6.96, 6.69, 7.02, 40, 35, 16, 15, 12, 12, 0, 0);
-
--- Alumno 65
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(65, 25, 5.94, 6.50, 6.83, 48, 44, 14, 8, 8, 6, 0, 0),
-(65, 27, 6.64, 6.65, 6.28, 40, 39, 12, 7, 8, 8, 1, 0),
-(65, 28, 6.65, 5.88, 6.18, 40, 30, 18, 18, 8, 8, 0, 0),
-(65, 29, 6.29, 6.32, 7.06, 36, 35, 18, 9, 14, 13, 0, 0),
-(65, 30, 6.17, 6.90, 5.96, 48, 38, 18, 11, 8, 8, 0, 0);
-
--- Alumno 66
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(66, 33, 7.65, 7.91, 7.39, 40, 37, 14, 13, 10, 8, 0, 1),
-(66, 34, 7.36, 7.92, 8.09, 40, 40, 16, 14, 10, 8, 0, 1),
-(66, 35, 7.05, 7.94, 8.00, 48, 43, 18, 18, 10, 10, 0, 1);
-
--- Alumno 67
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(67, 1, 8.07, 8.72, 8.49, 48, 47, 16, 14, 14, 11, 0, 1),
-(67, 2, 7.98, 7.44, 7.70, 48, 42, 12, 11, 10, 9, 0, 1),
-(67, 3, 8.23, 7.60, 7.59, 40, 36, 16, 12, 12, 11, 0, 1),
-(67, 5, 7.35, 8.62, 8.54, 36, 36, 18, 17, 14, 12, 0, 1);
-
--- Alumno 68
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(68, 7, 9.92, 9.10, 9.53, 36, 36, 14, 11, 14, 12, 0, 1),
-(68, 8, 9.83, 9.65, 9.67, 48, 46, 18, 17, 10, 10, 0, 1),
-(68, 9, 9.91, 9.07, 9.01, 48, 42, 12, 10, 8, 7, 0, 1),
-(68, 10, 8.52, 9.05, 9.13, 36, 35, 14, 10, 12, 11, 0, 1),
-(68, 11, 9.52, 8.88, 8.98, 40, 39, 10, 9, 14, 13, 0, 1),
-(68, 12, 8.57, 9.65, 9.50, 36, 35, 10, 8, 14, 14, 0, 1);
-
--- Alumno 69
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(69, 13, 6.88, 7.80, 7.59, 48, 48, 18, 9, 8, 7, 0, 0),
-(69, 14, 7.22, 8.02, 7.71, 48, 39, 10, 10, 12, 10, 0, 1),
-(69, 15, 7.92, 8.07, 7.39, 48, 47, 14, 7, 12, 11, 0, 1),
-(69, 16, 7.75, 7.37, 6.91, 48, 39, 14, 8, 8, 6, 0, 0),
-(69, 17, 8.01, 7.83, 7.60, 48, 37, 12, 11, 10, 9, 0, 1),
-(69, 18, 7.80, 7.04, 8.01, 48, 48, 15, 8, 10, 6, 0, 1);
-
--- Alumno 70
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(70, 19, 6.35, 6.27, 7.42, 40, 36, 15, 14, 14, 12, 1, 0),
-(70, 20, 6.55, 6.34, 6.28, 48, 45, 10, 10, 8, 5, 0, 0),
-(70, 21, 6.72, 6.58, 7.23, 48, 37, 14, 14, 14, 12, 0, 0),
-(70, 22, 6.02, 6.39, 6.58, 48, 42, 16, 12, 10, 8, 0, 0),
-(70, 23, 7.34, 7.28, 7.29, 40, 30, 16, 16, 10, 6, 1, 0),
-(70, 24, 6.83, 6.72, 7.04, 36, 31, 12, 11, 12, 8, 0, 0);
-
--- Alumno 71
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(71, 25, 6.92, 6.54, 6.45, 48, 48, 16, 8, 14, 14, 0, 0),
-(71, 26, 6.43, 6.28, 6.43, 48, 45, 15, 12, 12, 8, 0, 0),
-(71, 29, 6.34, 6.59, 6.39, 36, 32, 15, 14, 12, 11, 0, 0),
-(71, 30, 7.03, 6.40, 7.08, 40, 36, 12, 6, 12, 8, 0, 0);
-
--- Alumno 72
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(72, 31, 8.90, 8.91, 8.94, 48, 42, 12, 9, 12, 10, 0, 1),
-(72, 32, 9.55, 8.69, 9.54, 48, 42, 18, 13, 8, 8, 0, 1),
-(72, 33, 9.16, 9.55, 9.32, 48, 43, 10, 9, 14, 12, 0, 1),
-(72, 34, 8.76, 8.72, 9.59, 48, 48, 14, 11, 14, 11, 0, 1),
-(72, 35, 8.81, 9.11, 9.44, 48, 47, 12, 10, 14, 12, 0, 1),
-(72, 36, 8.48, 9.74, 9.43, 36, 36, 18, 16, 12, 10, 0, 1);
-
--- Alumno 73
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(73, 1, 7.15, 7.08, 7.56, 40, 37, 15, 7, 8, 7, 1, 0),
-(73, 2, 7.60, 7.24, 6.83, 48, 40, 16, 16, 10, 9, 0, 0),
-(73, 3, 6.70, 7.26, 7.62, 48, 40, 15, 10, 14, 11, 0, 0),
-(73, 4, 6.67, 7.46, 7.69, 36, 35, 12, 9, 10, 7, 1, 0),
-(73, 5, 7.12, 6.65, 6.71, 40, 39, 18, 10, 10, 9, 0, 0),
-(73, 6, 7.23, 7.02, 7.12, 36, 36, 12, 11, 14, 9, 1, 0);
-
--- Alumno 74
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(74, 7, 7.47, 8.41, 7.79, 40, 36, 16, 15, 8, 8, 0, 1),
-(74, 8, 8.50, 8.76, 9.04, 36, 34, 16, 15, 14, 12, 0, 1),
-(74, 11, 7.74, 8.19, 7.91, 48, 48, 12, 11, 10, 10, 0, 1),
-(74, 12, 8.44, 8.90, 8.55, 36, 32, 15, 14, 10, 8, 0, 1);
-
--- Alumno 75
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(75, 13, 7.84, 7.17, 8.32, 48, 48, 10, 7, 14, 12, 0, 1),
-(75, 14, 8.27, 7.88, 7.22, 48, 47, 15, 15, 14, 13, 0, 1),
-(75, 15, 8.23, 8.10, 7.82, 40, 38, 14, 14, 8, 7, 0, 1),
-(75, 16, 7.12, 7.79, 7.55, 36, 33, 16, 16, 14, 13, 0, 0),
-(75, 17, 7.20, 8.11, 8.33, 48, 46, 10, 7, 14, 12, 0, 1),
-(75, 18, 7.95, 7.56, 7.73, 36, 34, 18, 17, 12, 11, 0, 1);
-
--- Alumno 76
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(76, 19, 8.44, 9.12, 8.80, 40, 39, 16, 15, 12, 11, 0, 1),
-(76, 20, 8.69, 9.10, 8.68, 36, 36, 10, 8, 14, 12, 0, 1),
-(76, 21, 7.97, 8.73, 9.22, 48, 46, 18, 18, 8, 6, 0, 1),
-(76, 22, 8.40, 8.91, 9.25, 36, 34, 16, 15, 8, 6, 0, 1),
-(76, 23, 8.21, 8.54, 8.97, 48, 45, 15, 15, 12, 12, 0, 1),
-(76, 24, 9.27, 8.10, 9.20, 36, 36, 15, 14, 8, 6, 0, 1);
-
--- Alumno 77
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(77, 25, 8.38, 8.07, 8.59, 36, 31, 14, 13, 12, 12, 0, 1),
-(77, 26, 7.96, 8.39, 8.39, 48, 47, 10, 7, 12, 12, 0, 1),
-(77, 27, 8.61, 8.85, 8.16, 40, 36, 16, 13, 14, 14, 0, 1),
-(77, 28, 8.23, 7.94, 8.24, 36, 35, 10, 9, 12, 10, 0, 1),
-(77, 29, 8.57, 8.91, 8.90, 48, 44, 18, 16, 14, 14, 0, 1),
-(77, 30, 8.52, 8.63, 9.02, 40, 40, 15, 15, 8, 7, 0, 1);
-
--- Alumno 78
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(78, 31, 8.58, 8.65, 9.01, 48, 48, 14, 11, 12, 10, 0, 1),
-(78, 32, 8.56, 9.21, 8.74, 48, 43, 15, 13, 12, 10, 0, 1),
-(78, 33, 9.30, 8.54, 9.59, 48, 43, 15, 12, 10, 10, 0, 1),
-(78, 34, 8.32, 8.53, 8.58, 36, 35, 14, 11, 8, 6, 0, 1),
-(78, 35, 9.34, 9.11, 9.19, 48, 42, 16, 12, 14, 13, 0, 1),
-(78, 36, 8.89, 8.85, 9.64, 48, 48, 14, 13, 10, 10, 0, 1);
-
--- Alumno 79
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(79, 2, 6.60, 6.60, 7.43, 36, 35, 14, 13, 10, 9, 0, 0),
-(79, 3, 6.86, 6.65, 7.07, 36, 30, 15, 8, 12, 9, 0, 0),
-(79, 4, 6.20, 6.78, 6.44, 40, 39, 14, 12, 10, 9, 0, 0),
-(79, 6, 6.44, 7.06, 6.62, 40, 34, 15, 9, 10, 10, 0, 0);
-
--- Alumno 80
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(80, 7, 8.46, 7.65, 8.60, 48, 43, 15, 11, 10, 9, 0, 1),
-(80, 8, 7.93, 8.77, 8.67, 48, 46, 18, 15, 14, 13, 0, 1),
-(80, 9, 7.56, 8.58, 7.55, 36, 36, 12, 9, 10, 9, 0, 1);
-
--- Alumno 81
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(81, 13, 7.40, 8.06, 7.22, 36, 33, 10, 7, 10, 10, 0, 1),
-(81, 14, 7.42, 7.67, 7.10, 40, 35, 14, 14, 14, 9, 0, 0),
-(81, 15, 7.13, 7.16, 7.74, 36, 29, 18, 14, 14, 14, 0, 0),
-(81, 16, 7.48, 7.33, 8.13, 36, 29, 14, 10, 12, 9, 0, 1),
-(81, 17, 7.54, 7.75, 7.71, 40, 34, 15, 12, 14, 12, 0, 1),
-(81, 18, 6.81, 7.96, 7.04, 36, 31, 18, 10, 10, 7, 0, 0);
-
--- Alumno 82
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(82, 19, 6.08, 6.75, 5.90, 40, 39, 12, 6, 14, 11, 1, 0),
-(82, 20, 6.59, 6.30, 5.96, 48, 38, 10, 5, 12, 9, 0, 0),
-(82, 21, 6.18, 6.90, 7.09, 48, 43, 12, 11, 10, 10, 0, 0),
-(82, 22, 6.43, 6.57, 6.57, 48, 46, 18, 17, 12, 9, 0, 0),
-(82, 23, 5.82, 5.81, 6.21, 40, 34, 12, 8, 8, 5, 0, 0),
-(82, 24, 6.62, 5.87, 6.18, 48, 36, 18, 16, 14, 11, 1, 0);
-
--- Alumno 83
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(83, 26, 8.77, 8.41, 9.49, 40, 38, 12, 10, 14, 14, 0, 1),
-(83, 27, 8.28, 8.26, 9.13, 48, 48, 16, 14, 12, 12, 0, 1),
-(83, 28, 9.06, 9.28, 8.83, 36, 32, 12, 11, 8, 8, 0, 1);
-
--- Alumno 84
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(84, 31, 6.66, 7.99, 6.76, 36, 31, 14, 9, 14, 14, 0, 0),
-(84, 32, 6.44, 6.76, 6.75, 36, 32, 15, 11, 14, 11, 0, 0),
-(84, 33, 7.13, 7.74, 7.19, 36, 27, 14, 13, 8, 8, 0, 0),
-(84, 34, 6.70, 7.88, 7.08, 40, 30, 10, 10, 10, 9, 0, 0),
-(84, 35, 7.59, 7.25, 7.76, 36, 30, 15, 8, 10, 9, 0, 1),
-(84, 36, 7.01, 7.98, 8.04, 36, 27, 18, 17, 8, 7, 0, 1);
-
--- Alumno 85
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(85, 1, 8.86, 9.32, 8.83, 40, 39, 10, 10, 10, 8, 0, 1),
-(85, 2, 9.96, 9.52, 9.78, 48, 46, 12, 11, 8, 6, 0, 1),
-(85, 3, 8.75, 8.84, 9.68, 48, 42, 10, 9, 10, 10, 0, 1),
-(85, 4, 9.31, 8.86, 9.49, 40, 39, 18, 15, 14, 12, 0, 1),
-(85, 5, 8.54, 9.24, 9.82, 40, 35, 15, 14, 12, 12, 0, 1),
-(85, 6, 9.56, 8.98, 9.07, 40, 37, 18, 16, 12, 12, 0, 1);
-
--- Alumno 86
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(86, 7, 7.77, 8.45, 8.16, 40, 35, 18, 17, 14, 12, 0, 1),
-(86, 8, 8.42, 8.17, 7.91, 48, 43, 14, 10, 14, 12, 0, 1),
-(86, 11, 7.89, 8.00, 8.17, 48, 44, 14, 13, 12, 10, 0, 1);
-
--- Alumno 87
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(87, 13, 8.50, 9.08, 8.64, 48, 47, 15, 14, 12, 10, 0, 1),
-(87, 14, 8.75, 9.25, 8.60, 36, 36, 15, 11, 14, 11, 0, 1),
-(87, 15, 8.74, 9.44, 9.75, 40, 40, 10, 9, 8, 8, 0, 1),
-(87, 16, 8.31, 8.83, 9.82, 48, 42, 10, 8, 14, 12, 0, 1),
-(87, 17, 8.49, 9.32, 9.30, 36, 35, 18, 17, 14, 11, 0, 1),
-(87, 18, 9.35, 9.21, 9.44, 48, 47, 15, 11, 10, 8, 0, 1);
-
--- Alumno 88
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(88, 19, 8.01, 8.62, 8.67, 48, 44, 14, 13, 14, 13, 0, 1),
-(88, 21, 8.02, 8.10, 7.71, 48, 47, 14, 12, 14, 14, 0, 1),
-(88, 22, 8.55, 7.31, 7.46, 40, 39, 10, 8, 12, 10, 0, 1),
-(88, 23, 7.56, 7.62, 8.61, 36, 36, 14, 14, 10, 8, 0, 1),
-(88, 24, 7.17, 7.81, 7.60, 40, 39, 12, 10, 12, 11, 0, 1);
-
--- Alumno 89
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(89, 25, 8.84, 9.06, 8.29, 48, 47, 16, 12, 12, 10, 0, 1),
-(89, 27, 8.85, 8.76, 8.16, 36, 33, 14, 13, 14, 11, 0, 1),
-(89, 28, 9.05, 8.27, 8.96, 48, 42, 18, 18, 14, 11, 0, 1),
-(89, 29, 8.21, 8.01, 8.81, 36, 33, 16, 13, 10, 8, 0, 1),
-(89, 30, 8.76, 9.35, 9.41, 48, 46, 16, 12, 10, 9, 0, 1);
-
--- Alumno 90
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(90, 31, 6.52, 5.93, 6.52, 36, 33, 16, 14, 10, 7, 0, 0),
-(90, 32, 5.96, 6.41, 6.76, 48, 45, 18, 17, 10, 7, 1, 0),
-(90, 33, 6.83, 6.31, 7.25, 36, 28, 18, 15, 14, 11, 1, 0),
-(90, 34, 6.14, 6.69, 5.99, 40, 32, 14, 14, 10, 9, 1, 0),
-(90, 35, 6.89, 6.14, 6.48, 48, 37, 10, 10, 8, 6, 0, 0);
-
--- Alumno 91
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(91, 1, 6.87, 7.33, 7.89, 36, 35, 16, 14, 14, 12, 0, 0),
-(91, 2, 7.88, 7.98, 7.67, 48, 46, 10, 9, 10, 8, 0, 1),
-(91, 3, 7.27, 8.14, 8.01, 36, 34, 18, 13, 8, 7, 0, 1),
-(91, 4, 7.83, 7.97, 8.42, 40, 35, 10, 9, 14, 12, 0, 1),
-(91, 5, 8.31, 7.75, 8.13, 40, 38, 16, 16, 8, 6, 0, 1),
-(91, 6, 7.14, 8.39, 7.92, 48, 42, 10, 8, 12, 11, 0, 1);
-
--- Alumno 92
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(92, 7, 8.12, 8.21, 9.28, 48, 44, 10, 9, 14, 11, 0, 1),
-(92, 8, 9.01, 9.12, 8.21, 40, 38, 18, 14, 8, 8, 0, 1),
-(92, 10, 8.16, 9.13, 8.75, 48, 47, 12, 12, 10, 10, 0, 1),
-(92, 11, 7.82, 9.15, 9.16, 40, 38, 16, 13, 10, 10, 0, 1),
-(92, 12, 7.80, 8.55, 9.01, 36, 33, 18, 18, 10, 9, 0, 1);
-
--- Alumno 93
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(93, 13, 8.60, 7.55, 7.92, 36, 36, 10, 9, 14, 14, 0, 1),
-(93, 14, 7.64, 8.42, 8.63, 48, 47, 14, 11, 10, 8, 0, 1),
-(93, 16, 7.38, 7.42, 8.86, 48, 44, 16, 16, 10, 10, 0, 1),
-(93, 17, 7.53, 8.34, 7.98, 48, 48, 15, 12, 14, 13, 0, 1),
-(93, 18, 7.46, 7.92, 8.14, 36, 32, 12, 9, 14, 11, 0, 1);
-
--- Alumno 94
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(94, 20, 7.85, 8.04, 8.10, 40, 39, 15, 13, 14, 12, 0, 1),
-(94, 21, 8.19, 8.84, 8.70, 40, 40, 14, 13, 8, 8, 0, 1),
-(94, 22, 7.71, 8.39, 9.08, 36, 35, 16, 15, 8, 8, 0, 1),
-(94, 24, 8.13, 8.82, 9.20, 36, 33, 15, 14, 12, 11, 0, 1);
-
--- Alumno 95
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(95, 25, 7.85, 7.21, 7.88, 36, 35, 18, 17, 10, 9, 0, 1),
-(95, 26, 7.50, 7.71, 7.43, 48, 47, 12, 12, 8, 7, 0, 1),
-(95, 27, 7.37, 7.99, 8.18, 36, 36, 18, 13, 8, 6, 0, 1),
-(95, 28, 7.94, 7.97, 7.30, 48, 45, 18, 17, 10, 9, 0, 1),
-(95, 29, 7.71, 7.14, 7.42, 40, 39, 18, 14, 10, 8, 0, 0),
-(95, 30, 7.15, 8.08, 7.77, 40, 40, 15, 13, 10, 8, 0, 1);
-
--- Alumno 96
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(96, 31, 6.19, 6.34, 6.87, 48, 43, 12, 7, 14, 12, 0, 0),
-(96, 32, 5.56, 6.48, 6.08, 48, 40, 16, 16, 10, 6, 1, 0),
-(96, 33, 5.52, 6.13, 5.94, 36, 36, 16, 12, 12, 7, 1, 0),
-(96, 35, 6.07, 5.89, 6.68, 48, 46, 18, 18, 10, 9, 0, 0),
-(96, 36, 5.98, 5.69, 6.82, 40, 35, 15, 8, 14, 13, 1, 0);
-
--- Alumno 97
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(97, 1, 7.07, 6.94, 7.04, 36, 28, 16, 16, 8, 8, 0, 0),
-(97, 2, 7.54, 7.50, 7.85, 48, 40, 15, 12, 12, 11, 0, 1),
-(97, 3, 7.31, 7.52, 8.05, 48, 45, 15, 15, 14, 12, 0, 1),
-(97, 4, 7.66, 7.89, 7.08, 40, 33, 10, 5, 8, 8, 0, 1),
-(97, 5, 7.39, 6.82, 7.94, 48, 42, 15, 7, 12, 9, 0, 0);
-
--- Alumno 98
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(98, 7, 6.31, 6.83, 7.28, 36, 28, 18, 14, 12, 10, 0, 0),
-(98, 8, 7.30, 7.27, 6.55, 36, 30, 14, 12, 14, 12, 0, 0),
-(98, 9, 7.41, 7.31, 7.18, 48, 43, 16, 13, 14, 12, 0, 0),
-(98, 10, 7.60, 6.49, 7.24, 48, 47, 18, 14, 8, 6, 0, 0),
-(98, 11, 7.08, 6.87, 7.79, 40, 31, 12, 8, 8, 7, 0, 0),
-(98, 12, 7.69, 7.29, 7.69, 48, 45, 15, 9, 8, 7, 0, 1);
-
--- Alumno 99
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(99, 13, 7.00, 6.40, 7.14, 40, 33, 16, 12, 10, 6, 0, 0),
-(99, 14, 5.74, 6.16, 6.11, 48, 36, 15, 15, 10, 7, 1, 0),
-(99, 15, 6.41, 7.10, 6.41, 40, 32, 10, 9, 10, 7, 0, 0),
-(99, 17, 6.37, 6.88, 6.71, 36, 31, 10, 10, 8, 7, 0, 0),
-(99, 18, 5.75, 6.61, 6.90, 40, 30, 16, 12, 10, 8, 1, 0);
-
--- Alumno 100
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(100, 20, 7.96, 7.97, 8.01, 48, 46, 16, 12, 10, 10, 0, 1),
-(100, 21, 8.08, 8.20, 8.05, 48, 48, 14, 14, 10, 8, 0, 1),
-(100, 23, 7.66, 8.61, 8.32, 40, 35, 12, 9, 14, 11, 0, 1),
-(100, 24, 7.71, 7.83, 8.45, 36, 36, 16, 16, 14, 13, 0, 1);
-
--- Alumno 101
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(101, 26, 9.04, 8.14, 9.42, 40, 39, 12, 9, 14, 11, 0, 1),
-(101, 27, 8.51, 8.99, 9.12, 40, 38, 12, 10, 10, 10, 0, 1),
-(101, 29, 8.22, 8.54, 8.39, 48, 44, 14, 13, 14, 11, 0, 1),
-(101, 30, 7.93, 8.19, 8.80, 36, 33, 14, 14, 10, 10, 0, 1);
-
--- Alumno 102
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(102, 31, 7.70, 7.88, 8.27, 48, 43, 15, 14, 8, 7, 0, 1),
-(102, 32, 7.41, 8.27, 8.00, 40, 39, 14, 14, 10, 8, 0, 1),
-(102, 33, 8.09, 7.41, 8.70, 48, 48, 15, 11, 14, 13, 0, 1),
-(102, 34, 7.93, 8.45, 7.65, 40, 35, 16, 12, 14, 13, 0, 1),
-(102, 35, 7.84, 8.22, 7.53, 36, 35, 18, 13, 10, 10, 0, 1),
-(102, 36, 7.32, 8.04, 7.95, 48, 45, 12, 10, 12, 11, 0, 1);
-
--- Alumno 103
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(103, 2, 9.44, 9.63, 9.58, 36, 33, 10, 9, 8, 6, 0, 1),
-(103, 3, 9.63, 9.92, 9.37, 40, 35, 12, 12, 14, 13, 0, 1),
-(103, 4, 9.64, 9.34, 9.48, 36, 36, 12, 12, 10, 8, 0, 1),
-(103, 5, 9.40, 9.95, 9.37, 40, 36, 14, 11, 10, 8, 0, 1),
-(103, 6, 8.68, 8.79, 9.88, 40, 40, 15, 12, 8, 6, 0, 1);
-
--- Alumno 104
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(104, 8, 8.07, 8.18, 8.84, 40, 37, 12, 10, 14, 11, 0, 1),
-(104, 9, 8.26, 8.78, 8.02, 48, 44, 15, 15, 12, 10, 0, 1),
-(104, 10, 8.86, 8.39, 8.68, 36, 35, 15, 11, 10, 10, 0, 1),
-(104, 11, 8.49, 8.97, 9.07, 40, 38, 16, 12, 8, 6, 0, 1),
-(104, 12, 8.10, 8.63, 9.03, 36, 36, 18, 17, 12, 12, 0, 1);
-
--- Alumno 105
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(105, 13, 8.21, 7.85, 7.61, 40, 37, 14, 11, 8, 8, 0, 1),
-(105, 14, 8.23, 8.10, 8.17, 48, 44, 10, 10, 10, 10, 0, 1),
-(105, 15, 6.93, 8.44, 8.28, 48, 42, 14, 13, 8, 6, 0, 1),
-(105, 18, 7.61, 8.24, 7.54, 36, 35, 14, 12, 12, 10, 0, 1);
-
--- Alumno 106
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(106, 19, 8.06, 7.96, 8.91, 36, 34, 12, 9, 12, 10, 0, 1),
-(106, 20, 8.96, 8.54, 8.96, 40, 38, 15, 12, 14, 12, 0, 1),
-(106, 21, 7.83, 8.74, 8.29, 48, 44, 10, 7, 10, 9, 0, 1),
-(106, 23, 8.11, 8.13, 8.85, 48, 43, 15, 14, 14, 13, 0, 1),
-(106, 24, 7.73, 8.93, 7.83, 40, 38, 18, 15, 8, 6, 0, 1);
-
--- Alumno 107
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(107, 25, 7.47, 6.83, 7.39, 40, 40, 18, 12, 10, 10, 0, 0),
-(107, 26, 6.78, 7.44, 6.82, 48, 36, 18, 9, 8, 5, 0, 0),
-(107, 27, 6.89, 7.21, 7.53, 40, 33, 18, 13, 12, 8, 0, 0),
-(107, 28, 6.32, 7.34, 6.65, 48, 46, 12, 10, 8, 5, 0, 0),
-(107, 29, 6.40, 7.32, 7.10, 48, 45, 12, 6, 10, 8, 0, 0),
-(107, 30, 6.71, 7.39, 6.68, 40, 34, 15, 12, 12, 8, 0, 0);
-
--- Alumno 108
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(108, 31, 6.55, 8.00, 7.13, 40, 31, 15, 10, 14, 10, 0, 0),
-(108, 32, 7.43, 6.81, 7.52, 40, 33, 16, 9, 14, 14, 0, 0),
-(108, 33, 6.85, 6.71, 6.86, 48, 40, 15, 7, 14, 10, 0, 0),
-(108, 35, 7.44, 6.66, 6.81, 40, 34, 12, 11, 12, 10, 0, 0),
-(108, 36, 7.32, 7.38, 8.08, 40, 37, 15, 13, 8, 6, 0, 1);
-
--- Alumno 109
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(109, 1, 6.92, 6.75, 8.17, 48, 37, 14, 12, 8, 8, 0, 0),
-(109, 2, 7.61, 7.08, 7.05, 48, 36, 15, 10, 12, 12, 0, 0),
-(109, 4, 7.06, 6.82, 7.73, 40, 31, 18, 16, 10, 7, 0, 0),
-(109, 5, 6.52, 6.71, 8.16, 36, 34, 15, 8, 12, 10, 0, 0),
-(109, 6, 7.27, 7.84, 7.40, 36, 27, 14, 7, 12, 12, 0, 1);
-
--- Alumno 110
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(110, 7, 8.12, 8.07, 9.10, 40, 40, 10, 10, 8, 6, 0, 1),
-(110, 8, 8.82, 8.15, 8.31, 36, 33, 10, 10, 10, 10, 0, 1),
-(110, 9, 7.87, 9.11, 8.23, 48, 48, 16, 13, 8, 6, 0, 1),
-(110, 10, 8.41, 9.11, 9.45, 48, 45, 14, 10, 10, 9, 0, 1),
-(110, 11, 9.02, 9.08, 9.14, 48, 43, 14, 10, 8, 7, 0, 1),
-(110, 12, 7.98, 8.55, 9.04, 48, 43, 15, 12, 8, 6, 0, 1);
-
--- Alumno 111
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(111, 13, 8.33, 8.42, 9.81, 48, 47, 16, 14, 14, 14, 0, 1),
-(111, 15, 9.25, 8.70, 9.41, 48, 45, 15, 12, 10, 10, 0, 1),
-(111, 16, 9.25, 9.24, 9.51, 48, 42, 18, 15, 12, 11, 0, 1),
-(111, 17, 8.22, 8.74, 8.67, 48, 42, 16, 14, 10, 9, 0, 1),
-(111, 18, 9.37, 9.33, 8.90, 36, 31, 12, 12, 14, 12, 0, 1);
-
--- Alumno 112
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(112, 19, 6.88, 7.12, 7.73, 40, 30, 10, 10, 8, 6, 0, 0),
-(112, 20, 6.81, 6.81, 7.59, 36, 30, 18, 16, 12, 10, 0, 0),
-(112, 21, 6.87, 7.72, 7.33, 36, 32, 12, 6, 10, 9, 0, 0),
-(112, 23, 7.87, 7.30, 7.18, 40, 39, 15, 7, 14, 10, 0, 0);
-
--- Alumno 113
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(113, 26, 6.53, 6.81, 6.54, 40, 34, 12, 8, 10, 6, 0, 0),
-(113, 28, 6.06, 6.36, 7.46, 40, 36, 12, 12, 12, 8, 0, 0),
-(113, 29, 6.88, 7.28, 7.16, 48, 38, 16, 16, 10, 6, 0, 0);
-
--- Alumno 114
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(114, 32, 8.50, 9.30, 9.41, 36, 32, 14, 13, 10, 10, 0, 1),
-(114, 33, 9.50, 9.56, 9.64, 40, 35, 10, 10, 8, 7, 0, 1),
-(114, 34, 8.88, 8.95, 9.50, 36, 34, 15, 12, 8, 8, 0, 1),
-(114, 35, 9.21, 9.25, 8.95, 36, 32, 14, 12, 10, 10, 0, 1),
-(114, 36, 9.58, 8.30, 9.32, 36, 36, 15, 15, 8, 7, 0, 1);
-
--- Alumno 115
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(115, 1, 8.47, 7.61, 8.59, 40, 40, 14, 14, 8, 7, 0, 1),
-(115, 2, 8.05, 7.99, 9.03, 48, 46, 12, 9, 12, 12, 0, 1),
-(115, 4, 8.81, 8.33, 8.98, 40, 35, 10, 10, 12, 11, 0, 1),
-(115, 5, 8.34, 8.12, 7.96, 48, 47, 10, 8, 10, 9, 0, 1),
-(115, 6, 7.77, 7.77, 8.38, 48, 48, 18, 14, 10, 9, 0, 1);
-
--- Alumno 116
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(116, 7, 7.27, 7.49, 8.05, 40, 38, 18, 17, 12, 10, 0, 1),
-(116, 8, 7.52, 7.91, 8.21, 36, 30, 15, 8, 8, 8, 0, 1),
-(116, 9, 7.94, 7.19, 8.23, 36, 29, 14, 8, 10, 9, 0, 1),
-(116, 10, 6.82, 7.08, 8.22, 36, 31, 15, 15, 10, 9, 0, 0),
-(116, 11, 7.11, 7.41, 7.79, 40, 33, 10, 5, 10, 10, 0, 0),
-(116, 12, 7.56, 7.37, 7.37, 48, 48, 14, 14, 14, 12, 0, 0);
-
--- Alumno 117
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(117, 14, 8.73, 9.57, 8.89, 40, 37, 10, 8, 12, 11, 0, 1),
-(117, 15, 8.95, 8.70, 9.86, 48, 46, 14, 11, 10, 10, 0, 1),
-(117, 17, 9.31, 9.40, 8.78, 36, 31, 10, 9, 10, 9, 0, 1);
-
--- Alumno 118
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(118, 19, 8.75, 9.36, 10.00, 48, 44, 10, 7, 14, 14, 0, 1),
-(118, 20, 9.68, 10.00, 10.00, 36, 31, 18, 17, 12, 12, 0, 1),
-(118, 21, 9.59, 9.39, 9.24, 48, 47, 12, 12, 12, 12, 0, 1),
-(118, 22, 8.70, 9.40, 8.89, 48, 46, 10, 9, 8, 7, 0, 1),
-(118, 23, 9.46, 9.04, 9.33, 40, 35, 16, 13, 10, 9, 0, 1),
-(118, 24, 8.82, 8.85, 10.00, 48, 47, 10, 10, 10, 9, 0, 1);
-
--- Alumno 119
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(119, 25, 7.74, 7.47, 7.51, 36, 31, 14, 12, 12, 10, 0, 1),
-(119, 26, 7.98, 6.99, 7.99, 40, 36, 15, 11, 10, 9, 0, 1),
-(119, 27, 7.76, 7.45, 8.14, 48, 37, 12, 7, 12, 10, 0, 1),
-(119, 29, 8.15, 7.61, 7.44, 48, 48, 15, 8, 8, 8, 0, 1),
-(119, 30, 7.63, 7.25, 7.21, 40, 39, 12, 7, 10, 9, 0, 0);
-
--- Alumno 120
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(120, 31, 8.09, 7.49, 8.39, 36, 33, 14, 13, 8, 8, 0, 1),
-(120, 32, 7.98, 7.58, 7.53, 48, 47, 12, 9, 8, 7, 0, 1),
-(120, 33, 7.72, 8.54, 8.12, 40, 39, 15, 15, 14, 13, 0, 1),
-(120, 34, 7.92, 7.85, 8.25, 36, 33, 16, 16, 8, 7, 0, 1),
-(120, 35, 7.22, 7.26, 7.73, 48, 43, 14, 11, 8, 7, 0, 0),
-(120, 36, 7.52, 8.07, 8.62, 36, 33, 14, 14, 8, 8, 0, 1);
-
--- Alumno 121
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(121, 1, 9.43, 9.35, 8.91, 48, 47, 18, 15, 8, 8, 0, 1),
-(121, 2, 9.06, 9.54, 8.51, 48, 44, 14, 13, 14, 13, 0, 1),
-(121, 3, 9.57, 8.62, 8.80, 48, 43, 12, 9, 14, 14, 0, 1),
-(121, 4, 9.56, 8.55, 8.67, 36, 34, 14, 12, 12, 10, 0, 1),
-(121, 5, 9.42, 9.64, 9.33, 40, 36, 18, 15, 8, 8, 0, 1),
-(121, 6, 9.41, 8.70, 9.69, 36, 36, 12, 11, 10, 8, 0, 1);
-
--- Alumno 122
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(122, 7, 8.01, 8.07, 8.82, 40, 35, 12, 9, 8, 8, 0, 1),
-(122, 8, 8.61, 8.12, 8.31, 40, 35, 10, 9, 8, 6, 0, 1),
-(122, 9, 9.01, 9.33, 8.43, 36, 32, 18, 15, 8, 6, 0, 1),
-(122, 10, 8.06, 9.08, 8.53, 48, 44, 14, 11, 10, 10, 0, 1);
-
--- Alumno 123
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(123, 13, 8.16, 8.64, 7.63, 48, 42, 18, 13, 10, 10, 0, 1),
-(123, 15, 8.37, 7.95, 8.37, 36, 34, 18, 13, 10, 9, 0, 1),
-(123, 16, 8.56, 7.88, 8.11, 40, 35, 14, 10, 14, 11, 0, 1),
-(123, 17, 7.87, 7.98, 7.90, 40, 39, 18, 13, 8, 7, 0, 1),
-(123, 18, 7.83, 7.83, 8.03, 48, 44, 18, 16, 10, 10, 0, 1);
-
--- Alumno 124
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(124, 19, 8.96, 8.63, 9.65, 48, 42, 15, 14, 8, 6, 0, 1),
-(124, 20, 8.63, 9.17, 9.54, 36, 36, 12, 9, 12, 10, 0, 1),
-(124, 21, 8.92, 9.44, 10.00, 36, 32, 15, 14, 12, 12, 0, 1),
-(124, 22, 9.56, 9.44, 9.77, 48, 45, 14, 13, 14, 14, 0, 1),
-(124, 23, 9.18, 8.82, 9.35, 36, 33, 15, 14, 10, 10, 0, 1),
-(124, 24, 9.82, 8.65, 9.74, 36, 34, 18, 13, 10, 9, 0, 1);
-
--- Alumno 125
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(125, 25, 8.82, 8.76, 8.82, 40, 36, 14, 13, 14, 13, 0, 1),
-(125, 26, 8.64, 9.16, 8.89, 36, 31, 15, 11, 14, 14, 0, 1),
-(125, 27, 8.30, 8.56, 8.77, 36, 32, 16, 14, 10, 9, 0, 1),
-(125, 28, 8.48, 8.47, 8.67, 36, 35, 18, 16, 14, 14, 0, 1),
-(125, 29, 8.67, 8.25, 8.21, 40, 38, 16, 15, 12, 11, 0, 1);
-
--- Alumno 126
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(126, 31, 6.80, 6.23, 6.88, 36, 32, 15, 8, 14, 11, 0, 0),
-(126, 33, 6.16, 5.82, 6.18, 36, 31, 16, 9, 8, 7, 1, 0),
-(126, 35, 5.79, 6.49, 5.89, 48, 42, 16, 16, 14, 11, 1, 0),
-(126, 36, 6.24, 5.77, 6.28, 48, 42, 14, 8, 14, 9, 0, 0);
-
--- Alumno 127
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(127, 2, 9.00, 8.43, 8.72, 40, 36, 15, 11, 10, 9, 0, 1),
-(127, 3, 8.40, 8.62, 9.10, 36, 35, 18, 13, 8, 8, 0, 1),
-(127, 4, 8.51, 8.29, 9.42, 40, 38, 12, 11, 8, 8, 0, 1),
-(127, 5, 9.24, 8.91, 8.72, 48, 46, 14, 11, 14, 14, 0, 1);
-
--- Alumno 128
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(128, 7, 8.18, 7.87, 8.41, 48, 48, 18, 16, 12, 12, 0, 1),
-(128, 8, 8.21, 8.47, 8.79, 40, 39, 18, 18, 8, 8, 0, 1),
-(128, 9, 7.71, 8.26, 8.05, 48, 47, 14, 13, 14, 13, 0, 1),
-(128, 10, 8.70, 8.89, 8.60, 40, 37, 14, 11, 12, 12, 0, 1),
-(128, 11, 8.31, 8.18, 7.87, 36, 31, 12, 11, 14, 14, 0, 1),
-(128, 12, 8.25, 8.22, 8.62, 36, 32, 12, 11, 10, 8, 0, 1);
-
--- Alumno 129
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(129, 14, 7.52, 8.67, 8.86, 36, 31, 14, 14, 12, 10, 0, 1),
-(129, 15, 8.81, 8.23, 8.27, 48, 42, 15, 12, 10, 8, 0, 1),
-(129, 18, 8.32, 8.36, 7.93, 48, 48, 16, 16, 12, 11, 0, 1);
-
--- Alumno 130
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(130, 19, 9.10, 9.49, 8.59, 36, 32, 12, 11, 14, 14, 0, 1),
-(130, 20, 8.36, 9.01, 8.97, 40, 40, 10, 9, 14, 14, 0, 1),
-(130, 21, 9.00, 9.53, 9.51, 36, 33, 15, 13, 12, 10, 0, 1),
-(130, 22, 8.95, 9.45, 8.33, 48, 47, 10, 8, 12, 12, 0, 1),
-(130, 23, 8.56, 9.07, 9.26, 48, 42, 16, 13, 14, 14, 0, 1),
-(130, 24, 7.99, 9.53, 9.58, 40, 37, 10, 8, 12, 10, 0, 1);
-
--- Alumno 131
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(131, 26, 9.36, 8.98, 8.56, 36, 34, 15, 14, 12, 12, 0, 1),
-(131, 27, 8.84, 9.70, 8.65, 36, 36, 14, 14, 8, 7, 0, 1),
-(131, 28, 8.84, 9.43, 9.28, 40, 38, 18, 13, 8, 8, 0, 1);
-
--- Alumno 132
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(132, 31, 7.62, 7.32, 7.10, 36, 30, 16, 10, 14, 11, 0, 0),
-(132, 32, 7.36, 8.10, 7.17, 36, 36, 14, 11, 10, 6, 0, 1),
-(132, 33, 7.30, 7.13, 8.21, 48, 39, 10, 5, 10, 6, 0, 1),
-(132, 34, 8.14, 7.16, 7.96, 36, 27, 15, 13, 12, 8, 0, 1),
-(132, 35, 6.81, 7.40, 8.31, 36, 27, 18, 17, 14, 12, 0, 1),
-(132, 36, 7.92, 7.57, 7.29, 36, 30, 14, 11, 14, 12, 0, 1);
-
--- Alumno 133
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(133, 2, 9.04, 9.73, 8.84, 48, 43, 15, 12, 14, 12, 0, 1),
-(133, 4, 8.18, 9.71, 8.77, 40, 36, 14, 14, 14, 11, 0, 1);
-
--- Alumno 134
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(134, 7, 8.67, 8.79, 8.93, 40, 35, 10, 7, 8, 7, 0, 1),
-(134, 8, 9.00, 8.46, 8.40, 48, 47, 16, 12, 8, 7, 0, 1),
-(134, 9, 8.36, 8.33, 9.27, 48, 44, 12, 9, 10, 9, 0, 1),
-(134, 10, 7.85, 8.49, 8.37, 40, 36, 10, 9, 14, 12, 0, 1),
-(134, 11, 7.99, 8.24, 9.27, 40, 37, 18, 15, 14, 13, 0, 1);
-
--- Alumno 135
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(135, 15, 7.70, 7.48, 8.38, 40, 36, 16, 15, 8, 6, 0, 1),
-(135, 17, 7.27, 7.57, 7.40, 40, 36, 18, 16, 14, 11, 0, 0),
-(135, 18, 8.54, 8.55, 7.41, 40, 40, 16, 15, 14, 14, 0, 1);
-
--- Alumno 136
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(136, 19, 7.00, 6.15, 6.24, 48, 40, 16, 11, 8, 6, 0, 0),
-(136, 20, 5.82, 6.98, 6.95, 40, 30, 14, 8, 14, 11, 0, 0),
-(136, 23, 7.13, 7.07, 6.22, 36, 34, 18, 16, 14, 14, 0, 0),
-(136, 24, 6.59, 5.91, 7.36, 48, 45, 15, 12, 10, 7, 0, 0);
-
--- Alumno 137
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(137, 25, 8.60, 8.82, 8.21, 40, 36, 12, 12, 8, 6, 0, 1),
-(137, 27, 9.06, 8.21, 9.17, 40, 40, 18, 14, 8, 7, 0, 1),
-(137, 29, 8.52, 8.59, 9.21, 40, 40, 16, 13, 12, 12, 0, 1),
-(137, 30, 7.92, 8.49, 8.36, 40, 38, 15, 13, 14, 11, 0, 1);
-
--- Alumno 138
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(138, 31, 6.04, 6.38, 6.14, 48, 47, 12, 9, 8, 7, 0, 0),
-(138, 32, 5.65, 6.85, 6.25, 36, 31, 12, 10, 14, 11, 0, 0),
-(138, 33, 6.36, 7.01, 6.55, 48, 42, 15, 8, 14, 14, 0, 0),
-(138, 34, 6.75, 6.23, 6.65, 48, 36, 10, 10, 14, 10, 0, 0),
-(138, 35, 6.79, 5.79, 6.41, 48, 40, 14, 14, 14, 13, 0, 0),
-(138, 36, 6.04, 7.02, 6.96, 36, 29, 10, 10, 12, 12, 1, 0);
-
--- Alumno 139
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(139, 1, 6.03, 6.64, 7.04, 48, 47, 16, 15, 12, 11, 0, 0),
-(139, 2, 6.70, 6.94, 7.42, 48, 42, 14, 8, 10, 7, 1, 0),
-(139, 5, 5.94, 5.99, 7.43, 36, 30, 15, 9, 10, 9, 0, 0),
-(139, 6, 7.06, 6.72, 6.19, 40, 32, 15, 13, 8, 5, 1, 0);
-
--- Alumno 140
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(140, 8, 6.13, 6.00, 6.17, 40, 30, 14, 7, 8, 8, 0, 0),
-(140, 10, 6.73, 6.69, 6.59, 48, 40, 10, 8, 14, 12, 0, 0),
-(140, 11, 6.55, 6.97, 7.03, 40, 33, 18, 9, 8, 8, 0, 0),
-(140, 12, 6.29, 6.03, 6.67, 40, 31, 15, 12, 14, 14, 0, 0);
-
--- Alumno 141
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(141, 14, 6.85, 7.01, 8.07, 40, 39, 18, 16, 10, 8, 0, 0),
-(141, 15, 7.58, 7.25, 7.38, 48, 46, 18, 14, 14, 10, 0, 0),
-(141, 16, 7.43, 7.10, 7.85, 48, 43, 12, 7, 10, 7, 0, 0),
-(141, 18, 7.41, 6.84, 7.38, 40, 34, 12, 7, 8, 5, 0, 0);
-
--- Alumno 142
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(142, 21, 7.83, 8.97, 8.57, 36, 33, 15, 11, 10, 8, 0, 1),
-(142, 23, 8.41, 8.45, 9.26, 40, 35, 16, 14, 10, 10, 0, 1),
-(142, 24, 8.88, 8.62, 8.02, 36, 34, 15, 11, 8, 8, 0, 1);
-
--- Alumno 143
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(143, 25, 6.68, 7.16, 7.32, 36, 31, 18, 16, 14, 14, 0, 0),
-(143, 27, 5.97, 6.45, 7.19, 36, 30, 15, 13, 8, 6, 0, 0),
-(143, 29, 6.45, 6.34, 6.28, 40, 35, 18, 15, 12, 12, 0, 0),
-(143, 30, 5.97, 6.99, 6.63, 36, 29, 15, 13, 14, 12, 0, 0);
-
--- Alumno 144
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(144, 31, 8.48, 8.00, 8.47, 40, 36, 15, 11, 14, 11, 0, 1),
-(144, 32, 8.69, 8.80, 9.26, 36, 36, 18, 18, 12, 11, 0, 1),
-(144, 33, 8.30, 8.85, 8.78, 40, 40, 18, 15, 12, 10, 0, 1),
-(144, 34, 8.94, 9.16, 8.85, 36, 36, 15, 14, 10, 10, 0, 1),
-(144, 35, 8.64, 8.77, 8.62, 40, 40, 15, 12, 12, 10, 0, 1),
-(144, 36, 7.76, 8.37, 9.02, 48, 43, 16, 16, 12, 10, 0, 1);
-
--- Alumno 145
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(145, 1, 6.81, 6.43, 6.13, 40, 36, 16, 9, 8, 7, 1, 0),
-(145, 2, 6.23, 5.84, 6.83, 36, 34, 14, 7, 14, 11, 0, 0),
-(145, 3, 6.68, 7.05, 6.56, 48, 46, 16, 11, 12, 9, 1, 0),
-(145, 4, 6.65, 6.67, 6.71, 48, 42, 16, 11, 8, 7, 0, 0),
-(145, 5, 5.76, 6.76, 6.41, 36, 33, 15, 8, 8, 5, 0, 0),
-(145, 6, 5.67, 5.97, 5.88, 48, 44, 15, 15, 14, 11, 0, 0);
-
--- Alumno 146
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(146, 10, 9.02, 8.82, 8.48, 36, 32, 16, 13, 14, 14, 0, 1),
-(146, 11, 7.79, 8.79, 9.11, 36, 36, 12, 12, 14, 11, 0, 1),
-(146, 12, 8.72, 9.12, 8.42, 36, 35, 15, 11, 8, 7, 0, 1);
-
--- Alumno 147
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(147, 13, 7.25, 7.70, 7.89, 40, 38, 10, 8, 10, 10, 0, 1),
-(147, 15, 7.70, 8.58, 7.80, 40, 36, 12, 12, 8, 6, 0, 1),
-(147, 17, 7.89, 7.36, 7.43, 40, 39, 14, 14, 14, 13, 0, 1);
-
--- Alumno 148
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(148, 19, 8.84, 8.25, 9.16, 36, 35, 18, 17, 14, 14, 0, 1),
-(148, 20, 8.19, 8.59, 8.90, 48, 45, 18, 15, 8, 6, 0, 1),
-(148, 22, 8.90, 8.84, 9.25, 48, 44, 16, 12, 8, 6, 0, 1),
-(148, 23, 9.27, 8.80, 9.20, 48, 46, 12, 12, 8, 6, 0, 1),
-(148, 24, 8.83, 8.78, 9.49, 40, 36, 12, 12, 8, 8, 0, 1);
-
--- Alumno 149
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(149, 25, 8.37, 7.65, 7.52, 36, 35, 14, 13, 12, 10, 0, 1),
-(149, 27, 7.14, 7.31, 7.51, 36, 32, 14, 10, 10, 9, 0, 0),
-(149, 28, 8.40, 8.12, 7.35, 40, 36, 10, 7, 12, 11, 0, 1),
-(149, 29, 7.12, 7.37, 8.52, 40, 38, 10, 7, 10, 8, 0, 1),
-(149, 30, 8.10, 7.99, 7.96, 48, 45, 10, 9, 8, 7, 0, 1);
-
--- Alumno 150
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(150, 31, 6.44, 6.97, 5.82, 48, 45, 18, 10, 10, 10, 0, 0),
-(150, 32, 5.68, 6.49, 6.41, 48, 44, 12, 12, 10, 8, 0, 0),
-(150, 34, 5.74, 6.03, 7.12, 48, 43, 10, 5, 14, 13, 1, 0),
-(150, 35, 6.95, 5.69, 7.10, 40, 34, 16, 12, 14, 11, 0, 0),
-(150, 36, 5.81, 6.87, 6.18, 36, 35, 16, 9, 12, 7, 0, 0);
-
--- Alumno 151
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(151, 1, 8.79, 8.00, 8.60, 40, 40, 14, 13, 12, 10, 0, 1),
-(151, 2, 8.34, 8.00, 7.94, 48, 44, 10, 8, 8, 8, 0, 1),
-(151, 3, 8.06, 8.81, 8.59, 40, 39, 18, 18, 14, 14, 0, 1),
-(151, 5, 8.16, 8.65, 8.56, 36, 35, 10, 10, 8, 7, 0, 1),
-(151, 6, 8.81, 8.08, 8.49, 40, 36, 18, 13, 8, 7, 0, 1);
-
--- Alumno 152
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(152, 7, 6.14, 6.70, 7.70, 40, 33, 10, 9, 12, 12, 1, 0),
-(152, 8, 7.58, 7.66, 6.46, 40, 39, 12, 6, 10, 9, 1, 0),
-(152, 9, 6.53, 7.01, 6.65, 36, 36, 18, 18, 10, 6, 0, 0),
-(152, 10, 7.23, 6.49, 7.72, 36, 35, 18, 13, 10, 6, 0, 0);
-
--- Alumno 153
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(153, 13, 9.36, 9.92, 8.77, 40, 38, 15, 13, 8, 8, 0, 1),
-(153, 14, 9.18, 9.29, 9.42, 36, 36, 12, 9, 12, 11, 0, 1),
-(153, 15, 9.20, 9.04, 9.25, 40, 35, 16, 12, 10, 10, 0, 1),
-(153, 16, 9.04, 8.70, 9.05, 36, 33, 14, 10, 8, 6, 0, 1),
-(153, 17, 9.12, 9.73, 9.53, 48, 44, 14, 11, 8, 7, 0, 1),
-(153, 18, 8.76, 9.08, 8.78, 40, 39, 12, 9, 14, 11, 0, 1);
-
--- Alumno 154
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(154, 22, 7.38, 7.53, 7.60, 40, 40, 10, 8, 8, 7, 0, 1),
-(154, 24, 7.33, 8.31, 8.15, 36, 36, 10, 7, 12, 11, 0, 1);
-
--- Alumno 155
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(155, 25, 9.35, 9.24, 9.10, 40, 38, 16, 16, 8, 7, 0, 1),
-(155, 28, 9.15, 9.32, 8.51, 48, 44, 16, 13, 8, 6, 0, 1),
-(155, 29, 8.19, 9.37, 9.30, 36, 35, 12, 11, 12, 11, 0, 1),
-(155, 30, 8.89, 9.24, 8.73, 36, 31, 10, 8, 12, 12, 0, 1);
-
--- Alumno 156
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(156, 32, 8.08, 7.67, 8.23, 48, 44, 14, 12, 8, 8, 0, 1),
-(156, 33, 8.15, 8.42, 7.65, 48, 48, 16, 12, 14, 13, 0, 1),
-(156, 34, 7.56, 7.75, 8.84, 36, 33, 12, 12, 14, 13, 0, 1),
-(156, 35, 8.55, 8.26, 8.04, 40, 38, 14, 11, 8, 7, 0, 1);
-
--- Alumno 157
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(157, 1, 7.21, 7.76, 8.27, 40, 40, 15, 12, 14, 12, 0, 1),
-(157, 2, 8.13, 7.10, 7.20, 40, 35, 16, 12, 10, 9, 0, 0),
-(157, 3, 7.55, 7.97, 8.47, 40, 35, 10, 8, 10, 9, 0, 1),
-(157, 4, 7.15, 8.33, 8.20, 40, 39, 12, 10, 10, 8, 0, 1),
-(157, 5, 7.15, 7.46, 7.33, 48, 43, 15, 11, 12, 10, 0, 0),
-(157, 6, 7.35, 7.43, 8.32, 48, 43, 16, 16, 14, 11, 0, 1);
-
--- Alumno 158
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(158, 7, 8.10, 8.42, 8.81, 36, 35, 16, 13, 12, 10, 0, 1),
-(158, 8, 8.11, 7.89, 9.03, 36, 35, 16, 15, 10, 10, 0, 1),
-(158, 9, 7.74, 8.48, 8.85, 36, 32, 16, 15, 12, 11, 0, 1),
-(158, 10, 8.40, 8.07, 8.92, 48, 47, 15, 14, 14, 13, 0, 1),
-(158, 11, 8.49, 8.71, 9.03, 48, 42, 12, 10, 10, 9, 0, 1),
-(158, 12, 8.91, 8.37, 8.35, 40, 39, 12, 11, 12, 12, 0, 1);
-
--- Alumno 159
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(159, 13, 7.41, 7.32, 8.08, 40, 38, 15, 14, 14, 14, 0, 1),
-(159, 14, 7.61, 7.96, 7.74, 36, 32, 15, 12, 12, 12, 0, 1),
-(159, 15, 7.17, 8.52, 7.77, 48, 46, 16, 12, 12, 10, 0, 1),
-(159, 17, 7.21, 7.36, 7.41, 36, 33, 12, 11, 12, 11, 0, 0),
-(159, 18, 8.18, 8.34, 8.54, 36, 36, 16, 13, 12, 10, 0, 1);
-
--- Alumno 160
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(160, 20, 9.17, 8.25, 9.25, 36, 34, 12, 10, 10, 9, 0, 1),
-(160, 21, 8.38, 9.05, 9.10, 40, 40, 15, 13, 8, 7, 0, 1),
-(160, 22, 9.30, 8.83, 9.65, 40, 36, 15, 14, 8, 7, 0, 1),
-(160, 23, 8.24, 9.45, 8.76, 48, 42, 15, 13, 12, 10, 0, 1),
-(160, 24, 8.66, 9.19, 8.89, 48, 46, 14, 12, 8, 8, 0, 1);
-
--- Alumno 161
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(161, 25, 6.64, 7.00, 6.61, 36, 32, 16, 15, 12, 7, 1, 0),
-(161, 26, 7.06, 6.50, 7.51, 48, 43, 10, 6, 10, 6, 0, 0),
-(161, 27, 6.63, 6.54, 6.76, 48, 37, 15, 7, 12, 11, 1, 0),
-(161, 28, 6.54, 7.52, 6.90, 36, 29, 16, 14, 14, 14, 1, 0),
-(161, 29, 7.48, 7.46, 6.53, 36, 31, 15, 14, 10, 10, 0, 0),
-(161, 30, 6.52, 6.53, 7.35, 40, 34, 12, 6, 10, 9, 1, 0);
-
--- Alumno 162
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(162, 32, 7.30, 7.34, 7.40, 36, 28, 14, 14, 12, 12, 0, 0),
-(162, 33, 7.71, 7.76, 7.30, 36, 33, 12, 7, 14, 12, 0, 1),
-(162, 34, 7.03, 7.57, 7.73, 36, 33, 18, 9, 10, 7, 0, 0),
-(162, 35, 6.86, 7.53, 7.16, 36, 30, 15, 13, 8, 7, 0, 0);
-
--- Alumno 163
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(163, 1, 6.24, 6.19, 6.27, 48, 47, 18, 16, 14, 11, 0, 0),
-(163, 2, 7.21, 6.69, 6.25, 36, 29, 14, 14, 14, 12, 1, 0),
-(163, 3, 6.75, 6.47, 7.56, 36, 34, 14, 9, 10, 6, 0, 0),
-(163, 4, 6.20, 6.30, 7.27, 36, 28, 18, 9, 12, 8, 0, 0),
-(163, 6, 6.20, 7.13, 7.48, 48, 39, 15, 7, 8, 8, 0, 0);
-
--- Alumno 164
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(164, 7, 6.13, 6.04, 6.21, 36, 30, 10, 5, 14, 9, 0, 0),
-(164, 10, 6.07, 6.03, 6.80, 36, 28, 18, 11, 10, 6, 0, 0),
-(164, 11, 5.72, 6.22, 6.65, 36, 36, 12, 10, 14, 12, 1, 0);
-
--- Alumno 165
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(165, 13, 6.43, 5.67, 6.05, 36, 28, 18, 13, 12, 7, 1, 0),
-(165, 14, 5.78, 6.07, 6.59, 36, 35, 16, 10, 12, 7, 0, 0),
-(165, 15, 6.92, 6.62, 6.70, 48, 38, 14, 9, 12, 12, 0, 0),
-(165, 17, 5.95, 6.50, 6.57, 40, 38, 18, 12, 8, 6, 1, 0),
-(165, 18, 6.59, 5.82, 6.08, 40, 33, 16, 9, 8, 6, 0, 0);
-
--- Alumno 166
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(166, 19, 7.81, 8.67, 9.13, 40, 40, 14, 11, 12, 11, 0, 1),
-(166, 20, 8.42, 8.71, 8.48, 40, 40, 14, 10, 10, 10, 0, 1),
-(166, 21, 7.95, 7.99, 8.51, 48, 43, 18, 18, 10, 10, 0, 1),
-(166, 22, 8.76, 8.38, 8.01, 48, 42, 10, 10, 8, 6, 0, 1),
-(166, 23, 7.53, 9.04, 9.06, 36, 31, 12, 10, 10, 10, 0, 1);
-
--- Alumno 167
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(167, 25, 8.19, 8.93, 8.36, 36, 35, 12, 11, 12, 12, 0, 1),
-(167, 28, 8.39, 8.81, 8.40, 40, 35, 14, 13, 14, 12, 0, 1);
-
--- Alumno 168
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(168, 34, 7.66, 7.56, 7.27, 40, 35, 15, 14, 8, 7, 0, 0),
-(168, 36, 7.64, 7.16, 8.07, 40, 38, 15, 13, 14, 13, 0, 1);
-
--- Alumno 169
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(169, 1, 7.98, 9.17, 8.00, 48, 47, 18, 15, 14, 14, 0, 1),
-(169, 2, 9.08, 9.21, 9.35, 40, 38, 15, 13, 8, 7, 0, 1),
-(169, 3, 9.02, 9.28, 8.16, 48, 43, 12, 12, 12, 12, 0, 1),
-(169, 4, 8.21, 8.88, 8.88, 40, 40, 10, 10, 14, 12, 0, 1),
-(169, 5, 8.05, 7.94, 9.13, 48, 47, 18, 13, 10, 9, 0, 1),
-(169, 6, 8.60, 9.21, 8.20, 36, 35, 16, 13, 8, 6, 0, 1);
-
--- Alumno 170
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(170, 7, 7.34, 7.85, 8.52, 40, 40, 14, 14, 14, 13, 0, 1),
-(170, 9, 8.16, 8.31, 8.65, 36, 31, 18, 17, 12, 10, 0, 1),
-(170, 10, 7.46, 7.55, 8.41, 48, 44, 10, 8, 14, 11, 0, 1),
-(170, 11, 7.21, 8.34, 7.94, 40, 40, 14, 13, 10, 8, 0, 1),
-(170, 12, 7.62, 8.25, 7.64, 36, 35, 10, 10, 10, 8, 0, 1);
-
--- Alumno 171
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(171, 13, 7.58, 7.00, 7.41, 48, 37, 18, 11, 8, 7, 0, 0),
-(171, 14, 6.36, 6.60, 6.62, 36, 36, 12, 9, 14, 14, 0, 0),
-(171, 17, 7.37, 6.44, 6.90, 36, 36, 10, 5, 10, 10, 0, 0),
-(171, 18, 7.42, 6.96, 7.26, 40, 37, 15, 12, 14, 11, 0, 0);
-
--- Alumno 172
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(172, 19, 6.70, 7.31, 7.37, 36, 27, 15, 13, 10, 6, 0, 0),
-(172, 20, 7.51, 8.03, 7.30, 48, 48, 12, 8, 14, 13, 0, 1),
-(172, 21, 7.64, 8.03, 7.63, 48, 39, 10, 10, 12, 7, 0, 1),
-(172, 22, 7.56, 8.03, 8.27, 48, 41, 18, 16, 10, 10, 0, 1),
-(172, 23, 7.34, 7.84, 8.02, 40, 36, 15, 8, 14, 11, 0, 1),
-(172, 24, 7.52, 7.81, 8.13, 48, 48, 18, 17, 8, 6, 0, 1);
-
--- Alumno 173
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(173, 25, 10.00, 9.44, 10.00, 36, 34, 18, 17, 10, 8, 0, 1),
-(173, 27, 8.91, 9.84, 9.81, 36, 31, 15, 11, 10, 9, 0, 1),
-(173, 28, 9.94, 9.86, 9.20, 40, 40, 15, 11, 10, 10, 0, 1),
-(173, 30, 9.54, 9.48, 10.00, 40, 36, 16, 16, 8, 8, 0, 1);
-
--- Alumno 174
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(174, 31, 6.29, 6.44, 6.54, 48, 45, 12, 11, 8, 7, 1, 0),
-(174, 32, 6.59, 6.85, 7.45, 40, 30, 16, 16, 10, 9, 0, 0),
-(174, 33, 6.60, 6.83, 7.37, 36, 35, 18, 18, 10, 6, 0, 0),
-(174, 34, 6.93, 6.96, 6.62, 40, 33, 15, 14, 10, 10, 1, 0),
-(174, 35, 7.24, 7.51, 7.58, 36, 36, 14, 11, 8, 7, 0, 0),
-(174, 36, 7.18, 6.99, 7.58, 40, 34, 18, 15, 8, 7, 1, 0);
-
--- Alumno 175
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(175, 2, 9.13, 9.04, 9.25, 48, 45, 14, 11, 8, 8, 0, 1),
-(175, 3, 8.34, 8.54, 8.71, 40, 38, 15, 11, 12, 11, 0, 1),
-(175, 5, 8.79, 8.22, 9.25, 40, 35, 12, 11, 8, 8, 0, 1),
-(175, 6, 8.21, 8.87, 8.86, 40, 40, 15, 13, 10, 8, 0, 1);
-
--- Alumno 176
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(176, 7, 9.05, 7.98, 9.20, 40, 40, 12, 9, 8, 7, 0, 1),
-(176, 8, 9.03, 8.02, 7.94, 48, 47, 14, 14, 14, 12, 0, 1),
-(176, 10, 8.51, 8.34, 7.92, 36, 34, 15, 13, 10, 10, 0, 1),
-(176, 11, 8.69, 8.86, 9.26, 48, 47, 10, 10, 14, 13, 0, 1),
-(176, 12, 8.52, 8.39, 7.89, 36, 31, 10, 10, 10, 8, 0, 1);
-
--- Alumno 177
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(177, 13, 8.13, 7.81, 7.35, 36, 28, 14, 8, 10, 9, 0, 1),
-(177, 14, 7.85, 6.86, 7.71, 48, 48, 16, 15, 8, 5, 0, 0),
-(177, 15, 7.76, 7.12, 7.85, 36, 29, 16, 10, 8, 8, 0, 1),
-(177, 16, 7.83, 7.00, 7.11, 36, 29, 10, 9, 12, 7, 0, 0),
-(177, 17, 6.76, 7.00, 7.35, 48, 38, 15, 7, 10, 8, 0, 0),
-(177, 18, 6.70, 8.15, 8.20, 40, 40, 16, 15, 10, 10, 0, 1);
-
--- Alumno 178
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(178, 19, 8.59, 7.86, 7.95, 36, 33, 12, 10, 10, 10, 0, 1),
-(178, 21, 8.14, 7.98, 8.77, 36, 35, 14, 12, 14, 12, 0, 1),
-(178, 22, 8.20, 7.92, 8.26, 40, 40, 12, 10, 8, 8, 0, 1),
-(178, 23, 8.70, 9.19, 8.88, 36, 36, 14, 14, 10, 9, 0, 1),
-(178, 24, 8.83, 8.24, 9.00, 40, 35, 16, 13, 8, 7, 0, 1);
-
--- Alumno 179
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(179, 25, 6.58, 7.92, 7.84, 36, 30, 14, 7, 8, 8, 0, 0),
-(179, 26, 7.92, 6.96, 8.08, 36, 29, 16, 12, 14, 9, 0, 1),
-(179, 27, 7.24, 7.63, 7.96, 48, 40, 16, 9, 8, 6, 0, 1),
-(179, 28, 6.93, 7.70, 7.00, 48, 46, 16, 16, 14, 12, 0, 0),
-(179, 29, 7.34, 7.01, 7.71, 48, 38, 18, 11, 10, 9, 0, 0),
-(179, 30, 7.30, 7.02, 8.04, 48, 41, 18, 12, 14, 14, 0, 0);
-
--- Alumno 180
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(180, 31, 6.92, 7.80, 7.81, 36, 31, 18, 10, 12, 10, 0, 1),
-(180, 32, 7.44, 7.66, 7.47, 36, 30, 10, 6, 8, 5, 0, 1),
-(180, 33, 7.40, 7.26, 7.27, 36, 33, 18, 17, 10, 9, 0, 0),
-(180, 34, 7.03, 7.44, 7.53, 48, 47, 10, 8, 8, 6, 0, 0),
-(180, 35, 7.65, 7.52, 7.58, 48, 44, 18, 14, 10, 10, 0, 1),
-(180, 36, 7.31, 6.54, 7.21, 36, 35, 12, 7, 8, 7, 0, 0);
-
--- Alumno 181
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(181, 1, 7.25, 8.55, 7.76, 48, 43, 16, 12, 12, 11, 0, 1),
-(181, 2, 7.71, 7.56, 7.29, 48, 46, 15, 12, 12, 12, 0, 1),
-(181, 3, 7.76, 8.44, 8.60, 48, 48, 15, 11, 12, 10, 0, 1),
-(181, 5, 7.91, 7.65, 7.79, 36, 33, 18, 14, 14, 13, 0, 1),
-(181, 6, 7.00, 7.79, 7.57, 48, 46, 12, 12, 8, 7, 0, 0);
-
--- Alumno 182
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(182, 7, 7.12, 7.47, 7.23, 40, 31, 15, 14, 10, 7, 0, 0),
-(182, 8, 7.20, 7.48, 7.47, 48, 39, 10, 6, 12, 7, 0, 0),
-(182, 9, 6.87, 7.46, 7.43, 36, 29, 18, 12, 14, 14, 0, 0),
-(182, 11, 8.14, 7.04, 7.65, 40, 40, 18, 11, 12, 10, 0, 1),
-(182, 12, 7.42, 8.16, 8.15, 40, 32, 10, 5, 8, 6, 0, 1);
-
--- Alumno 183
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(183, 14, 8.15, 7.53, 8.25, 40, 38, 16, 12, 14, 14, 0, 1),
-(183, 15, 7.43, 7.88, 8.37, 36, 35, 12, 10, 10, 9, 0, 1);
-
--- Alumno 184
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(184, 19, 7.09, 7.36, 7.31, 48, 45, 12, 7, 10, 7, 1, 0),
-(184, 20, 6.63, 6.61, 6.60, 36, 33, 10, 9, 10, 6, 0, 0),
-(184, 21, 6.60, 6.96, 7.31, 36, 30, 14, 13, 14, 9, 0, 0),
-(184, 22, 7.00, 6.66, 6.71, 40, 35, 18, 15, 10, 8, 0, 0),
-(184, 23, 6.30, 6.23, 7.25, 40, 33, 14, 14, 12, 11, 1, 0);
-
--- Alumno 185
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(185, 26, 7.02, 6.90, 6.88, 48, 48, 12, 8, 12, 12, 0, 0),
-(185, 27, 7.78, 7.80, 7.68, 48, 41, 12, 11, 12, 8, 0, 1),
-(185, 28, 7.44, 6.88, 7.01, 48, 47, 16, 9, 8, 6, 0, 0);
-
--- Alumno 186
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(186, 31, 9.34, 9.03, 9.37, 36, 35, 18, 14, 8, 6, 0, 1),
-(186, 32, 8.70, 9.38, 9.06, 48, 44, 14, 13, 8, 7, 0, 1),
-(186, 34, 8.51, 9.20, 10.00, 48, 48, 10, 8, 12, 12, 0, 1),
-(186, 35, 9.86, 9.02, 10.00, 36, 36, 12, 12, 14, 11, 0, 1);
-
--- Alumno 187
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(187, 1, 7.65, 7.55, 8.44, 48, 47, 10, 10, 12, 11, 0, 1),
-(187, 2, 8.62, 7.95, 8.02, 36, 32, 12, 9, 10, 9, 0, 1),
-(187, 3, 7.40, 7.75, 8.88, 36, 33, 10, 8, 10, 10, 0, 1),
-(187, 4, 7.51, 8.45, 8.53, 40, 37, 10, 9, 10, 9, 0, 1),
-(187, 5, 8.69, 7.95, 9.02, 48, 48, 10, 9, 10, 10, 0, 1),
-(187, 6, 8.79, 7.79, 9.00, 48, 47, 16, 12, 14, 13, 0, 1);
-
--- Alumno 188
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(188, 8, 8.34, 8.59, 9.12, 40, 36, 15, 12, 14, 13, 0, 1),
-(188, 11, 8.23, 8.88, 9.00, 40, 36, 12, 10, 14, 12, 0, 1),
-(188, 12, 8.98, 8.24, 8.54, 36, 34, 18, 17, 10, 8, 0, 1);
-
--- Alumno 189
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(189, 13, 6.51, 6.94, 7.15, 48, 37, 15, 13, 8, 5, 0, 0),
-(189, 14, 6.87, 6.82, 6.08, 36, 28, 14, 9, 8, 5, 0, 0),
-(189, 15, 5.88, 6.95, 6.49, 48, 37, 12, 7, 14, 13, 0, 0),
-(189, 16, 6.94, 6.35, 6.69, 36, 27, 16, 12, 8, 5, 0, 0),
-(189, 17, 5.87, 6.34, 6.74, 40, 32, 10, 6, 8, 6, 0, 0),
-(189, 18, 5.94, 6.84, 6.34, 48, 42, 18, 10, 14, 10, 0, 0);
-
--- Alumno 190
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(190, 19, 6.14, 6.34, 7.23, 36, 27, 16, 10, 10, 9, 0, 0),
-(190, 20, 6.54, 6.79, 6.15, 48, 46, 14, 11, 12, 7, 1, 0),
-(190, 21, 6.39, 6.36, 6.31, 48, 48, 10, 5, 10, 7, 1, 0),
-(190, 24, 6.23, 6.85, 7.04, 40, 31, 10, 9, 14, 14, 1, 0);
-
--- Alumno 191
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(191, 25, 7.27, 7.40, 8.19, 48, 48, 18, 14, 10, 7, 0, 1),
-(191, 26, 7.10, 7.50, 7.58, 40, 38, 16, 11, 14, 9, 0, 0),
-(191, 27, 7.40, 7.32, 7.64, 48, 48, 18, 12, 8, 6, 0, 0),
-(191, 28, 7.07, 7.01, 8.02, 40, 38, 15, 9, 8, 5, 0, 0),
-(191, 30, 7.90, 7.24, 8.02, 36, 31, 15, 9, 14, 10, 0, 1);
-
--- Alumno 192
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(192, 32, 5.79, 7.13, 6.87, 40, 30, 18, 15, 12, 7, 0, 0),
-(192, 36, 6.57, 5.88, 7.05, 36, 27, 12, 8, 10, 6, 1, 0);
-
--- Alumno 193
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(193, 1, 8.90, 8.96, 8.50, 40, 40, 14, 13, 8, 7, 0, 1),
-(193, 2, 7.95, 8.06, 8.98, 48, 48, 12, 10, 8, 7, 0, 1),
-(193, 3, 9.03, 8.93, 9.31, 48, 47, 14, 14, 12, 12, 0, 1),
-(193, 4, 8.12, 9.28, 8.46, 36, 35, 15, 12, 10, 9, 0, 1),
-(193, 5, 8.71, 8.29, 8.34, 48, 46, 16, 12, 14, 14, 0, 1),
-(193, 6, 8.25, 8.88, 9.24, 36, 31, 14, 13, 10, 9, 0, 1);
-
--- Alumno 194
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(194, 7, 6.41, 6.52, 6.77, 36, 31, 12, 10, 10, 6, 1, 0),
-(194, 8, 6.30, 7.17, 6.53, 40, 30, 10, 7, 8, 7, 1, 0),
-(194, 9, 6.70, 6.77, 7.03, 36, 32, 15, 12, 10, 6, 1, 0),
-(194, 10, 7.51, 7.08, 7.17, 36, 27, 16, 14, 14, 13, 0, 0),
-(194, 11, 6.23, 6.60, 7.43, 36, 28, 18, 12, 10, 7, 0, 0),
-(194, 12, 6.41, 7.72, 7.19, 48, 45, 18, 17, 12, 10, 0, 0);
-
--- Alumno 195
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(195, 15, 8.81, 7.66, 8.70, 48, 45, 12, 10, 8, 6, 0, 1),
-(195, 17, 8.25, 8.99, 7.84, 36, 32, 14, 14, 8, 7, 0, 1),
-(195, 18, 7.54, 8.04, 9.01, 36, 31, 14, 14, 12, 11, 0, 1);
-
--- Alumno 196
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(196, 19, 8.36, 9.25, 9.34, 40, 40, 12, 9, 14, 11, 0, 1),
-(196, 20, 8.22, 8.27, 8.54, 48, 47, 12, 12, 12, 12, 0, 1),
-(196, 24, 8.94, 9.20, 8.49, 48, 45, 16, 15, 12, 12, 0, 1);
-
--- Alumno 197
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(197, 25, 8.98, 8.92, 8.45, 36, 33, 15, 12, 14, 11, 0, 1),
-(197, 27, 8.26, 9.35, 9.17, 40, 38, 15, 15, 14, 11, 0, 1),
-(197, 29, 8.06, 9.15, 9.51, 40, 38, 12, 12, 12, 10, 0, 1),
-(197, 30, 8.41, 9.53, 8.91, 48, 47, 15, 11, 12, 11, 0, 1);
-
--- Alumno 198
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(198, 31, 6.47, 7.46, 7.25, 40, 36, 15, 10, 8, 6, 0, 0),
-(198, 32, 7.72, 7.95, 7.68, 40, 34, 18, 11, 8, 6, 0, 1),
-(198, 33, 6.52, 7.19, 7.14, 48, 43, 15, 15, 10, 8, 0, 0),
-(198, 34, 6.70, 6.70, 7.97, 40, 35, 14, 9, 10, 8, 0, 0),
-(198, 35, 7.83, 7.29, 7.47, 36, 33, 14, 13, 8, 6, 0, 1),
-(198, 36, 6.54, 7.56, 7.58, 40, 40, 18, 14, 8, 6, 0, 0);
-
--- Alumno 199
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(199, 1, 7.32, 7.82, 7.86, 36, 34, 18, 18, 8, 5, 0, 1),
-(199, 2, 6.57, 7.81, 7.13, 48, 48, 12, 10, 14, 10, 0, 0),
-(199, 3, 6.76, 7.77, 7.90, 48, 36, 14, 12, 8, 7, 0, 0),
-(199, 4, 7.58, 7.14, 7.75, 48, 43, 18, 16, 14, 12, 0, 0),
-(199, 5, 6.77, 7.60, 7.14, 40, 31, 12, 9, 14, 11, 0, 0),
-(199, 6, 6.51, 7.27, 7.30, 40, 34, 18, 15, 12, 12, 0, 0);
-
--- Alumno 200
-INSERT INTO Alumnos_Materias (
-    id_alumno, id_materia, parcial_1, parcial_2, parcial_3,
-    total_clases, asistencias, total_participaciones, participaciones,
-    total_tareas, tareas, recursa, notas
-) VALUES
-(200, 7, 8.14, 9.09, 9.14, 40, 35, 15, 15, 8, 8, 0, 1),
-(200, 11, 8.65, 8.99, 8.33, 40, 38, 12, 10, 14, 14, 0, 1),
-(200, 12, 8.15, 9.38, 9.61, 40, 38, 15, 14, 8, 7, 0, 1);
+-- Tabla: Desempeno_Academico
+USE AulaPredict;
+
+INSERT INTO Desempeno_Academico (
+    horas_trabajo, traslado_minutos, cantidad_materias, recursa,
+    parcial_1, asistencia_1, tareas_1, participaciones_1, notas_1,
+    parcial_2, asistencia_2, tareas_2, participaciones_2, notas_2,
+    parcial_3, asistencia_3, tareas_3, participaciones_3, notas_3
+) VALUES
+(27, 135, 1, 0, 6.64, 0.4356, 0.0329, 0.3612, 1, 9.23, 0.9081, 0.9509, 0.7959, 0, 7.36, 0.6003, 0.8931, 0.9716, 0),
+(27, 154, 5, 0, 2.42, 0.1791, 0.9968, 0.9756, 0, 3.46, 0.4605, 0.1404, 0.3194, 1, 8.93, 0.3265, 0.3920, 0.4130, 1),
+(27, 140, 6, 1, 3.85, 0.0000, 0.0747, 0.6408, 1, 9.27, 0.6371, 1.0000, 0.7325, 0, 1.53, 0.1554, 0.7988, 0.0785, 1),
+(25, 71, 5, 0, 0.79, 0.2058, 0.7420, 0.4287, 1, 1.90, 0.2027, 0.9021, 0.7348, 1, 6.40, 0.4465, 0.1607, 0.6822, 0),
+(30, 44, 6, 1, 5.59, 0.1786, 0.3405, 0.3236, 1, 8.91, 0.9567, 0.4350, 1.0000, 0, 2.78, 0.7288, 0.6301, 0.2608, 1),
+(0, 82, 5, 0, 5.09, 0.4366, 0.5793, 0.3900, 0, 7.41, 0.6702, 0.5064, 0.0822, 0, 5.52, 0.6081, 0.3333, 0.0000, 1),
+(0, 173, 3, 0, 3.82, 1.0000, 0.9521, 0.5019, 0, 7.23, 0.6117, 0.4125, 0.0416, 0, 6.34, 0.5151, 1.0000, 0.6535, 0),
+(5, 50, 6, 0, 6.55, 0.1466, 0.8006, 0.4860, 1, 6.26, 0.3155, 0.7977, 0.3384, 0, 8.31, 0.4276, 0.7609, 0.8278, 1),
+(28, 161, 3, 0, 5.56, 0.2679, 0.2732, 0.2462, 1, 6.37, 0.4637, 0.1552, 0.8643, 1, 5.16, 0.9472, 0.3038, 0.7238, 1),
+(0, 71, 3, 0, 4.90, 0.4985, 0.1731, 0.0000, 0, 7.06, 0.9413, 1.0000, 0.4223, 1, 9.06, 0.2910, 0.4110, 0.4332, 1),
+(0, 154, 6, 0, 6.17, 0.0000, 0.9655, 0.5147, 0, 6.96, 0.2156, 0.9707, 0.1408, 0, 0.30, 0.0291, 0.2221, 0.1843, 0),
+(0, 19, 3, 0, 6.77, 0.7734, 0.0000, 0.8888, 0, 5.31, 0.4414, 0.3067, 0.6376, 1, 7.06, 0.0000, 0.2129, 0.6292, 0),
+(0, 137, 4, 0, 9.91, 0.8115, 0.8095, 0.7861, 1, 9.45, 0.4139, 0.0522, 0.9966, 1, 9.46, 0.2911, 0.9450, 0.0444, 1),
+(6, 15, 4, 0, 4.64, 0.0247, 0.8095, 0.0342, 0, 7.97, 0.0502, 0.8832, 0.3211, 1, 6.40, 0.3790, 0.0000, 0.0000, 0),
+(28, 127, 4, 1, 6.74, 0.9207, 0.1275, 1.0000, 0, 1.35, 0.3922, 0.8451, 0.3414, 1, 8.07, 0.7635, 0.1821, 0.3414, 0),
+(0, 79, 3, 0, 7.67, 0.1057, 0.5463, 0.3155, 1, 4.22, 0.4378, 0.5409, 0.4708, 1, 7.87, 0.0905, 0.8897, 0.3448, 1),
+(19, 100, 5, 0, 8.37, 0.9336, 0.6673, 0.9416, 1, 0.30, 0.4703, 0.3534, 0.5844, 1, 3.79, 0.7802, 0.0744, 0.9370, 0),
+(25, 22, 4, 0, 6.70, 0.7560, 0.6258, 0.6405, 1, 6.18, 0.5529, 0.0250, 0.6691, 1, 7.27, 0.7735, 1.0000, 0.0578, 1),
+(13, 103, 1, 0, 6.20, 0.0907, 0.0985, 0.5629, 1, 5.83, 0.8421, 1.0000, 0.5164, 1, 9.90, 0.7389, 0.1379, 0.4548, 1),
+(29, 112, 5, 0, 7.55, 1.0000, 0.4447, 0.6771, 1, 9.04, 1.0000, 0.8768, 0.5727, 1, 3.85, 0.4571, 0.9328, 0.1897, 0),
+(13, 23, 1, 1, 9.88, 0.2256, 0.6867, 1.0000, 0, 2.27, 0.8626, 0.2376, 0.9723, 0, 9.31, 0.6055, 0.4899, 0.3020, 0),
+(33, 27, 4, 0, 2.24, 0.0464, 0.9606, 0.0790, 0, 7.22, 0.3719, 0.4750, 0.6880, 1, 5.34, 0.4051, 0.5111, 0.5659, 1),
+(0, 24, 6, 0, 5.84, 0.4653, 0.2878, 0.8326, 0, 8.16, 0.9296, 0.7273, 0.5051, 1, 0.67, 0.0714, 0.5840, 0.6979, 0),
+(23, 75, 6, 1, 9.36, 0.6653, 0.8307, 0.7588, 1, 8.92, 0.5267, 0.0242, 0.1456, 1, 1.31, 0.3796, 0.1375, 0.5121, 0),
+(18, 6, 4, 0, 7.44, 0.6844, 0.3699, 0.3963, 0, 9.91, 1.0000, 0.9047, 0.7506, 1, 8.60, 0.1498, 0.3885, 0.0000, 0),
+(34, 155, 5, 1, 9.01, 0.0319, 0.7612, 0.9810, 1, 8.80, 0.7749, 0.7586, 1.0000, 0, 6.40, 0.8686, 1.0000, 0.9581, 1),
+(0, 133, 6, 1, 7.47, 0.9306, 0.0000, 0.2857, 0, 5.20, 0.9821, 0.0000, 0.6359, 1, 5.63, 0.7448, 0.1630, 0.0000, 0),
+(0, 112, 6, 0, 6.53, 0.9807, 0.8493, 0.2296, 0, 7.78, 0.2392, 0.7417, 0.1034, 0, 9.09, 0.3762, 0.4706, 0.2753, 1),
+(47, 19, 2, 0, 6.53, 1.0000, 1.0000, 0.6591, 0, 3.50, 0.3844, 0.8681, 0.5660, 1, 9.76, 0.0191, 0.8406, 0.7487, 0),
+(25, 72, 6, 0, 6.06, 0.0000, 0.7149, 0.2014, 1, 5.93, 0.3813, 0.4412, 0.1308, 0, 4.92, 0.6222, 0.8372, 0.1827, 1),
+(33, 43, 5, 1, 8.94, 0.7432, 0.8928, 0.8020, 0, 7.82, 0.5273, 0.5464, 0.2996, 0, 8.65, 0.2845, 0.9274, 0.5159, 0),
+(37, 39, 6, 0, 6.70, 0.6009, 0.9756, 0.1214, 0, 7.42, 0.0000, 0.9007, 0.0287, 1, 3.31, 1.0000, 0.4415, 0.9692, 0),
+(0, 34, 3, 0, 9.26, 0.8493, 0.6555, 0.0000, 0, 6.47, 0.1111, 0.2696, 0.9959, 1, 7.27, 0.5537, 0.4970, 0.1439, 0),
+(0, 82, 6, 1, 7.53, 0.0696, 0.9884, 0.4772, 1, 5.97, 0.8551, 0.7845, 0.8271, 1, 2.56, 0.6284, 0.9148, 0.5410, 0),
+(0, 87, 6, 0, 6.01, 0.8934, 0.7510, 0.6178, 0, 5.09, 0.0604, 0.6336, 0.4523, 1, 5.23, 0.9780, 0.0537, 0.2505, 1),
+(0, 166, 3, 0, 5.50, 0.1429, 0.9305, 0.0488, 0, 8.37, 0.3575, 0.1337, 0.7265, 0, 9.03, 0.4197, 1.0000, 0.9490, 1),
+(40, 143, 5, 0, 3.99, 0.4553, 0.5824, 0.4107, 0, 7.48, 0.2178, 0.0494, 0.2054, 1, 5.36, 1.0000, 0.8567, 0.8693, 0),
+(0, 78, 5, 1, 8.36, 0.5655, 0.7774, 0.9589, 1, 7.26, 0.8520, 0.1373, 0.4685, 1, 8.75, 0.5108, 0.2016, 0.8993, 0),
+(14, 45, 2, 0, 9.51, 0.0000, 0.2620, 0.4574, 0, 7.86, 0.3461, 0.3156, 0.3106, 1, 1.49, 0.5778, 0.8311, 0.8210, 0),
+(0, 49, 6, 0, 9.42, 0.2938, 0.4812, 0.3141, 0, 5.97, 0.8566, 0.8018, 0.4838, 0, 10.00, 0.0223, 0.3197, 0.2066, 0),
+(0, 135, 5, 0, 1.40, 0.6253, 0.4152, 0.5336, 1, 6.82, 0.8652, 0.4034, 0.2252, 1, 9.94, 0.0000, 0.8224, 0.7001, 1),
+(11, 37, 2, 0, 7.91, 0.3690, 0.8880, 0.5466, 1, 9.79, 0.1576, 0.5972, 0.9260, 1, 9.75, 0.3262, 0.0437, 1.0000, 1),
+(16, 6, 4, 0, 5.47, 0.7091, 0.1146, 0.0000, 1, 8.02, 0.4741, 0.1597, 0.1965, 0, 1.37, 0.1706, 0.2832, 0.3251, 0),
+(23, 43, 5, 1, 8.29, 1.0000, 0.2750, 0.7345, 1, 8.76, 0.9384, 1.0000, 0.3522, 0, 8.58, 1.0000, 0.4486, 0.3930, 0),
+(0, 98, 4, 1, 5.22, 0.8137, 0.0858, 0.3998, 1, 1.67, 0.0000, 0.0000, 0.9252, 1, 9.14, 0.9557, 0.3081, 0.6431, 0),
+(11, 163, 5, 0, 5.59, 0.7777, 0.4160, 0.4165, 1, 8.44, 0.0590, 0.8112, 0.7815, 0, 5.63, 0.0658, 0.3863, 0.7621, 0),
+(0, 40, 6, 0, 5.95, 0.8383, 0.0000, 0.9775, 0, 1.27, 0.0172, 0.0593, 0.1090, 1, 8.37, 0.6724, 0.3568, 0.4284, 0),
+(33, 67, 6, 0, 2.61, 0.6859, 0.0580, 0.4334, 1, 3.71, 0.0689, 0.2561, 0.7778, 0, 6.48, 0.3578, 0.1769, 0.9211, 0),
+(48, 83, 5, 0, 5.10, 0.9345, 0.3692, 0.7502, 1, 2.36, 0.9376, 0.1906, 0.8714, 1, 6.03, 0.2981, 0.6711, 0.8322, 1),
+(0, 40, 6, 0, 6.55, 0.7319, 0.6508, 0.4908, 1, 0.09, 0.2736, 0.2426, 0.5843, 1, 6.35, 0.1396, 0.9831, 0.2879, 0),
+(32, 96, 4, 0, 2.20, 1.0000, 0.3139, 0.8312, 1, 5.02, 0.0000, 0.2843, 0.1843, 0, 8.69, 0.1532, 0.9232, 0.5830, 0),
+(24, 79, 5, 0, 7.90, 0.0000, 0.0628, 0.2255, 0, 9.98, 1.0000, 0.8453, 0.4589, 0, 9.88, 0.4184, 0.3711, 0.4166, 1),
+(30, 102, 6, 0, 6.33, 0.2882, 0.1696, 0.8963, 0, 6.69, 0.9090, 0.9654, 0.9603, 0, 7.06, 0.7023, 0.7470, 0.0000, 1),
+(0, 27, 2, 1, 6.22, 0.3536, 0.8318, 0.5327, 1, 5.13, 0.3879, 1.0000, 0.9156, 1, 9.25, 0.5538, 0.3979, 0.6729, 0),
+(39, 107, 5, 1, 9.34, 0.1317, 0.0389, 1.0000, 1, 5.32, 0.7069, 0.9241, 0.0245, 1, 6.82, 0.6864, 0.1096, 0.5921, 0),
+(43, 165, 1, 0, 7.23, 0.0366, 0.2257, 0.2351, 0, 9.85, 0.7591, 1.0000, 1.0000, 0, 6.16, 0.7378, 0.0934, 1.0000, 1),
+(0, 82, 6, 0, 5.60, 1.0000, 0.6734, 0.5126, 1, 2.92, 0.2397, 0.0000, 0.5601, 0, 2.42, 0.6989, 0.3046, 0.2490, 0),
+(47, 163, 5, 0, 9.00, 0.3080, 0.2637, 0.4241, 1, 7.66, 0.6040, 0.1226, 0.3878, 1, 5.19, 0.9296, 0.7150, 0.6266, 0),
+(27, 95, 3, 0, 9.93, 0.2888, 0.3873, 0.5027, 0, 9.33, 0.0784, 0.5106, 0.5908, 0, 8.36, 0.8635, 0.9274, 0.0000, 1),
+(23, 148, 6, 0, 5.08, 0.6303, 1.0000, 0.7769, 0, 8.34, 0.1131, 0.6903, 0.7249, 1, 9.12, 0.8425, 0.9932, 0.0000, 1),
+(22, 20, 5, 0, 2.88, 0.6184, 0.0710, 0.5822, 1, 3.97, 0.3527, 0.2263, 0.2452, 1, 8.85, 0.9943, 0.0000, 0.9435, 1),
+(14, 25, 5, 1, 4.24, 0.1394, 0.2838, 0.6748, 1, 8.95, 0.6589, 0.5390, 0.0621, 1, 9.40, 0.0000, 0.1914, 0.6481, 0),
+(9, 106, 6, 0, 6.93, 0.8403, 0.5294, 0.8012, 1, 7.11, 0.9930, 0.3905, 0.9220, 1, 7.20, 0.2385, 0.2268, 0.3304, 0),
+(20, 110, 6, 0, 6.76, 0.3692, 0.5014, 0.5001, 0, 4.16, 0.4580, 0.5043, 0.6131, 1, 4.45, 0.1013, 0.8093, 0.2883, 1),
+(0, 85, 3, 0, 9.05, 0.6778, 0.0000, 0.4720, 0, 6.62, 0.4771, 0.0231, 0.3678, 0, 5.74, 0.8162, 0.2212, 0.5248, 1),
+(22, 54, 4, 0, 9.76, 0.4647, 0.9504, 0.3511, 0, 7.84, 0.7833, 0.9939, 0.0000, 1, 3.29, 0.8757, 1.0000, 0.1960, 0),
+(29, 87, 4, 0, 9.79, 0.1168, 0.9689, 0.8329, 1, 1.88, 0.9562, 0.9909, 0.0000, 1, 0.46, 0.3600, 0.8410, 0.9472, 1),
+(0, 97, 4, 0, 7.08, 0.2089, 0.7623, 0.0000, 0, 9.77, 0.1521, 1.0000, 0.8318, 1, 7.80, 0.8298, 0.0925, 0.0366, 1),
+(0, 71, 6, 0, 2.76, 0.3879, 0.5307, 0.0985, 0, 8.04, 0.2067, 0.7931, 0.9464, 1, 6.96, 0.3545, 0.6404, 0.1926, 1),
+(33, 24, 6, 0, 6.06, 0.4803, 0.4488, 0.1210, 0, 6.81, 0.1929, 0.0000, 0.6337, 1, 7.10, 0.4218, 0.2167, 0.1548, 0),
+(0, 20, 4, 0, 9.43, 0.6921, 0.0510, 0.6721, 0, 8.00, 0.0000, 0.3597, 0.8450, 1, 3.67, 1.0000, 0.4683, 0.3820, 1),
+(30, 140, 3, 0, 6.63, 0.1063, 0.8647, 0.3552, 1, 9.75, 0.7079, 0.8435, 0.7822, 1, 0.54, 0.8672, 0.8913, 0.6704, 0),
+(0, 125, 4, 1, 6.06, 0.9267, 0.9835, 1.0000, 1, 8.38, 0.4258, 0.3782, 0.5056, 1, 6.04, 0.6398, 0.0000, 0.0497, 0),
+(0, 162, 4, 0, 8.03, 0.4841, 1.0000, 0.4008, 0, 9.06, 0.7080, 0.3837, 0.1275, 1, 8.65, 0.1225, 0.0000, 0.5348, 0),
+(15, 170, 5, 0, 4.33, 0.6764, 0.9592, 0.2428, 1, 8.00, 0.3772, 0.0821, 0.1176, 1, 5.57, 0.6462, 0.3027, 0.3550, 1),
+(0, 160, 4, 0, 9.82, 0.9045, 0.4891, 0.1690, 1, 2.19, 0.0287, 0.3576, 0.0000, 1, 9.59, 0.5922, 0.8917, 0.7079, 1),
+(13, 154, 4, 1, 5.74, 0.2037, 0.7013, 0.7620, 0, 5.70, 0.6583, 0.3871, 0.8425, 1, 6.54, 0.5751, 0.0000, 0.3098, 0),
+(0, 150, 2, 0, 7.17, 0.4966, 0.5093, 0.9311, 1, 5.77, 0.2676, 0.9690, 1.0000, 1, 6.16, 0.1339, 0.4308, 0.5423, 1),
+(5, 21, 6, 0, 2.28, 0.2850, 0.8536, 0.1167, 1, 5.92, 0.3567, 0.1427, 0.7247, 0, 5.68, 0.9861, 0.2203, 0.3210, 1),
+(0, 60, 6, 0, 6.70, 0.4300, 0.2792, 1.0000, 1, 8.30, 0.6338, 0.5687, 0.8081, 0, 7.32, 0.4873, 0.3538, 1.0000, 0),
+(0, 95, 4, 1, 8.95, 0.8193, 0.9918, 0.5372, 1, 6.64, 0.8752, 0.1303, 0.6947, 1, 2.40, 0.3868, 0.7533, 0.9915, 1),
+(0, 13, 4, 0, 0.40, 0.6133, 0.8244, 0.6445, 0, 5.47, 0.2087, 0.8544, 0.7267, 1, 5.31, 0.4597, 1.0000, 0.6665, 1),
+(0, 157, 4, 1, 4.71, 0.6270, 0.8367, 0.2511, 0, 8.47, 0.8120, 0.2979, 0.7338, 1, 9.46, 0.2107, 0.9606, 0.3371, 0),
+(16, 61, 4, 1, 5.49, 0.4507, 0.9960, 0.4142, 0, 5.03, 0.5718, 0.9730, 0.1892, 0, 6.98, 0.6833, 0.5836, 0.9681, 0),
+(23, 76, 3, 0, 9.37, 0.1083, 0.4630, 0.8762, 0, 8.07, 0.9126, 0.5775, 0.2420, 0, 1.25, 0.7923, 0.8231, 0.6873, 0),
+(19, 44, 3, 0, 8.03, 0.3220, 0.7354, 0.9230, 0, 4.59, 0.2402, 0.7875, 0.2415, 1, 7.13, 0.5276, 0.2356, 1.0000, 1),
+(0, 23, 2, 0, 7.20, 0.4838, 0.5572, 1.0000, 1, 9.03, 0.5574, 0.4519, 0.0627, 0, 3.87, 0.8621, 0.6114, 0.7679, 1),
+(0, 21, 4, 0, 5.77, 0.5147, 0.3287, 0.9292, 0, 6.64, 0.0103, 0.5173, 0.4398, 0, 2.87, 0.4466, 0.1842, 0.5835, 0),
+(0, 95, 1, 0, 0.43, 0.7347, 0.3461, 0.0000, 1, 6.36, 0.2895, 0.4963, 0.0292, 0, 9.96, 1.0000, 0.8105, 0.0320, 0),
+(11, 72, 4, 0, 6.71, 0.7666, 0.5490, 0.6269, 1, 1.60, 0.3560, 0.5908, 0.6934, 1, 2.91, 0.5787, 0.6584, 0.7574, 0),
+(0, 69, 5, 0, 2.19, 0.0000, 0.3936, 0.7068, 1, 6.17, 0.0620, 0.8218, 0.1150, 1, 5.21, 0.7921, 0.8920, 0.1624, 1),
+(0, 140, 5, 1, 6.31, 0.8758, 0.9115, 0.9001, 0, 5.49, 0.7648, 0.6612, 0.6872, 1, 7.28, 0.9898, 0.6251, 0.1749, 0),
+(0, 155, 4, 1, 5.27, 0.9330, 0.1056, 0.7727, 1, 6.71, 0.7068, 0.9833, 0.8169, 1, 9.32, 1.0000, 0.6629, 0.4752, 1),
+(0, 71, 1, 0, 8.72, 0.5234, 0.0747, 0.6391, 0, 6.42, 0.2707, 0.0334, 0.0997, 0, 3.19, 0.0210, 0.4796, 1.0000, 1),
+(37, 77, 4, 0, 5.44, 0.0000, 0.5746, 0.3943, 0, 6.89, 0.6410, 0.7720, 0.5658, 1, 3.66, 0.9034, 0.2729, 0.9690, 0),
+(31, 41, 3, 0, 9.91, 0.9149, 0.0000, 0.8387, 1, 5.71, 0.3150, 0.4399, 0.4520, 0, 9.69, 0.1709, 0.8904, 0.8579, 1),
+(30, 162, 4, 0, 9.90, 0.4889, 0.1317, 0.3669, 1, 5.55, 0.0639, 0.4623, 1.0000, 1, 8.56, 0.3412, 0.9384, 0.7802, 0),
+(0, 108, 3, 0, 7.25, 0.0527, 0.5379, 0.3641, 0, 6.55, 0.9163, 0.6692, 0.0000, 1, 8.59, 0.0000, 0.7757, 0.1263, 0),
+(0, 161, 3, 0, 9.07, 0.3144, 0.1109, 0.2106, 0, 7.00, 0.9169, 0.6196, 0.8259, 0, 7.83, 0.4063, 1.0000, 0.0801, 1),
+(0, 93, 6, 0, 7.55, 0.2091, 0.6886, 0.9821, 0, 5.98, 0.7777, 0.3714, 0.8208, 0, 6.38, 0.3985, 0.5845, 0.6028, 1),
+(12, 37, 3, 0, 9.80, 0.9554, 0.7866, 0.8832, 0, 1.07, 0.4385, 0.8104, 0.3263, 0, 9.80, 1.0000, 0.9346, 0.7818, 1),
+(17, 36, 3, 0, 6.27, 0.0799, 0.3541, 0.7590, 1, 7.57, 0.8279, 0.8094, 0.9230, 0, 5.31, 0.8930, 0.0374, 0.4087, 0),
+(0, 103, 6, 0, 0.33, 0.2375, 0.4959, 0.1990, 0, 5.20, 0.9275, 0.0346, 0.5928, 0, 0.55, 0.5690, 0.1721, 0.3238, 1),
+(22, 108, 5, 0, 9.50, 0.6413, 0.3400, 0.6750, 0, 7.59, 0.2906, 0.9683, 0.0857, 1, 9.99, 0.6668, 0.1657, 0.7743, 1),
+(0, 153, 6, 0, 8.62, 0.4496, 0.4427, 0.7151, 1, 5.83, 0.0601, 0.4248, 0.5584, 1, 6.39, 0.6857, 0.3189, 0.8300, 0),
+(0, 158, 4, 0, 6.04, 0.4227, 0.4924, 1.0000, 0, 6.45, 0.9855, 0.0000, 0.9359, 1, 9.50, 0.1876, 0.0000, 0.0676, 0),
+(0, 49, 4, 0, 5.51, 0.1010, 0.8181, 0.6544, 0, 6.51, 1.0000, 0.9990, 0.0906, 0, 6.95, 0.9024, 0.5967, 0.0000, 1),
+(0, 109, 1, 0, 5.58, 0.3154, 0.9183, 0.4598, 0, 5.75, 0.3644, 0.5180, 0.8406, 0, 9.21, 0.2428, 0.8713, 0.5184, 1),
+(7, 61, 6, 0, 3.07, 0.4198, 0.2782, 0.4416, 0, 5.39, 0.8992, 0.0669, 0.1017, 1, 9.19, 0.6846, 0.3077, 0.1355, 1),
+(0, 108, 2, 0, 2.57, 0.8047, 0.7693, 0.4359, 0, 1.90, 0.8994, 0.5196, 0.6128, 1, 7.35, 0.3875, 0.2979, 0.9844, 1),
+(26, 68, 3, 0, 8.35, 0.5494, 1.0000, 0.9715, 1, 5.38, 0.7394, 0.6884, 0.0748, 0, 7.05, 0.6477, 0.9832, 0.5480, 1),
+(31, 12, 6, 0, 0.45, 0.5110, 0.8315, 0.2156, 1, 8.69, 0.5104, 0.1001, 0.4933, 0, 9.35, 0.8842, 0.7521, 0.4101, 1),
+(13, 57, 3, 1, 6.04, 0.0000, 0.4605, 0.9145, 1, 3.93, 0.7289, 0.3061, 0.7184, 1, 5.06, 0.9358, 0.2151, 0.7853, 1),
+(0, 168, 4, 1, 4.98, 0.8728, 0.0000, 0.1102, 1, 9.72, 0.9783, 0.6790, 0.2794, 0, 9.41, 0.1098, 0.5414, 0.2688, 1),
+(47, 68, 6, 0, 7.11, 0.4572, 0.7783, 0.3448, 0, 7.23, 0.0783, 0.1833, 0.0230, 1, 1.63, 0.6519, 0.4635, 0.0800, 0),
+(0, 149, 5, 0, 8.17, 0.0000, 0.4794, 1.0000, 1, 8.69, 0.9681, 0.7985, 0.6446, 1, 7.90, 0.3596, 0.7254, 0.4208, 1),
+(0, 102, 4, 0, 8.86, 0.6127, 0.3403, 1.0000, 1, 9.20, 0.6827, 0.0000, 0.5189, 1, 9.08, 0.9500, 0.6912, 0.0000, 1),
+(31, 62, 2, 1, 5.48, 0.3427, 0.9032, 0.1037, 1, 9.01, 0.6442, 0.6218, 0.8006, 1, 6.74, 0.8085, 0.9223, 1.0000, 0),
+(25, 102, 5, 1, 4.42, 0.8984, 0.5892, 0.0000, 1, 7.95, 0.0926, 0.5719, 0.9687, 1, 8.99, 0.5160, 0.5154, 0.3675, 0),
+(24, 48, 5, 0, 6.62, 0.2384, 0.0169, 0.9554, 0, 6.37, 0.9332, 0.5168, 0.7247, 1, 5.26, 0.3710, 0.1854, 0.7564, 0),
+(27, 179, 6, 0, 9.42, 0.5012, 0.2887, 0.6857, 1, 3.88, 0.5329, 0.7018, 0.1653, 0, 6.78, 0.4164, 0.6836, 0.3824, 0),
+(0, 32, 5, 0, 8.31, 0.3518, 0.6290, 0.5871, 0, 8.60, 0.0786, 0.0000, 0.7477, 0, 5.82, 0.7026, 0.2663, 0.6038, 1),
+(0, 105, 4, 0, 2.83, 0.2026, 0.7731, 0.4989, 0, 6.25, 0.4038, 0.8441, 0.5582, 0, 5.37, 0.8389, 0.7090, 0.5679, 1),
+(9, 13, 5, 1, 5.26, 0.7480, 0.5143, 0.7064, 0, 8.68, 0.3446, 0.9698, 0.7509, 1, 2.68, 0.2847, 0.6511, 0.9638, 0),
+(11, 81, 6, 0, 9.75, 1.0000, 0.1619, 0.0479, 1, 9.49, 0.9133, 0.9588, 1.0000, 1, 9.11, 0.8682, 0.9170, 0.5580, 0),
+(0, 96, 5, 0, 2.27, 1.0000, 0.8279, 0.0503, 1, 8.23, 0.2669, 0.7385, 0.7054, 0, 9.96, 0.9143, 1.0000, 0.4697, 1),
+(0, 94, 6, 0, 5.64, 0.6614, 0.0000, 0.9865, 0, 3.56, 1.0000, 0.4843, 0.5117, 0, 7.08, 0.6588, 0.6581, 0.2371, 1),
+(7, 47, 2, 0, 6.24, 0.1818, 0.7419, 0.6925, 0, 7.91, 0.4634, 0.4314, 0.9824, 1, 7.07, 0.2386, 0.8300, 0.8058, 0),
+(21, 167, 3, 0, 6.91, 1.0000, 0.5309, 0.0708, 1, 9.08, 0.3286, 0.4314, 0.7639, 0, 1.97, 0.8596, 0.7345, 0.1505, 0),
+(31, 36, 4, 0, 6.15, 0.9562, 0.8475, 0.7970, 1, 5.01, 0.8582, 0.5989, 0.0000, 0, 8.94, 0.6223, 1.0000, 0.8893, 1),
+(47, 72, 3, 0, 6.83, 0.1800, 0.8631, 0.0954, 1, 8.47, 0.9910, 0.8026, 0.3944, 1, 1.92, 0.8558, 0.9673, 0.2585, 1),
+(0, 37, 4, 0, 1.24, 0.6190, 0.5552, 0.3912, 0, 5.55, 0.0000, 0.7700, 0.1737, 0, 9.46, 1.0000, 0.2787, 0.9313, 0),
+(10, 170, 4, 0, 1.93, 0.5445, 0.6259, 0.7683, 1, 1.45, 0.2691, 0.0869, 0.9336, 1, 4.61, 0.1522, 0.4162, 0.2754, 1),
+(11, 138, 4, 0, 8.08, 0.9728, 0.4156, 0.5193, 1, 8.38, 0.9348, 0.9354, 0.7437, 0, 9.46, 0.7640, 0.2575, 0.5551, 1),
+(46, 35, 4, 1, 0.88, 0.4889, 0.4777, 0.6271, 0, 9.73, 0.0000, 0.1662, 0.8703, 0, 1.11, 0.3150, 0.6108, 0.5258, 0),
+(0, 82, 4, 0, 5.17, 0.9037, 0.3850, 0.0253, 1, 3.23, 0.0129, 0.9351, 0.1397, 1, 2.08, 0.0905, 0.3021, 0.5855, 0),
+(0, 3, 4, 0, 6.33, 0.4378, 0.0000, 0.0264, 1, 6.45, 1.0000, 0.7365, 0.5333, 0, 7.95, 1.0000, 0.2864, 0.0250, 0),
+(0, 82, 3, 1, 6.44, 0.0108, 0.6493, 0.8592, 0, 1.69, 0.2718, 0.5012, 0.3901, 0, 5.88, 0.4601, 0.5230, 0.0000, 0),
+(5, 82, 1, 1, 5.48, 0.2685, 0.6493, 0.0800, 1, 4.27, 0.3390, 0.8896, 0.0403, 1, 6.35, 0.1607, 0.3085, 0.5691, 1),
+(0, 24, 5, 0, 6.34, 0.1007, 0.2083, 0.1078, 0, 6.93, 0.4722, 0.3062, 0.1610, 0, 5.85, 0.3476, 0.5028, 0.4322, 0),
+(15, 24, 5, 1, 5.46, 0.7223, 0.3816, 0.7039, 0, 2.81, 0.3916, 0.9868, 0.0782, 1, 0.27, 0.4769, 0.5359, 0.1710, 0),
+(0, 158, 4, 0, 3.91, 0.2288, 0.4994, 0.4287, 1, 6.44, 0.4655, 0.6389, 1.0000, 1, 9.57, 0.3271, 0.6085, 0.9658, 0),
+(47, 180, 4, 0, 7.85, 0.4083, 0.2316, 0.4335, 1, 8.26, 0.2582, 0.7241, 0.6850, 0, 5.02, 0.2303, 0.8822, 1.0000, 0),
+(0, 106, 1, 0, 6.45, 0.9780, 0.4277, 0.3320, 1, 7.14, 0.6729, 0.4759, 0.1053, 0, 7.02, 0.4575, 0.6840, 0.3721, 1),
+(14, 32, 4, 0, 0.25, 0.4916, 0.8519, 0.2602, 1, 5.24, 0.4982, 0.2529, 0.6696, 1, 8.35, 0.8191, 0.4761, 1.0000, 1),
+(0, 21, 6, 0, 6.53, 0.4364, 0.2051, 0.6818, 1, 6.15, 0.9259, 0.9044, 0.0157, 1, 6.38, 0.6700, 0.2164, 0.6137, 1),
+(23, 155, 4, 1, 2.41, 0.1509, 0.2110, 0.5294, 0, 8.86, 0.0646, 0.4295, 0.7708, 1, 5.18, 0.6855, 0.3376, 0.0954, 1),
+(0, 49, 5, 0, 9.56, 0.8887, 0.4718, 0.4966, 1, 9.01, 0.8837, 0.7197, 0.8043, 1, 9.04, 1.0000, 0.9783, 0.7467, 1),
+(0, 155, 6, 0, 7.59, 0.8278, 0.3836, 0.7523, 0, 7.14, 0.1398, 0.9292, 0.5012, 1, 8.31, 0.7173, 0.5428, 0.3875, 1),
+(8, 107, 3, 0, 2.00, 0.9414, 0.8485, 0.8570, 0, 5.86, 0.0000, 0.9021, 0.0000, 1, 8.70, 0.5167, 0.0507, 0.7192, 1),
+(0, 78, 5, 1, 5.24, 0.8272, 0.1133, 0.5136, 1, 7.37, 0.1424, 0.8941, 0.8290, 0, 5.55, 0.1301, 0.0431, 0.4901, 0),
+(0, 101, 6, 1, 5.66, 0.5934, 0.8003, 0.1806, 1, 6.19, 0.4311, 0.7688, 0.5183, 1, 8.57, 0.9108, 0.1956, 0.4980, 0),
+(16, 61, 2, 0, 8.40, 0.2961, 0.3051, 0.0975, 0, 9.38, 0.6977, 0.4224, 0.8805, 1, 6.38, 0.3693, 0.2698, 0.4510, 1),
+(20, 109, 6, 0, 2.67, 0.0000, 0.1465, 0.3507, 1, 3.95, 0.0000, 0.0219, 0.8141, 0, 6.49, 0.2972, 0.9474, 0.6107, 0),
+(0, 4, 5, 0, 9.54, 0.0497, 0.7893, 0.6985, 0, 5.76, 0.4395, 0.3362, 0.4070, 1, 9.86, 0.8479, 0.2131, 0.1185, 1),
+(0, 72, 3, 1, 6.40, 0.1423, 1.0000, 0.7879, 1, 6.41, 0.4616, 0.5729, 0.6828, 0, 6.60, 0.7706, 0.5191, 0.9012, 0),
+(0, 97, 6, 1, 8.56, 0.6744, 0.4063, 0.1471, 0, 8.22, 0.4193, 0.6318, 0.9830, 1, 9.06, 0.3805, 0.1131, 0.0000, 0),
+(34, 83, 3, 0, 5.99, 0.2707, 0.8656, 0.3491, 1, 8.01, 0.2397, 0.9921, 0.0000, 1, 7.96, 0.6194, 0.4427, 0.8110, 1),
+(9, 141, 4, 1, 5.45, 0.6051, 0.9396, 0.5921, 1, 6.70, 1.0000, 0.9029, 0.6442, 1, 7.13, 0.7728, 0.2876, 0.5020, 1),
+(26, 52, 3, 1, 5.79, 0.3854, 0.9055, 0.1358, 1, 0.95, 0.4846, 0.0912, 0.6931, 0, 6.39, 0.0000, 1.0000, 0.4450, 1),
+(0, 23, 5, 1, 8.43, 0.2415, 0.0736, 0.4421, 0, 6.35, 0.0624, 0.0670, 0.8722, 0, 5.43, 0.7224, 0.8261, 0.7217, 0),
+(14, 95, 3, 0, 7.63, 0.4225, 0.6533, 0.8849, 0, 7.31, 0.7521, 0.8153, 0.8494, 0, 9.06, 1.0000, 0.6014, 0.6611, 0),
+(18, 79, 5, 0, 8.12, 0.0000, 0.3470, 1.0000, 0, 3.42, 0.2714, 0.6345, 1.0000, 0, 2.17, 0.2644, 0.2412, 0.0624, 1),
+(0, 143, 5, 0, 8.27, 0.9356, 0.7330, 0.3293, 1, 7.87, 0.3108, 0.2078, 0.6787, 0, 2.66, 0.3754, 0.4661, 0.8141, 0),
+(31, 32, 5, 0, 3.01, 0.8652, 0.5969, 0.5948, 0, 9.21, 0.7973, 0.9754, 0.0000, 0, 8.45, 0.9249, 1.0000, 0.9306, 1),
+(19, 84, 6, 1, 7.73, 0.7926, 0.3949, 0.8068, 1, 3.75, 0.2601, 0.4173, 0.7294, 1, 7.13, 0.6842, 0.3888, 0.5336, 0),
+(0, 70, 5, 0, 8.78, 0.0000, 0.0496, 0.6849, 1, 0.75, 0.5775, 0.0397, 0.7059, 1, 5.14, 0.5237, 0.1204, 0.7284, 1),
+(0, 54, 3, 0, 6.77, 0.7905, 0.9480, 0.8497, 0, 8.75, 0.3331, 0.9642, 0.4127, 1, 5.59, 0.0779, 0.6963, 0.8853, 0),
+(47, 95, 6, 0, 7.94, 0.4824, 0.2448, 0.9572, 1, 6.77, 0.9429, 0.0000, 0.6917, 1, 5.69, 0.9222, 0.0000, 1.0000, 0),
+(0, 79, 5, 0, 9.60, 0.1394, 1.0000, 0.1938, 0, 9.71, 0.7011, 0.7245, 0.5984, 0, 3.98, 0.2422, 0.0451, 0.9668, 1),
+(17, 19, 6, 0, 7.88, 0.7185, 1.0000, 0.4870, 0, 8.10, 0.4233, 0.7235, 0.2143, 1, 8.48, 0.5368, 0.1642, 0.2098, 1),
+(23, 108, 6, 0, 4.40, 0.3423, 0.1044, 0.3928, 1, 5.37, 0.8501, 0.7247, 0.2465, 1, 4.99, 0.5193, 0.2079, 0.9379, 1),
+(22, 164, 5, 0, 8.13, 0.7831, 0.1439, 0.1519, 1, 1.01, 0.9601, 0.5050, 0.2520, 0, 7.55, 0.6684, 0.4563, 0.8412, 1),
+(9, 139, 5, 1, 5.53, 1.0000, 0.3025, 0.6174, 1, 9.13, 0.7994, 0.4029, 0.0873, 0, 7.15, 0.6895, 0.3037, 0.8053, 0),
+(0, 107, 5, 1, 0.19, 0.5334, 0.1986, 0.7157, 0, 6.75, 0.3603, 0.7923, 0.0807, 1, 0.09, 0.8690, 0.0299, 0.7561, 0),
+(17, 21, 6, 0, 5.67, 0.0957, 0.3649, 0.0825, 0, 5.55, 0.9189, 0.0306, 0.5624, 1, 7.39, 0.9281, 0.8280, 0.9878, 1),
+(48, 67, 5, 0, 6.28, 0.3880, 0.5695, 0.2480, 1, 5.82, 0.9278, 0.0000, 0.9778, 0, 9.21, 0.3485, 0.1485, 0.9396, 0),
+(0, 82, 4, 0, 7.66, 0.1561, 0.0964, 0.2979, 0, 9.53, 0.6352, 0.5934, 0.8692, 1, 5.53, 0.1870, 0.0987, 0.3322, 1),
+(20, 12, 6, 0, 3.45, 0.8671, 0.8103, 0.0000, 1, 2.17, 0.9031, 0.9381, 0.2167, 1, 8.58, 0.3484, 0.0000, 0.3484, 1),
+(16, 117, 5, 0, 8.76, 1.0000, 0.2684, 0.0000, 1, 4.09, 0.6059, 0.8971, 0.4918, 1, 7.06, 0.8058, 0.5278, 0.0735, 0),
+(47, 31, 4, 0, 8.84, 0.1206, 0.3364, 0.6666, 0, 5.56, 0.6311, 0.9609, 0.9078, 1, 3.37, 0.2784, 0.7881, 0.7166, 0),
+(0, 116, 4, 1, 6.02, 0.6405, 0.9334, 0.3048, 1, 8.00, 0.1470, 0.9269, 0.7828, 0, 4.34, 0.1039, 0.8802, 1.0000, 0),
+(0, 151, 6, 1, 7.33, 0.3668, 0.4179, 0.4469, 0, 7.10, 0.2748, 0.5301, 0.7534, 0, 6.37, 0.0000, 0.7718, 0.9634, 1),
+(37, 135, 5, 0, 7.03, 0.6190, 0.5473, 0.9077, 1, 8.66, 0.4201, 0.2019, 0.1908, 1, 7.68, 1.0000, 1.0000, 0.4826, 1),
+(0, 159, 3, 1, 6.36, 0.6400, 0.5458, 0.8101, 0, 0.78, 0.2072, 0.0581, 0.2919, 1, 7.50, 0.5085, 0.5301, 0.0701, 1),
+(32, 6, 5, 0, 0.49, 0.6702, 0.0000, 0.1897, 0, 7.61, 0.7442, 0.7370, 0.0925, 1, 7.56, 0.2447, 0.6937, 0.6165, 0),
+(24, 42, 4, 0, 5.29, 0.6099, 0.2189, 0.8864, 0, 2.29, 0.0277, 0.8855, 0.2216, 0, 6.19, 0.6157, 1.0000, 0.4879, 0),
+(34, 3, 2, 0, 8.60, 0.8489, 0.0587, 0.7449, 1, 6.39, 0.4080, 0.7287, 0.4109, 0, 7.02, 0.7012, 0.9418, 0.8736, 1),
+(39, 92, 1, 0, 9.04, 0.0234, 0.8451, 0.6496, 1, 8.00, 0.2029, 0.2111, 0.1633, 1, 6.59, 1.0000, 0.0425, 0.3395, 0),
+(18, 132, 5, 0, 0.53, 0.0000, 0.7618, 0.4119, 0, 0.65, 0.3430, 0.8215, 0.5634, 1, 8.27, 0.6150, 0.9346, 0.0000, 1),
+(0, 139, 5, 1, 6.41, 0.4080, 0.6316, 0.6815, 1, 7.30, 0.0977, 0.7350, 0.7118, 0, 3.32, 1.0000, 0.1355, 0.3362, 1),
+(22, 109, 3, 0, 9.73, 0.6906, 0.1030, 0.1114, 0, 3.62, 1.0000, 0.1880, 0.9349, 0, 8.62, 0.7374, 0.2145, 0.6713, 0),
+(0, 50, 3, 0, 7.78, 0.3178, 0.4379, 0.9331, 0, 8.82, 0.6320, 0.1053, 1.0000, 1, 5.04, 0.8052, 0.0000, 0.2265, 0),
+(29, 147, 3, 0, 9.57, 0.3642, 0.7360, 0.4472, 1, 6.05, 0.9474, 0.8831, 0.9746, 0, 8.41, 0.5564, 1.0000, 0.2143, 0),
+(12, 87, 3, 1, 9.22, 0.0587, 0.2871, 0.5631, 0, 9.13, 0.4189, 0.2078, 0.0410, 1, 5.44, 0.7774, 0.0635, 0.5922, 1),
+(0, 59, 4, 0, 6.72, 0.0271, 0.8686, 0.7902, 1, 6.96, 0.5155, 0.3156, 0.7822, 0, 7.79, 0.3373, 0.9000, 0.3800, 0),
+(11, 64, 4, 0, 9.58, 0.7799, 0.8268, 0.0166, 1, 6.01, 0.2259, 0.5583, 0.4538, 1, 9.11, 0.5061, 0.3931, 0.0600, 0),
+(40, 31, 3, 1, 8.48, 0.1130, 0.0507, 0.6029, 0, 5.56, 0.8503, 0.9055, 0.0000, 0, 5.58, 0.7041, 0.1981, 0.4597, 0),
+(48, 77, 5, 0, 8.61, 0.2625, 0.2476, 0.9065, 0, 7.94, 1.0000, 0.2293, 0.6718, 1, 6.16, 0.6775, 0.0832, 0.7734, 1),
+(18, 42, 4, 1, 0.43, 0.8184, 1.0000, 0.0107, 1, 2.37, 0.0169, 0.5992, 0.9607, 1, 4.49, 0.5314, 1.0000, 0.2707, 0),
+(8, 26, 5, 0, 6.60, 0.1667, 0.0000, 0.3603, 1, 8.90, 0.3830, 0.5851, 0.8404, 1, 1.25, 0.9502, 0.0708, 0.8910, 1),
+(42, 73, 5, 0, 1.03, 0.7964, 0.0970, 0.8031, 0, 5.38, 0.6282, 1.0000, 0.2737, 0, 1.30, 0.0893, 0.6887, 0.3849, 1),
+(0, 145, 5, 0, 5.41, 0.2621, 0.3135, 0.7132, 0, 5.33, 0.4927, 0.5162, 0.7669, 1, 9.08, 0.0600, 0.0336, 0.1488, 0),
+(24, 104, 6, 1, 6.88, 0.9422, 0.0206, 0.8951, 0, 8.39, 0.5693, 0.1836, 0.1872, 0, 7.10, 0.8688, 0.8259, 0.8230, 1),
+(0, 20, 3, 1, 7.86, 0.7922, 0.8159, 0.6375, 0, 6.57, 0.3635, 0.2991, 0.2519, 1, 9.70, 0.3407, 0.8474, 0.0000, 0),
+(0, 72, 6, 0, 6.69, 0.0531, 0.5292, 0.5763, 0, 6.00, 0.1281, 0.0552, 0.8333, 1, 1.86, 0.9651, 0.7245, 0.1466, 1),
+(36, 101, 4, 0, 7.71, 0.8208, 1.0000, 0.8228, 0, 5.11, 0.6771, 0.7990, 0.6299, 1, 4.32, 0.6234, 0.1294, 0.8797, 1),
+(0, 58, 6, 0, 8.53, 0.2111, 0.6586, 0.6525, 0, 6.64, 0.6565, 0.1507, 0.1115, 0, 9.57, 0.4547, 0.7326, 0.5642, 1),
+(38, 159, 4, 1, 4.12, 0.0887, 0.5679, 0.5734, 1, 5.60, 0.6818, 0.0583, 0.3185, 0, 4.89, 0.2305, 0.5433, 0.8432, 0),
+(0, 71, 4, 0, 7.28, 0.2379, 1.0000, 0.7957, 1, 8.11, 0.6103, 0.6110, 0.0000, 1, 6.78, 0.1799, 0.7979, 0.6961, 1),
+(33, 54, 5, 0, 9.36, 0.2700, 0.7241, 0.3582, 1, 5.17, 0.0549, 0.7148, 0.4006, 0, 7.39, 0.4515, 0.1769, 0.9564, 0),
+(38, 74, 2, 0, 2.41, 0.7653, 0.4746, 0.6948, 1, 9.70, 0.4774, 0.4542, 0.6239, 0, 5.34, 0.5358, 0.3546, 0.3048, 1),
+(37, 157, 6, 0, 9.11, 0.6215, 0.1002, 0.1646, 1, 9.66, 0.6756, 0.9283, 1.0000, 1, 5.82, 0.1833, 0.6248, 0.4119, 0),
+(0, 101, 5, 0, 6.37, 0.8820, 0.2552, 0.3683, 0, 7.37, 0.8824, 0.7112, 0.8382, 1, 2.68, 0.9513, 0.0000, 0.5511, 0),
+(0, 110, 4, 0, 5.67, 0.0000, 0.7319, 0.9785, 1, 7.45, 0.0791, 0.9357, 0.4496, 0, 9.11, 0.6440, 0.7238, 0.7682, 0),
+(0, 80, 5, 0, 0.11, 0.4436, 0.7510, 0.8992, 0, 0.16, 0.7964, 0.9170, 0.9514, 0, 8.54, 0.5567, 0.5596, 0.6926, 0),
+(0, 129, 5, 1, 0.97, 0.5732, 0.8052, 0.1904, 0, 8.89, 0.0831, 0.6761, 1.0000, 1, 5.43, 0.1952, 0.3135, 0.4326, 0),
+(22, 6, 5, 0, 7.10, 0.6903, 0.4302, 0.0448, 1, 7.99, 0.1130, 0.8033, 0.4204, 0, 2.22, 0.2410, 0.5487, 0.3020, 1),
+(12, 12, 3, 1, 6.44, 0.5889, 0.1798, 0.5188, 1, 6.96, 0.7142, 0.9497, 0.6840, 1, 5.44, 0.1468, 0.1562, 0.9154, 0),
+(0, 94, 6, 1, 9.93, 0.4548, 0.5888, 0.0000, 0, 8.44, 0.3890, 0.6901, 0.7158, 0, 9.16, 0.5369, 0.7920, 0.1354, 0),
+(0, 32, 4, 0, 9.61, 0.1685, 0.6236, 0.7157, 1, 6.72, 0.4243, 0.2516, 0.4828, 1, 9.67, 0.7223, 0.2171, 0.6871, 1),
+(36, 13, 1, 1, 7.43, 0.4067, 1.0000, 0.8232, 0, 9.68, 0.1834, 0.1984, 0.6021, 1, 6.75, 0.8158, 0.1999, 0.4104, 1),
+(9, 85, 4, 1, 8.97, 0.0879, 0.0988, 0.1729, 0, 6.81, 0.7105, 0.2596, 0.2367, 0, 4.77, 0.1910, 0.5029, 0.1741, 0),
+(8, 165, 6, 1, 6.65, 0.7009, 1.0000, 0.9323, 0, 5.04, 0.0000, 0.0270, 0.7174, 1, 5.57, 0.5855, 0.8566, 0.5234, 1),
+(8, 95, 6, 0, 5.00, 0.2047, 0.3299, 0.8578, 1, 7.98, 0.2392, 0.4774, 0.7360, 0, 9.37, 1.0000, 0.2828, 1.0000, 0),
+(36, 78, 4, 0, 5.35, 0.7325, 0.1841, 0.0000, 1, 5.34, 0.0000, 0.0405, 0.1823, 0, 7.30, 0.1061, 0.3213, 0.8399, 0),
+(41, 74, 4, 0, 7.05, 0.6785, 0.2167, 0.6420, 0, 1.79, 0.5176, 0.5874, 0.2444, 0, 6.32, 0.8852, 0.7404, 0.6286, 1),
+(0, 71, 6, 1, 5.71, 0.7737, 1.0000, 0.6691, 0, 0.73, 0.8464, 0.4894, 0.4668, 0, 4.03, 0.1721, 0.9005, 0.6203, 1),
+(5, 36, 3, 0, 5.01, 0.4275, 0.8575, 1.0000, 0, 9.30, 0.4880, 0.8413, 0.0482, 0, 7.95, 0.8557, 0.3419, 0.3745, 1),
+(0, 124, 4, 1, 2.08, 0.0209, 0.9472, 0.5860, 0, 4.03, 0.7348, 0.6010, 0.1866, 1, 5.14, 0.6098, 0.6113, 0.8803, 0),
+(0, 37, 6, 0, 5.81, 1.0000, 0.3633, 0.6303, 1, 9.84, 0.6927, 0.9960, 0.6529, 1, 2.50, 0.4964, 0.0769, 0.4201, 0),
+(48, 65, 5, 0, 5.45, 0.1197, 1.0000, 0.5168, 1, 3.51, 0.5786, 0.4299, 0.6474, 0, 5.12, 0.7841, 0.1348, 0.6672, 1),
+(0, 34, 5, 0, 7.12, 0.9233, 0.2869, 0.0196, 0, 7.60, 0.6457, 1.0000, 0.4188, 0, 8.30, 0.6007, 0.9615, 0.3628, 1),
+(14, 124, 4, 1, 8.62, 0.9074, 0.2609, 0.8942, 0, 6.97, 0.8668, 0.4239, 0.0436, 1, 4.68, 0.4415, 0.1075, 0.6582, 0),
+(0, 162, 5, 1, 0.19, 0.8265, 0.7529, 0.0659, 1, 6.93, 0.9652, 0.3000, 0.8711, 1, 7.24, 0.7451, 0.8092, 0.2945, 0),
+(40, 87, 6, 0, 7.59, 0.7385, 0.5378, 0.5390, 0, 7.44, 0.7848, 0.2065, 1.0000, 1, 8.32, 0.2342, 0.3897, 1.0000, 0),
+(0, 4, 3, 0, 4.16, 0.6389, 0.9347, 0.6278, 0, 9.21, 0.9893, 0.9854, 0.1857, 0, 6.39, 0.1198, 0.6419, 0.6634, 0),
+(0, 33, 1, 0, 8.65, 0.3241, 0.6565, 0.2607, 0, 8.49, 0.5539, 0.6721, 0.9120, 1, 6.09, 0.0514, 0.6449, 0.7450, 1),
+(14, 81, 6, 0, 0.15, 0.3169, 0.8054, 0.1373, 1, 2.16, 0.4074, 0.6417, 0.1039, 1, 7.68, 0.4108, 0.2789, 0.2743, 0),
+(38, 111, 6, 0, 9.99, 1.0000, 0.6391, 0.3443, 1, 6.13, 0.6064, 0.5131, 0.4719, 1, 2.50, 0.9591, 0.7007, 0.9351, 0),
+(16, 39, 1, 0, 5.90, 0.2224, 0.7864, 0.7131, 0, 5.12, 0.9177, 0.8723, 1.0000, 0, 5.09, 0.8530, 0.5212, 0.9370, 1),
+(47, 47, 1, 0, 9.13, 0.9702, 0.7754, 0.2119, 0, 6.55, 0.3497, 0.3309, 0.5624, 1, 8.86, 0.5521, 0.2765, 0.2556, 0),
+(43, 59, 3, 0, 6.53, 0.3414, 0.8772, 1.0000, 0, 6.41, 0.1618, 0.2904, 0.3791, 1, 5.11, 0.1763, 0.2090, 0.5625, 1),
+(28, 57, 3, 0, 8.00, 0.9934, 0.6113, 0.3184, 0, 7.96, 0.0498, 0.1553, 0.0459, 1, 7.07, 0.6681, 0.1276, 0.6328, 1),
+(0, 103, 4, 0, 6.55, 0.6016, 0.9298, 0.4696, 1, 5.68, 0.6139, 0.1572, 0.2978, 1, 2.57, 0.0737, 0.9740, 0.1000, 1),
+(13, 29, 4, 0, 6.79, 0.9421, 0.2633, 0.4678, 1, 1.67, 0.9688, 0.8266, 0.8691, 1, 8.63, 0.8093, 0.8617, 0.3768, 0),
+(29, 68, 4, 0, 6.29, 1.0000, 0.8253, 0.7817, 0, 5.07, 0.0381, 0.9385, 0.6804, 1, 0.84, 0.5347, 0.1292, 0.0853, 1),
+(37, 82, 5, 0, 7.02, 0.3365, 1.0000, 0.6091, 1, 6.96, 0.8892, 0.8219, 0.8477, 1, 5.00, 0.5483, 0.0851, 0.1054, 1),
+(29, 47, 4, 1, 4.19, 0.6823, 0.8800, 0.9784, 0, 9.63, 0.9593, 0.2505, 0.5197, 0, 5.76, 1.0000, 0.1899, 1.0000, 0),
+(5, 147, 2, 1, 2.49, 0.4106, 0.9787, 0.9893, 0, 9.47, 0.0000, 0.1722, 0.9174, 0, 3.23, 0.7393, 0.7597, 0.6896, 1),
+(24, 59, 1, 0, 6.55, 0.8339, 0.7088, 0.7824, 1, 8.08, 0.5202, 0.2785, 0.7329, 0, 9.80, 0.3320, 0.3989, 0.0300, 0),
+(8, 146, 1, 0, 7.28, 0.6120, 1.0000, 0.8595, 1, 7.14, 0.0481, 0.7197, 0.8883, 1, 8.62, 0.9042, 0.0000, 0.6946, 1),
+(23, 69, 5, 0, 6.83, 0.5193, 0.3365, 0.3475, 1, 9.64, 0.6965, 0.6591, 0.6401, 0, 6.46, 0.9621, 0.5224, 0.9395, 0),
+(41, 9, 5, 1, 0.32, 0.5868, 0.0170, 0.3974, 0, 9.38, 0.9105, 0.5868, 0.3525, 0, 5.54, 0.8092, 0.4329, 0.2282, 1),
+(26, 122, 3, 1, 8.44, 0.0000, 0.5281, 0.1944, 0, 9.64, 0.1153, 0.5850, 0.7900, 1, 6.83, 0.6250, 0.7791, 0.7424, 0),
+(29, 152, 6, 0, 7.97, 0.9285, 0.0345, 0.5485, 1, 8.55, 0.2008, 0.5084, 0.2578, 0, 5.85, 0.5258, 0.0000, 0.9864, 1),
+(35, 98, 5, 0, 5.44, 0.8297, 0.7195, 0.7659, 1, 6.98, 0.0936, 0.0701, 0.6437, 1, 6.99, 0.5221, 0.9221, 0.1479, 1),
+(0, 132, 6, 0, 10.00, 0.1221, 0.0543, 0.8245, 1, 7.82, 0.7229, 0.4901, 0.2697, 0, 6.44, 0.1296, 0.2123, 0.3164, 0),
+(43, 175, 4, 1, 9.73, 0.8202, 0.6878, 0.6679, 1, 3.70, 0.8915, 0.2663, 0.5670, 1, 7.04, 0.0559, 0.8891, 0.0000, 0),
+(0, 78, 5, 1, 6.23, 0.8662, 0.0000, 0.4907, 1, 7.22, 1.0000, 0.1460, 0.2886, 1, 8.92, 0.3506, 0.9597, 0.7002, 1),
+(19, 58, 6, 0, 5.04, 0.4685, 0.9832, 0.7658, 1, 8.67, 0.1451, 0.1954, 0.0248, 1, 7.96, 0.0507, 0.2286, 0.3159, 0),
+(23, 72, 3, 0, 8.65, 0.0471, 0.5529, 0.6895, 1, 8.76, 0.5969, 0.0763, 0.0980, 0, 7.93, 0.4069, 0.4862, 0.3257, 1),
+(47, 108, 6, 1, 7.54, 0.7988, 0.0959, 0.8603, 1, 5.82, 0.5669, 0.6010, 0.1232, 0, 3.08, 0.9765, 0.6989, 0.2802, 1),
+(35, 155, 2, 1, 4.54, 0.9161, 0.6310, 0.6849, 1, 7.12, 0.4734, 0.4137, 0.6425, 1, 5.97, 0.9376, 0.8194, 0.9612, 0),
+(0, 25, 5, 1, 7.39, 0.1203, 0.4555, 0.1989, 1, 6.13, 0.4952, 0.0852, 0.0000, 0, 9.80, 1.0000, 0.3252, 0.8244, 1),
+(0, 138, 5, 1, 9.15, 0.0000, 0.5009, 0.7731, 0, 5.49, 0.8924, 0.2573, 0.1404, 1, 9.13, 0.7076, 0.0000, 0.3851, 1),
+(20, 61, 4, 0, 5.57, 0.2398, 0.8573, 0.3820, 0, 5.95, 0.7403, 0.4688, 0.2953, 1, 0.34, 0.8080, 0.6705, 1.0000, 1),
+(19, 53, 5, 0, 1.87, 0.9716, 0.0515, 0.7471, 0, 5.40, 0.8810, 0.7816, 0.3893, 1, 7.57, 0.5205, 0.9061, 0.8646, 0),
+(0, 41, 2, 0, 6.49, 0.2989, 0.3842, 0.7721, 1, 9.35, 0.8442, 0.1150, 0.9119, 0, 9.19, 0.4633, 0.2727, 0.5159, 1),
+(19, 34, 5, 0, 6.92, 0.0326, 0.3093, 0.4566, 0, 6.41, 0.0000, 0.2017, 0.6681, 0, 5.11, 0.6669, 0.6029, 0.3937, 1),
+(27, 172, 3, 0, 9.54, 0.9176, 0.8638, 1.0000, 1, 2.74, 0.4012, 0.3767, 0.4343, 0, 0.58, 1.0000, 0.1673, 0.8756, 0),
+(21, 139, 3, 0, 8.37, 0.5576, 0.7622, 0.1603, 1, 8.81, 0.1773, 0.9702, 0.4515, 0, 5.66, 0.5292, 0.1937, 0.6780, 0),
+(19, 53, 6, 0, 5.52, 1.0000, 0.0353, 0.0860, 0, 6.62, 0.7992, 0.6983, 0.2019, 0, 9.96, 0.7842, 0.7789, 0.1636, 0),
+(6, 20, 4, 0, 5.08, 0.9473, 0.5924, 0.1058, 0, 9.77, 0.3458, 0.7312, 0.4790, 0, 6.21, 0.2351, 0.3765, 0.2682, 0),
+(16, 85, 6, 1, 2.01, 0.5437, 0.1494, 0.8482, 0, 8.96, 0.7774, 0.9482, 0.6083, 0, 7.48, 0.9887, 1.0000, 0.2785, 0),
+(25, 108, 3, 0, 9.23, 0.0903, 0.7618, 0.6652, 1, 3.77, 1.0000, 0.3148, 0.5134, 1, 8.40, 0.0000, 1.0000, 0.6355, 1),
+(24, 74, 6, 1, 5.22, 0.8438, 0.7495, 0.8138, 0, 5.94, 0.4711, 0.7123, 0.2716, 0, 9.84, 0.8774, 0.6888, 0.7351, 1),
+(30, 61, 6, 0, 5.33, 0.0777, 0.5878, 0.1664, 1, 9.34, 0.6555, 0.7179, 0.1448, 1, 1.26, 0.3945, 0.2549, 0.0340, 0),
+(0, 63, 2, 1, 8.02, 0.1938, 0.2254, 0.3391, 0, 2.82, 0.7492, 0.4448, 0.8297, 1, 8.51, 1.0000, 0.1371, 0.4144, 0),
+(5, 28, 4, 0, 5.35, 0.3685, 0.0983, 0.4489, 1, 9.43, 0.5592, 0.2407, 0.2785, 0, 4.54, 0.7450, 0.7730, 0.0677, 0),
+(18, 11, 6, 0, 6.07, 0.8649, 0.5035, 0.7981, 0, 8.75, 0.7873, 1.0000, 0.5836, 1, 8.14, 1.0000, 0.3018, 0.2621, 0),
+(28, 53, 3, 0, 5.85, 0.1874, 0.7703, 0.6484, 1, 1.19, 0.8702, 0.6771, 0.8116, 1, 8.93, 0.7001, 0.8095, 0.2345, 0),
+(0, 49, 4, 1, 8.85, 0.7457, 0.2958, 0.5115, 1, 5.78, 0.8612, 0.4710, 0.6693, 0, 3.38, 0.0350, 0.1635, 0.4942, 0),
+(17, 68, 3, 1, 8.43, 0.3292, 0.8116, 0.8647, 1, 5.52, 0.1595, 0.3758, 0.7740, 0, 6.74, 0.4078, 0.2259, 0.9104, 0),
+(0, 98, 4, 0, 1.65, 0.7271, 0.1014, 0.8996, 0, 5.58, 0.0861, 0.9914, 0.5823, 1, 5.80, 1.0000, 0.1432, 0.8085, 0),
+(37, 90, 5, 0, 4.05, 1.0000, 0.1650, 0.7046, 0, 1.42, 0.7220, 0.9805, 0.3471, 1, 5.74, 0.0140, 0.6114, 0.0000, 0),
+(0, 165, 2, 0, 7.05, 0.3775, 0.1040, 0.5975, 0, 1.29, 0.4313, 0.2290, 0.0590, 1, 0.64, 0.4616, 0.4290, 0.0000, 1),
+(11, 27, 4, 1, 5.05, 0.3884, 0.3987, 0.1726, 1, 6.44, 0.0550, 1.0000, 0.5159, 0, 9.40, 0.3521, 0.4808, 0.8703, 0),
+(29, 56, 5, 0, 5.88, 0.2563, 0.0793, 0.0784, 1, 0.76, 0.8324, 0.1518, 0.7447, 0, 8.10, 0.3792, 0.5353, 0.0000, 0),
+(43, 172, 4, 0, 7.59, 1.0000, 0.3526, 0.0000, 1, 8.94, 0.5821, 0.6801, 0.2824, 1, 5.91, 0.0000, 0.6302, 0.9116, 1),
+(21, 180, 5, 1, 8.50, 0.5724, 0.9369, 0.3053, 0, 8.50, 0.2221, 0.0000, 0.4205, 0, 6.32, 0.2588, 0.1565, 0.5973, 1),
+(25, 115, 4, 0, 5.96, 0.5594, 0.1700, 0.6232, 0, 7.52, 0.3797, 0.9888, 0.3067, 0, 0.03, 0.6573, 0.6500, 0.0000, 0),
+(25, 38, 3, 0, 6.97, 0.0622, 0.2527, 0.7074, 1, 9.35, 0.6803, 0.1764, 0.0234, 0, 9.87, 0.6229, 0.2343, 0.9544, 1),
+(0, 45, 6, 0, 5.10, 0.6564, 0.3475, 0.1217, 0, 8.90, 0.2749, 0.0729, 0.1089, 1, 6.54, 0.4633, 0.8695, 0.0763, 0),
+(39, 90, 6, 0, 7.16, 0.9574, 0.8195, 1.0000, 1, 8.75, 0.9261, 0.2423, 0.9157, 1, 6.32, 0.6579, 0.1763, 0.6441, 1),
+(6, 166, 6, 0, 7.70, 0.9753, 0.3864, 0.3792, 1, 5.10, 0.1729, 0.0853, 0.0761, 0, 8.03, 0.5281, 0.1746, 0.4881, 0),
+(35, 7, 2, 0, 9.67, 0.0000, 0.8096, 1.0000, 1, 8.30, 0.5509, 0.9221, 0.5490, 0, 8.57, 0.5168, 0.3116, 0.5428, 1),
+(12, 180, 6, 1, 9.51, 0.4937, 0.5585, 0.2608, 0, 6.89, 0.3935, 0.3520, 0.7676, 1, 5.11, 0.3202, 0.1573, 0.4625, 1),
+(19, 44, 5, 1, 5.00, 1.0000, 0.4259, 0.8008, 0, 8.26, 0.8947, 0.4325, 0.8650, 0, 6.55, 0.4501, 0.9900, 0.9157, 0),
+(0, 142, 4, 0, 6.65, 0.2165, 0.7948, 0.1073, 0, 5.68, 0.7160, 0.1970, 0.3017, 0, 9.89, 0.2830, 0.0000, 0.1940, 1),
+(0, 127, 4, 1, 7.20, 0.2446, 0.0606, 0.0000, 0, 6.14, 0.3432, 0.4222, 0.0248, 0, 7.14, 0.4543, 0.7395, 0.2415, 0),
+(0, 157, 5, 0, 7.77, 0.1842, 0.0847, 0.1387, 1, 5.14, 0.7575, 0.4802, 0.9670, 0, 5.82, 0.0807, 0.7256, 0.2550, 1),
+(25, 46, 2, 1, 9.47, 0.6658, 0.9798, 0.6791, 1, 7.96, 0.7122, 0.0000, 0.5643, 0, 1.05, 0.4609, 1.0000, 0.6633, 1),
+(8, 71, 3, 1, 9.76, 0.3789, 0.6011, 0.7208, 0, 9.15, 0.4514, 0.7044, 0.5262, 0, 8.83, 0.9666, 0.9953, 0.7531, 1),
+(19, 56, 5, 0, 6.57, 0.2793, 0.6662, 0.8348, 0, 2.99, 0.5001, 0.3645, 0.5331, 1, 6.16, 0.8054, 0.9687, 0.7851, 1),
+(0, 53, 4, 0, 5.94, 0.0746, 0.5102, 0.7315, 1, 9.09, 0.8751, 0.2828, 0.1080, 1, 7.80, 0.2017, 0.9722, 0.0259, 0),
+(45, 38, 4, 1, 5.49, 0.6984, 0.2367, 0.9195, 0, 8.10, 0.2034, 0.9452, 0.5418, 1, 7.43, 0.2712, 0.7217, 0.6557, 1),
+(30, 171, 5, 0, 5.32, 0.1788, 0.7427, 0.1832, 1, 7.13, 0.7894, 0.4431, 0.2930, 0, 7.91, 0.2549, 0.5018, 0.3602, 1),
+(46, 162, 2, 0, 0.15, 0.6072, 0.0190, 0.2730, 1, 0.97, 0.3636, 0.9484, 0.9234, 0, 8.14, 0.4708, 0.5181, 0.6602, 1),
+(10, 164, 6, 0, 7.64, 0.8576, 0.2603, 0.8661, 0, 5.95, 0.0000, 1.0000, 0.2767, 1, 7.20, 0.0000, 0.1906, 0.7679, 1),
+(46, 7, 4, 0, 7.20, 0.9714, 0.0709, 0.2043, 1, 1.58, 1.0000, 0.2314, 0.4421, 1, 3.52, 0.8745, 0.0765, 0.9947, 0),
+(0, 46, 4, 0, 1.02, 0.9361, 0.5106, 0.0281, 1, 4.98, 0.4889, 0.3553, 0.1170, 1, 3.56, 0.8690, 0.1455, 0.3050, 1),
+(20, 125, 5, 0, 6.35, 0.7561, 0.4715, 0.7394, 1, 3.77, 0.0310, 0.7189, 0.2923, 1, 9.70, 0.2403, 0.1015, 0.3837, 1),
+(21, 82, 5, 0, 7.32, 0.2538, 1.0000, 0.8762, 1, 8.48, 0.0305, 0.2187, 0.5171, 0, 5.10, 0.2117, 0.2059, 0.6854, 0),
+(0, 100, 3, 1, 6.65, 0.7092, 0.7644, 0.2832, 0, 6.67, 0.0432, 0.6657, 0.2626, 0, 4.39, 0.9449, 0.3681, 0.3930, 1),
+(48, 46, 6, 0, 5.85, 0.0000, 0.0230, 0.6393, 0, 9.76, 0.0000, 0.6781, 0.0000, 1, 7.89, 0.3381, 0.1616, 0.2166, 1),
+(0, 30, 3, 0, 8.82, 0.8559, 0.6707, 0.0551, 0, 2.03, 0.2789, 0.0292, 0.4032, 1, 7.54, 0.1632, 0.1017, 0.6052, 1),
+(14, 144, 2, 1, 5.18, 0.7011, 0.2014, 0.7052, 0, 5.29, 0.9873, 0.6322, 0.2450, 1, 5.82, 0.9153, 0.7105, 0.6453, 0),
+(36, 26, 4, 1, 5.44, 1.0000, 0.8226, 0.3833, 1, 4.37, 0.2135, 0.2006, 0.2638, 0, 5.10, 0.2459, 0.4194, 0.3652, 0),
+(46, 149, 4, 0, 9.77, 0.0000, 0.8809, 0.1145, 1, 0.35, 0.6638, 0.6614, 0.4986, 1, 9.52, 0.9561, 0.5842, 0.6870, 1),
+(19, 16, 5, 0, 7.41, 1.0000, 0.7861, 0.7971, 1, 9.58, 0.5543, 0.9116, 0.0389, 1, 5.77, 0.3517, 0.4478, 0.0160, 1),
+(16, 111, 4, 1, 8.35, 0.6818, 0.0000, 0.0853, 0, 5.39, 0.3916, 0.8893, 0.3199, 1, 9.68, 0.3840, 0.3532, 0.2663, 1),
+(0, 55, 2, 0, 0.42, 0.0140, 0.9351, 0.3075, 1, 7.54, 0.4716, 0.0241, 0.2711, 0, 5.98, 0.4161, 0.6119, 0.4994, 0),
+(6, 141, 5, 1, 7.75, 0.1412, 0.5657, 0.0000, 0, 8.51, 0.5295, 0.0000, 0.2196, 1, 8.83, 0.6772, 0.1408, 0.7711, 1),
+(0, 66, 4, 0, 6.53, 0.8565, 0.0381, 0.4151, 0, 9.59, 0.2038, 0.2987, 0.8309, 1, 5.96, 0.7371, 0.0000, 0.2900, 0),
+(8, 106, 3, 0, 6.64, 0.2249, 0.5670, 0.6523, 0, 8.62, 0.1089, 0.8162, 0.4578, 0, 8.06, 0.1465, 0.6681, 0.8587, 1),
+(34, 91, 6, 0, 6.74, 0.9341, 0.0130, 0.5091, 0, 1.33, 0.8354, 0.0137, 0.8245, 1, 6.77, 0.5406, 0.8340, 0.2431, 0),
+(32, 29, 2, 1, 8.47, 0.2319, 0.7786, 1.0000, 1, 8.80, 0.0444, 0.8180, 0.5447, 0, 6.42, 0.0144, 0.7217, 0.5277, 0),
+(39, 137, 5, 0, 6.88, 0.6424, 0.2615, 0.4246, 1, 6.31, 0.6351, 0.2940, 0.7146, 1, 7.09, 0.9551, 0.8043, 0.4284, 1),
+(0, 66, 4, 1, 6.88, 0.5845, 0.5515, 0.8317, 1, 8.05, 0.3300, 0.5428, 0.9503, 1, 8.59, 0.7197, 0.1403, 0.0000, 1),
+(0, 30, 1, 0, 6.19, 0.9850, 0.3864, 0.0850, 1, 7.42, 0.7054, 0.7341, 0.4896, 1, 5.96, 0.9476, 0.3028, 0.2814, 1),
+(24, 141, 4, 1, 2.59, 0.2638, 0.0437, 0.3310, 0, 8.13, 0.1610, 0.8342, 0.1943, 0, 6.20, 1.0000, 0.6216, 0.2602, 1),
+(20, 104, 4, 0, 1.31, 0.1372, 0.8948, 0.9742, 0, 9.71, 0.3687, 0.2916, 0.7210, 1, 7.85, 0.8854, 0.0879, 0.5896, 0),
+(17, 44, 3, 0, 9.50, 0.1388, 0.6814, 0.2323, 0, 6.12, 0.9378, 0.5515, 0.7546, 1, 8.38, 0.0703, 0.5110, 0.0000, 0),
+(33, 14, 6, 1, 8.82, 0.9550, 0.5769, 0.0163, 1, 9.65, 0.4335, 0.0000, 0.3292, 0, 9.21, 0.6964, 0.9964, 1.0000, 1),
+(0, 129, 5, 0, 5.12, 0.6846, 0.7336, 1.0000, 1, 7.73, 0.9937, 0.6863, 1.0000, 0, 9.79, 0.6602, 0.5815, 0.0665, 1),
+(0, 69, 6, 1, 7.18, 0.2489, 0.2077, 0.7904, 0, 9.55, 1.0000, 0.9317, 0.5370, 0, 6.19, 0.8808, 0.0418, 0.3598, 0),
+(0, 57, 5, 0, 7.72, 1.0000, 1.0000, 0.7093, 0, 5.28, 0.8356, 0.0000, 0.6979, 0, 7.84, 0.0128, 0.3119, 0.3489, 0),
+(39, 23, 5, 0, 5.76, 0.1232, 0.8925, 0.2332, 1, 5.91, 0.0000, 0.7351, 0.1393, 1, 9.92, 0.6496, 0.7767, 0.3852, 0),
+(0, 21, 6, 0, 8.06, 0.9940, 0.5970, 0.5387, 1, 5.32, 0.0361, 0.8192, 0.7790, 0, 5.84, 0.9410, 0.8489, 0.0676, 0),
+(25, 164, 5, 0, 3.42, 0.5628, 0.2927, 0.2936, 1, 5.54, 0.1044, 0.3452, 0.0310, 1, 4.63, 0.8156, 0.4135, 0.4813, 1),
+(47, 96, 3, 0, 2.62, 0.8846, 0.0664, 0.5142, 0, 7.62, 0.2713, 0.1002, 0.4305, 1, 5.04, 0.7097, 0.0000, 0.6155, 0),
+(13, 62, 5, 1, 6.26, 0.8174, 0.7104, 0.6537, 1, 5.92, 0.6975, 0.0270, 0.6653, 0, 7.14, 1.0000, 0.6359, 0.7975, 0),
+(46, 45, 4, 0, 5.53, 0.6746, 0.4524, 0.0825, 0, 8.44, 0.6647, 1.0000, 0.2459, 1, 6.07, 0.0000, 0.8816, 1.0000, 1),
+(41, 37, 3, 0, 3.70, 0.7620, 0.9278, 0.9473, 1, 6.41, 0.9509, 0.4857, 0.7148, 1, 6.56, 0.0587, 0.0432, 0.0334, 1),
+(17, 16, 4, 0, 7.39, 0.7639, 0.1695, 0.0400, 1, 7.59, 0.3773, 0.2242, 0.2041, 0, 0.85, 0.5816, 0.7863, 0.8624, 0),
+(16, 94, 4, 0, 5.91, 0.6500, 0.0882, 0.6087, 1, 9.88, 0.1529, 0.8124, 0.0526, 1, 8.95, 0.8203, 0.6746, 0.9741, 0),
+(43, 169, 4, 0, 9.76, 0.3691, 0.9608, 0.3756, 1, 6.68, 0.9133, 0.5450, 0.2393, 0, 5.79, 0.9273, 0.1392, 0.2654, 1),
+(45, 23, 5, 0, 5.95, 0.9330, 0.7081, 0.7919, 1, 9.73, 0.7938, 0.8717, 0.8089, 0, 8.79, 0.2328, 0.7432, 0.1560, 1),
+(19, 109, 4, 0, 9.02, 0.0742, 0.2849, 0.2129, 1, 8.48, 0.8047, 0.5702, 1.0000, 1, 8.56, 1.0000, 0.7876, 0.6637, 1),
+(0, 87, 5, 0, 7.66, 0.9493, 0.6936, 0.0482, 1, 8.08, 1.0000, 0.1776, 0.7040, 0, 7.43, 0.2534, 0.6824, 0.6173, 1),
+(9, 67, 3, 0, 6.97, 0.1212, 0.0781, 0.6484, 0, 6.85, 0.5681, 0.2273, 0.4955, 1, 7.16, 0.3850, 0.3284, 1.0000, 0),
+(0, 65, 5, 0, 7.16, 0.1152, 0.6039, 0.8678, 0, 2.62, 0.5341, 0.7223, 0.2298, 0, 8.45, 0.3563, 0.7147, 0.3796, 0),
+(40, 58, 5, 0, 5.25, 0.1863, 1.0000, 1.0000, 0, 8.45, 0.3473, 0.8050, 0.7098, 0, 5.60, 0.2495, 0.7810, 0.8029, 1),
+(0, 51, 4, 0, 8.61, 0.0000, 0.1742, 0.1444, 0, 9.73, 0.2668, 0.9931, 0.6079, 0, 6.33, 0.7329, 0.4527, 0.0878, 1),
+(35, 19, 4, 0, 9.61, 0.0000, 0.7743, 0.2900, 1, 6.54, 0.1857, 0.5161, 0.8604, 0, 3.15, 0.6658, 0.2395, 0.0217, 0),
+(11, 26, 3, 1, 6.46, 0.4598, 0.2428, 0.5751, 0, 8.22, 0.8002, 0.1380, 0.5848, 0, 4.54, 0.6521, 0.5019, 0.7564, 0),
+(31, 18, 4, 0, 1.82, 0.1938, 0.3434, 0.0983, 0, 6.29, 0.2738, 0.7879, 0.0401, 1, 5.45, 0.2349, 0.7721, 0.9173, 1),
+(28, 6, 4, 0, 9.58, 0.1820, 0.1423, 0.1801, 0, 9.72, 0.5257, 1.0000, 0.0663, 0, 0.55, 0.3070, 0.7473, 0.8060, 0),
+(33, 99, 5, 0, 6.30, 0.3857, 0.3575, 0.9472, 0, 7.49, 0.3955, 0.0000, 0.7004, 1, 8.12, 1.0000, 0.8533, 1.0000, 1),
+(36, 46, 5, 1, 3.98, 0.9333, 0.8812, 0.9409, 0, 6.14, 0.4086, 0.9124, 0.8085, 0, 8.71, 0.8312, 0.2527, 0.5443, 1),
+(39, 24, 5, 0, 7.07, 0.6622, 0.6775, 0.2963, 0, 9.75, 0.8723, 0.1969, 0.9734, 0, 8.03, 0.9675, 0.1010, 0.0740, 0),
+(24, 75, 6, 0, 2.31, 0.4033, 0.4132, 0.0000, 0, 7.79, 0.6843, 0.7565, 0.9625, 0, 6.24, 0.9254, 0.0000, 0.3151, 1),
+(0, 37, 4, 1, 5.56, 0.2121, 0.3155, 0.7167, 0, 1.35, 0.2200, 0.0359, 0.9972, 1, 6.89, 0.1641, 0.5613, 0.6884, 1),
+(23, 63, 6, 1, 3.51, 1.0000, 0.6418, 0.6750, 1, 0.97, 1.0000, 0.8876, 0.3031, 0, 4.55, 0.7468, 0.0000, 0.8447, 1),
+(0, 72, 6, 0, 8.26, 0.4229, 0.8294, 0.8740, 0, 5.14, 0.5170, 0.4834, 0.8112, 1, 5.44, 1.0000, 0.3718, 0.5533, 0),
+(39, 42, 6, 0, 9.05, 0.3150, 0.1449, 0.7657, 0, 7.67, 0.1651, 0.0932, 0.0111, 0, 6.83, 0.2052, 0.0000, 0.9127, 1),
+(34, 27, 6, 0, 5.29, 0.7842, 0.4941, 0.4222, 1, 7.63, 0.6720, 0.4893, 0.6940, 0, 6.42, 0.4757, 1.0000, 0.9457, 1),
+(13, 58, 4, 0, 5.71, 0.3030, 0.3968, 0.3808, 0, 2.75, 1.0000, 0.2725, 0.6320, 1, 6.12, 0.1940, 0.6944, 0.8527, 1),
+(0, 110, 3, 0, 3.02, 0.4534, 0.6408, 0.5130, 0, 6.00, 0.6667, 1.0000, 0.8783, 1, 4.77, 0.4459, 0.4927, 0.7717, 1),
+(5, 168, 2, 1, 8.55, 0.4061, 0.4396, 0.1821, 0, 9.22, 0.9935, 0.5230, 0.8248, 0, 8.95, 0.1957, 0.7324, 0.5106, 1),
+(30, 45, 4, 0, 5.61, 0.8891, 0.7301, 0.0000, 1, 9.22, 0.6435, 0.4641, 0.1178, 0, 2.49, 0.3487, 0.2968, 0.8849, 1),
+(0, 91, 3, 0, 5.77, 0.2115, 0.3304, 0.2703, 1, 7.72, 0.7461, 0.0462, 0.4325, 0, 5.57, 0.9038, 0.0709, 0.6022, 0),
+(32, 69, 6, 1, 6.31, 0.3645, 0.4859, 0.8429, 1, 9.09, 0.4160, 0.7844, 0.8019, 0, 9.93, 0.1532, 0.4685, 1.0000, 1),
+(0, 98, 4, 1, 8.58, 0.7523, 0.5949, 0.0875, 0, 6.96, 0.6608, 1.0000, 0.5949, 1, 7.62, 0.5021, 0.5659, 0.5962, 1),
+(16, 96, 5, 0, 0.68, 0.0000, 0.5919, 0.1776, 0, 6.93, 0.7232, 0.4767, 0.6025, 1, 5.24, 0.1222, 0.0000, 0.2212, 1),
+(0, 72, 4, 0, 7.26, 0.7357, 0.6420, 0.8940, 0, 0.02, 0.1449, 0.7036, 1.0000, 1, 7.06, 0.6921, 0.9572, 0.0000, 0),
+(0, 58, 4, 0, 2.43, 0.3465, 0.4934, 0.8253, 0, 2.22, 0.5456, 0.7993, 0.2417, 0, 3.97, 0.2138, 0.7953, 0.1084, 0),
+(0, 114, 2, 0, 8.22, 0.1946, 0.3398, 0.1940, 1, 5.64, 0.2724, 0.9795, 0.9905, 1, 8.86, 0.7382, 0.3977, 0.0637, 0),
+(0, 26, 4, 1, 9.54, 0.5145, 0.0326, 0.8325, 0, 1.70, 0.2665, 0.5575, 0.4609, 0, 8.79, 1.0000, 0.0000, 0.0337, 1),
+(42, 44, 2, 0, 6.93, 0.0679, 0.4654, 0.6345, 1, 0.80, 0.5851, 0.1493, 0.0393, 1, 8.30, 0.6432, 0.3717, 0.5527, 0),
+(23, 99, 3, 1, 9.46, 0.8193, 0.3063, 0.3498, 0, 9.03, 0.3059, 0.6205, 0.2623, 0, 9.52, 0.3095, 0.7883, 0.2436, 0),
+(16, 139, 6, 1, 8.25, 0.9139, 0.2526, 0.1789, 1, 3.11, 0.6359, 1.0000, 0.1079, 0, 5.03, 0.4914, 0.8515, 0.7362, 1),
+(0, 85, 5, 1, 7.64, 0.4179, 0.7612, 0.5227, 0, 8.82, 0.1000, 0.0405, 0.7105, 1, 9.22, 0.5365, 0.2784, 0.2836, 0),
+(24, 72, 3, 0, 7.00, 0.3511, 0.8092, 0.7613, 1, 6.30, 0.8518, 0.5048, 0.7332, 1, 7.84, 0.3536, 0.8933, 0.3196, 1),
+(0, 17, 3, 1, 8.57, 0.3104, 0.7034, 0.0000, 0, 5.84, 0.9397, 0.5397, 0.0000, 1, 8.34, 0.0000, 0.4277, 0.6919, 0),
+(19, 75, 4, 0, 7.18, 0.6435, 0.3111, 0.5424, 0, 4.83, 0.1569, 0.5580, 0.2428, 1, 8.64, 0.3573, 0.7955, 0.2115, 1),
+(43, 173, 4, 0, 5.85, 1.0000, 0.9686, 0.6482, 0, 6.17, 0.7328, 0.7653, 0.6287, 1, 7.15, 0.6310, 0.3729, 0.6424, 1),
+(0, 54, 4, 0, 9.38, 0.3560, 0.9847, 0.4958, 0, 8.69, 0.5837, 0.2077, 1.0000, 1, 5.53, 0.0000, 0.1294, 0.5899, 1),
+(0, 55, 6, 1, 7.78, 0.0000, 0.6505, 0.9388, 1, 7.82, 0.0855, 0.6461, 0.6942, 1, 2.50, 0.0848, 0.6115, 0.6137, 0),
+(48, 44, 5, 0, 1.47, 0.1987, 0.0838, 0.2226, 0, 5.08, 0.1171, 0.7339, 0.6525, 1, 9.78, 0.0000, 0.3419, 0.2416, 1),
+(43, 62, 4, 0, 4.38, 0.2597, 0.5277, 0.2450, 0, 6.18, 0.0000, 0.6469, 0.7424, 0, 9.70, 0.3411, 0.5153, 1.0000, 0),
+(36, 97, 6, 0, 8.45, 0.3585, 0.8680, 0.3141, 1, 5.35, 0.1162, 0.1780, 0.2184, 1, 8.26, 0.9755, 0.8868, 0.1276, 0),
+(24, 135, 4, 0, 1.73, 0.5334, 0.1688, 0.6350, 1, 6.65, 0.0000, 0.0141, 0.5823, 1, 5.74, 0.9255, 0.5917, 0.7280, 1),
+(37, 73, 5, 0, 5.22, 0.9766, 0.7696, 0.0000, 1, 4.71, 0.6330, 0.3418, 0.1582, 1, 5.01, 0.8959, 0.9518, 0.3897, 1),
+(44, 26, 1, 1, 8.22, 1.0000, 0.1992, 0.7724, 0, 2.22, 0.0380, 0.3204, 0.8000, 1, 0.63, 0.0521, 0.4970, 0.9916, 0),
+(43, 35, 5, 0, 7.01, 0.7783, 0.1620, 0.4956, 1, 6.66, 0.8721, 0.4357, 0.2223, 1, 6.16, 0.1839, 0.5709, 0.4644, 1),
+(0, 156, 4, 0, 8.74, 0.7465, 0.3667, 0.6804, 1, 7.67, 0.2817, 0.2957, 0.5226, 1, 7.01, 0.5752, 0.3033, 0.7537, 0),
+(39, 160, 4, 0, 6.09, 0.6545, 0.7830, 0.8407, 1, 9.02, 0.8731, 0.4106, 0.3161, 0, 9.55, 0.7640, 0.1094, 0.1075, 1),
+(0, 84, 2, 0, 7.01, 0.1072, 0.5866, 0.8245, 1, 9.95, 1.0000, 0.7964, 0.5683, 0, 0.78, 0.8734, 0.6327, 1.0000, 1),
+(28, 100, 5, 0, 9.65, 0.6904, 0.2658, 0.3948, 0, 8.44, 0.8995, 0.5008, 0.9587, 0, 0.49, 0.3280, 0.8557, 0.2559, 0),
+(6, 138, 6, 0, 5.52, 0.0000, 0.6217, 0.3859, 0, 4.52, 0.4173, 0.4977, 0.0000, 1, 5.45, 0.4912, 0.1245, 0.5039, 1),
+(15, 5, 2, 1, 5.50, 0.5613, 0.9938, 0.2328, 0, 4.15, 0.5703, 0.2432, 0.4047, 1, 9.07, 0.4449, 0.3387, 0.5026, 0),
+(17, 125, 3, 0, 9.36, 0.3228, 0.6853, 0.6731, 1, 3.44, 1.0000, 0.6082, 0.8428, 1, 0.35, 0.0000, 0.9633, 0.6964, 0),
+(0, 59, 4, 0, 6.36, 0.2440, 0.7003, 0.5373, 1, 6.06, 0.6329, 0.6160, 0.8700, 0, 7.12, 0.2686, 0.4150, 0.3282, 1),
+(27, 74, 5, 0, 3.95, 0.9705, 0.5892, 0.6956, 0, 5.25, 0.2338, 0.8950, 0.2845, 1, 5.92, 0.5030, 0.3657, 0.4730, 0),
+(0, 32, 5, 1, 6.28, 0.3231, 0.8361, 0.3566, 0, 9.69, 0.9122, 0.7945, 0.2569, 1, 7.75, 0.7645, 0.3157, 1.0000, 1),
+(0, 97, 3, 1, 9.61, 0.5054, 1.0000, 0.7985, 0, 7.02, 0.3188, 0.8170, 0.5378, 0, 2.47, 0.2360, 0.0000, 0.5317, 0),
+(15, 93, 5, 1, 5.27, 0.4373, 0.6824, 0.1857, 1, 9.52, 0.4032, 0.2083, 0.5471, 0, 0.96, 0.6072, 0.4142, 0.9768, 1),
+(8, 149, 5, 1, 1.08, 0.6270, 0.8761, 0.6555, 0, 5.09, 0.2352, 0.8900, 0.1290, 0, 6.39, 0.0539, 0.6806, 0.8803, 1),
+(27, 46, 1, 0, 9.33, 0.1062, 0.5049, 0.5247, 1, 5.98, 0.0672, 0.5526, 1.0000, 0, 6.58, 0.6968, 0.5777, 0.8432, 0),
+(38, 83, 5, 0, 9.42, 1.0000, 0.5316, 0.4100, 1, 5.65, 0.3138, 0.8952, 0.0305, 0, 5.98, 0.6114, 0.7306, 0.3709, 1),
+(0, 107, 5, 0, 6.84, 0.7035, 0.9047, 0.3427, 1, 5.74, 0.4354, 0.6072, 0.2520, 1, 5.10, 0.5345, 0.6557, 0.9252, 0),
+(0, 50, 4, 1, 6.04, 0.7863, 1.0000, 0.8513, 1, 5.58, 0.9542, 0.0946, 0.1547, 1, 5.10, 0.6720, 0.1993, 0.7578, 1),
+(17, 146, 4, 0, 9.57, 0.9366, 0.6306, 0.8895, 0, 1.93, 0.9928, 0.3307, 0.1428, 1, 9.90, 0.3977, 0.2869, 0.6753, 0),
+(0, 165, 4, 0, 8.77, 0.8686, 0.0252, 0.5340, 1, 9.82, 0.1192, 0.8766, 0.0418, 0, 5.26, 0.1059, 0.8881, 0.7741, 1),
+(0, 104, 5, 0, 7.96, 0.4810, 0.2033, 0.5559, 1, 2.36, 0.0597, 0.5535, 0.0197, 1, 0.34, 0.6016, 0.7877, 0.0501, 0),
+(31, 157, 5, 0, 5.47, 0.4698, 0.0932, 1.0000, 1, 7.77, 0.9481, 0.3751, 0.9009, 0, 0.33, 0.4357, 1.0000, 0.5522, 0),
+(38, 40, 6, 0, 5.74, 0.0000, 0.3803, 0.6392, 0, 0.06, 0.1720, 0.9297, 0.5824, 1, 6.33, 0.3214, 0.5272, 0.3104, 0),
+(5, 40, 5, 1, 6.52, 0.4115, 0.9242, 1.0000, 0, 8.68, 0.0507, 0.5210, 0.9660, 0, 6.53, 0.1727, 0.3951, 0.0000, 1),
+(37, 77, 6, 0, 7.36, 0.8717, 1.0000, 0.6334, 0, 8.24, 0.6886, 0.1760, 0.2020, 0, 7.20, 0.7150, 0.8860, 0.2617, 0),
+(36, 110, 4, 1, 7.38, 0.2477, 1.0000, 0.5895, 0, 5.80, 0.3098, 0.6428, 0.8188, 1, 7.68, 0.9833, 0.9999, 0.9790, 1),
+(0, 88, 6, 0, 7.85, 0.8265, 0.6868, 0.2490, 1, 3.27, 0.6536, 0.0711, 0.6427, 0, 8.71, 0.8576, 0.2869, 0.4909, 0),
+(38, 40, 5, 0, 5.31, 0.1267, 0.7429, 0.0961, 1, 4.47, 0.2478, 0.1319, 1.0000, 0, 6.73, 0.0000, 0.7232, 0.1693, 1),
+(0, 162, 4, 0, 4.76, 0.3250, 0.0000, 0.6059, 0, 5.70, 0.5878, 0.5606, 0.2471, 1, 8.51, 0.1481, 0.3114, 0.0715, 0),
+(43, 83, 1, 0, 7.01, 0.4113, 0.9853, 0.7859, 1, 8.94, 0.5990, 0.2396, 0.2943, 0, 7.93, 0.4519, 0.5974, 0.1362, 1),
+(0, 103, 6, 0, 7.56, 0.1535, 0.8071, 0.3922, 0, 1.95, 0.9555, 0.1728, 0.4168, 0, 8.99, 0.6325, 0.8624, 0.7371, 1),
+(30, 127, 3, 0, 5.78, 0.2530, 0.3652, 1.0000, 0, 0.02, 1.0000, 0.7851, 0.5539, 1, 5.37, 0.1621, 0.9541, 0.1337, 1),
+(14, 66, 4, 0, 8.16, 0.9160, 0.0253, 0.0526, 0, 8.60, 0.6856, 0.9404, 0.8385, 1, 7.91, 0.1774, 0.8929, 0.6274, 0),
+(0, 149, 6, 0, 6.24, 0.2340, 0.6175, 0.9786, 1, 4.11, 0.9026, 0.2963, 0.0000, 0, 9.31, 0.0000, 0.4283, 0.2994, 0),
+(20, 116, 5, 0, 1.92, 0.1504, 0.9549, 0.4960, 1, 7.88, 0.9432, 0.1787, 0.1734, 0, 6.61, 1.0000, 0.6554, 0.6629, 0),
+(23, 62, 3, 0, 6.29, 0.4856, 0.6933, 0.3648, 0, 4.43, 0.7647, 0.0000, 0.8902, 0, 5.57, 0.7973, 0.1812, 0.5222, 1),
+(0, 99, 4, 1, 8.98, 0.2685, 0.8972, 0.2491, 0, 6.93, 0.2052, 0.9702, 0.4965, 0, 5.42, 0.2759, 0.3218, 0.9317, 1),
+(25, 46, 6, 0, 5.45, 0.2433, 0.1473, 0.7387, 1, 5.47, 0.5077, 0.7784, 0.2853, 0, 8.21, 0.2563, 0.9257, 0.2541, 0),
+(0, 81, 6, 0, 8.86, 0.9623, 0.8889, 0.6321, 0, 9.02, 0.2085, 0.5208, 0.2001, 0, 5.63, 0.0788, 0.5615, 0.9369, 1),
+(8, 99, 6, 0, 3.00, 0.2238, 0.6986, 0.0395, 1, 8.33, 0.1798, 0.3210, 1.0000, 0, 7.02, 0.6642, 1.0000, 0.1337, 1),
+(13, 51, 6, 0, 5.72, 0.5164, 1.0000, 1.0000, 0, 5.32, 0.1328, 0.4348, 0.0758, 1, 9.65, 0.9435, 0.0000, 0.5858, 1),
+(0, 97, 2, 1, 2.82, 0.3329, 0.7056, 0.6551, 1, 9.71, 0.6341, 0.5543, 0.1702, 1, 5.10, 0.1604, 0.6319, 0.1296, 1),
+(0, 129, 3, 0, 7.39, 0.9096, 0.2506, 0.9712, 1, 8.20, 0.4168, 0.5568, 0.3615, 1, 9.86, 0.6636, 1.0000, 0.1004, 1),
+(11, 87, 6, 1, 7.60, 0.9397, 0.1361, 1.0000, 0, 1.50, 0.9005, 0.5631, 1.0000, 0, 8.26, 0.0463, 0.0000, 0.0609, 1),
+(19, 29, 4, 0, 6.50, 0.5014, 0.5714, 0.2247, 1, 6.94, 0.9878, 0.4406, 0.4377, 0, 2.84, 0.6760, 0.0000, 0.5684, 0),
+(0, 76, 6, 0, 6.17, 0.0731, 0.4714, 0.7328, 0, 2.36, 0.3359, 0.0648, 0.5629, 1, 8.43, 0.3651, 0.4939, 1.0000, 1),
+(18, 35, 4, 0, 8.24, 0.2395, 0.3071, 0.2520, 0, 3.90, 0.3126, 0.7709, 0.5156, 1, 5.03, 0.4851, 0.0261, 0.1296, 1),
+(26, 89, 6, 1, 7.61, 0.6774, 0.7115, 0.1766, 0, 6.67, 0.9537, 0.1878, 0.6099, 1, 1.88, 0.7535, 1.0000, 0.0414, 1),
+(25, 137, 3, 0, 5.92, 0.5438, 0.1746, 0.4354, 0, 5.91, 0.1052, 0.3484, 0.9242, 0, 6.57, 0.3261, 0.8990, 0.4399, 0),
+(26, 154, 5, 0, 7.21, 0.8703, 0.9206, 0.9745, 0, 7.45, 0.0411, 0.2592, 1.0000, 0, 7.88, 0.9060, 0.9542, 0.5316, 1),
+(8, 87, 5, 1, 9.47, 0.8127, 0.0000, 0.1720, 1, 8.39, 0.2246, 0.1392, 0.7682, 0, 2.56, 0.5937, 0.0000, 0.7600, 1),
+(6, 71, 6, 0, 0.20, 0.5208, 0.0567, 0.9913, 0, 9.84, 0.0383, 0.9825, 0.1212, 1, 7.51, 0.6714, 0.2360, 0.0000, 0),
+(36, 130, 4, 0, 0.42, 0.5686, 0.9350, 0.0000, 0, 8.62, 0.6765, 0.2088, 0.5051, 0, 1.90, 0.4785, 0.7392, 0.0153, 0),
+(0, 100, 4, 0, 8.87, 0.2868, 0.6150, 0.1403, 0, 6.48, 0.0000, 0.8261, 0.8368, 1, 7.74, 0.8421, 0.4453, 0.3368, 1),
+(22, 136, 4, 0, 7.22, 0.0522, 0.0544, 0.8952, 0, 9.51, 0.7059, 0.0000, 0.0000, 0, 8.38, 0.4843, 1.0000, 1.0000, 1),
+(0, 110, 5, 0, 6.97, 0.7924, 0.3683, 0.0234, 1, 3.29, 0.0763, 0.9102, 0.2604, 1, 5.67, 0.9197, 0.6023, 0.2178, 1),
+(11, 157, 4, 0, 8.43, 0.2308, 0.5012, 0.5483, 0, 3.71, 0.2677, 0.0000, 0.2996, 1, 7.90, 0.7722, 0.9960, 0.5937, 0),
+(46, 66, 4, 0, 8.96, 0.0714, 0.4086, 0.8716, 0, 5.36, 0.4399, 0.4240, 0.1189, 0, 1.60, 0.9813, 0.9161, 0.8112, 0),
+(0, 5, 3, 1, 1.84, 0.3035, 0.1214, 0.6117, 1, 6.81, 0.5224, 0.9569, 0.7491, 1, 8.78, 0.6407, 0.6460, 0.8347, 1),
+(0, 102, 3, 0, 8.38, 0.6660, 0.9787, 0.2867, 0, 8.39, 0.4515, 0.8294, 0.8912, 1, 6.59, 0.4135, 1.0000, 0.9710, 1),
+(22, 123, 5, 0, 7.95, 0.6675, 0.4128, 0.6544, 0, 8.30, 0.6740, 0.7564, 0.1944, 0, 4.99, 0.7012, 0.1525, 1.0000, 1),
+(45, 117, 5, 0, 6.01, 0.0255, 0.6938, 0.9089, 1, 5.57, 0.4988, 0.5303, 0.1831, 0, 5.80, 0.2620, 0.6549, 0.6104, 0),
+(47, 106, 5, 0, 6.83, 0.1552, 0.3752, 0.5802, 0, 8.37, 0.8656, 0.2154, 0.0860, 1, 7.97, 0.1707, 0.9881, 0.9332, 1),
+(41, 92, 1, 0, 5.25, 0.7671, 0.4295, 0.3170, 1, 5.64, 0.3645, 0.1304, 0.9546, 1, 2.01, 0.7616, 0.2261, 0.8712, 0),
+(22, 172, 6, 0, 8.37, 0.6587, 0.7809, 0.2047, 0, 9.77, 0.5213, 0.3336, 0.1606, 0, 9.84, 0.7533, 0.5934, 0.5109, 1),
+(12, 85, 4, 0, 5.67, 0.1937, 0.0817, 0.8243, 1, 3.89, 0.2983, 0.8984, 0.7798, 1, 8.76, 0.3235, 0.5680, 0.2620, 0),
+(0, 125, 5, 0, 5.58, 0.8390, 0.4711, 0.3693, 1, 6.53, 0.8373, 0.8986, 0.4800, 0, 9.98, 0.9760, 0.8110, 0.8721, 0),
+(0, 49, 5, 0, 5.36, 0.1404, 0.6116, 0.9335, 0, 9.58, 0.5232, 0.6270, 0.7520, 1, 6.26, 0.9187, 0.9109, 0.9628, 1),
+(12, 154, 2, 0, 6.67, 0.8286, 0.4305, 0.8914, 0, 7.53, 1.0000, 0.2679, 0.1495, 0, 8.07, 0.3819, 0.3961, 0.1296, 1),
+(0, 78, 5, 0, 9.54, 0.2071, 0.6776, 0.0383, 1, 5.74, 0.6027, 0.7908, 0.1160, 1, 8.89, 0.5464, 0.5561, 0.1764, 1),
+(26, 52, 6, 0, 6.43, 0.5778, 0.0000, 0.1893, 0, 5.70, 0.0264, 0.1228, 0.9337, 0, 0.48, 0.7295, 0.8699, 0.2498, 1),
+(0, 126, 5, 0, 7.05, 0.8700, 0.8311, 0.5364, 0, 2.32, 0.9818, 0.6767, 0.0455, 1, 6.57, 0.2296, 0.4971, 0.8316, 0),
+(14, 161, 6, 0, 7.22, 0.0000, 0.8635, 0.3974, 1, 7.56, 0.9789, 1.0000, 0.8961, 1, 9.88, 0.0000, 0.6815, 0.6412, 0),
+(0, 159, 3, 1, 5.18, 0.0393, 0.6283, 0.0000, 1, 7.54, 0.6822, 0.0000, 1.0000, 0, 8.24, 0.5473, 0.2921, 0.0000, 0),
+(45, 24, 2, 0, 6.95, 0.6769, 1.0000, 0.8153, 1, 5.96, 0.9342, 0.3184, 0.5349, 1, 9.90, 0.2349, 0.2605, 0.7258, 0),
+(0, 93, 6, 0, 8.92, 0.2127, 0.2452, 0.6333, 1, 1.25, 0.5211, 0.6781, 0.2394, 0, 9.03, 0.5549, 0.2787, 0.5648, 0),
+(0, 118, 5, 0, 9.66, 0.9326, 0.2197, 0.6207, 1, 9.09, 0.6232, 0.3126, 1.0000, 0, 7.02, 0.6009, 0.8795, 0.2113, 1),
+(0, 83, 1, 0, 1.43, 0.3997, 0.1253, 0.3835, 0, 6.40, 0.8711, 0.8909, 0.9290, 0, 7.98, 0.5562, 0.0487, 0.0227, 1),
+(10, 151, 6, 0, 5.94, 0.8264, 0.5817, 0.2877, 1, 5.78, 0.1675, 0.9009, 0.3496, 0, 4.84, 0.2487, 0.1193, 0.0398, 0),
+(0, 64, 2, 0, 3.55, 0.3975, 0.6544, 0.7912, 0, 4.03, 0.3063, 0.4010, 0.0155, 1, 7.65, 0.6604, 0.1700, 0.0000, 1),
+(20, 43, 4, 0, 4.54, 0.5629, 1.0000, 0.6018, 0, 9.12, 0.5534, 0.8745, 0.6015, 0, 6.23, 0.9614, 0.3252, 0.0391, 1),
+(11, 156, 4, 1, 8.73, 0.8653, 0.8276, 0.9441, 1, 8.47, 0.0414, 0.5913, 0.8539, 0, 9.58, 0.2400, 0.0000, 0.5830, 1),
+(22, 19, 4, 0, 9.45, 0.8982, 0.0000, 1.0000, 1, 6.02, 0.6183, 0.8976, 0.1361, 0, 6.89, 0.0834, 0.5706, 0.0200, 1),
+(25, 71, 3, 0, 0.26, 0.2879, 0.0322, 0.5002, 1, 9.01, 0.7705, 0.0389, 0.1029, 1, 9.45, 0.1424, 0.0656, 0.1189, 0),
+(26, 43, 5, 0, 8.03, 0.8264, 0.4040, 0.3638, 1, 8.81, 1.0000, 0.8860, 0.0499, 1, 9.44, 0.6012, 0.8339, 0.1274, 0),
+(36, 49, 5, 1, 6.57, 0.9463, 0.7221, 0.9109, 1, 8.72, 0.4699, 0.4542, 0.9516, 0, 5.15, 0.0000, 0.7968, 0.3506, 1),
+(0, 177, 4, 0, 6.10, 0.1697, 0.3420, 0.8323, 0, 0.56, 0.3659, 0.1768, 0.8246, 1, 6.25, 0.1259, 0.1684, 1.0000, 1),
+(32, 70, 1, 1, 6.57, 0.2969, 0.7830, 0.5918, 1, 9.33, 0.2157, 0.6557, 0.3543, 0, 7.80, 0.9942, 0.5747, 0.4494, 1),
+(0, 90, 3, 1, 9.86, 0.8934, 0.9556, 0.6200, 1, 6.73, 0.4253, 1.0000, 0.1478, 1, 4.67, 0.7383, 0.9945, 0.1793, 0),
+(16, 33, 6, 0, 6.95, 0.6949, 0.8825, 0.5053, 1, 9.38, 0.1776, 0.8465, 0.8717, 1, 0.67, 0.3599, 0.4365, 0.0781, 1),
+(45, 69, 1, 0, 4.34, 0.4515, 0.8223, 0.3856, 1, 9.51, 0.1088, 1.0000, 0.6385, 0, 1.37, 0.8849, 0.1896, 0.6193, 1),
+(8, 13, 1, 0, 8.75, 0.8876, 0.8339, 0.1065, 0, 5.35, 0.1671, 0.8387, 1.0000, 0, 5.79, 0.4385, 0.5749, 0.3766, 1),
+(13, 69, 6, 0, 9.66, 0.1872, 0.9740, 0.4441, 0, 9.96, 0.1721, 0.8155, 0.5960, 1, 5.16, 0.1259, 0.9282, 0.4680, 1),
+(31, 79, 3, 0, 9.34, 0.5938, 0.4130, 0.8906, 1, 8.51, 0.0172, 0.3137, 0.5160, 0, 4.36, 0.0996, 0.7424, 1.0000, 0),
+(14, 166, 4, 0, 9.01, 0.0709, 0.3082, 0.4042, 0, 4.49, 0.3526, 0.9745, 0.6689, 1, 5.35, 0.5522, 0.0000, 0.8524, 1),
+(18, 39, 4, 0, 5.39, 0.7086, 0.5454, 0.0000, 0, 7.82, 1.0000, 0.2909, 0.2167, 1, 6.52, 0.7390, 0.1314, 0.6474, 0),
+(23, 17, 4, 0, 2.14, 0.7067, 1.0000, 0.8654, 0, 2.45, 0.3998, 0.8699, 0.8646, 0, 3.30, 0.9948, 0.8789, 0.2342, 0),
+(0, 124, 5, 0, 1.08, 0.1284, 0.2331, 0.1845, 1, 5.68, 0.2109, 0.9671, 0.4198, 0, 5.53, 0.0377, 0.0000, 0.2849, 1),
+(42, 39, 5, 0, 9.30, 0.3333, 0.7162, 0.1419, 1, 5.32, 0.9498, 0.9366, 0.0241, 0, 7.56, 0.0892, 0.0411, 0.0000, 1),
+(0, 126, 6, 0, 5.10, 0.8302, 0.5956, 0.5540, 1, 1.53, 0.8155, 0.5856, 0.6631, 1, 7.17, 0.4071, 1.0000, 0.5043, 1),
+(23, 87, 5, 0, 4.61, 0.4083, 0.0000, 0.6309, 0, 6.39, 0.2277, 0.5976, 0.6252, 0, 0.85, 0.9044, 0.3386, 0.2760, 1),
+(47, 127, 4, 0, 6.11, 0.5177, 0.7107, 0.1731, 0, 1.45, 0.0000, 0.3936, 0.6590, 1, 9.26, 0.3168, 0.0194, 0.4781, 0),
+(28, 98, 5, 0, 0.74, 0.5756, 0.3794, 0.0274, 0, 6.95, 0.2421, 0.7157, 0.1742, 0, 5.74, 0.3832, 0.0896, 0.7993, 0),
+(0, 97, 2, 0, 8.48, 0.5915, 0.9831, 0.1064, 1, 1.88, 0.8968, 0.8461, 0.6785, 1, 6.22, 0.0000, 0.7656, 0.2460, 0);
