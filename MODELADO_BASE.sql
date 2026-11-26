@@ -1,55 +1,87 @@
-USE Proyecto;
--- Tabla Alumnos --
+CREATE DATABASE IF NOT EXISTS AulaPredict;
+USE AulaPredict;
 
--- 1. Tabla Alumnos 
-CREATE TABLE Alumnos (
-    id_alumno INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    boleta VARCHAR(20) NOT NULL UNIQUE,
-    nombre VARCHAR(100) NOT NULL,
-    carrera VARCHAR(50) NOT NULL,
-    trabaja BOOLEAN NOT NULL DEFAULT 0,
-    traslado BOOLEAN NOT NULL DEFAULT 0,
-    total_materias INT NOT NULL CHECK (total_materias >= 0),
-    cantidad_materias INT NOT NULL CHECK (cantidad_materias >= 0),
-    porcentaje_materias DECIMAL(5, 2) GENERATED ALWAYS AS (
-        ROUND((cantidad_materias / NULLIF(total_materias, 0)) * 100, 2)
-    ) STORED
-) ENGINE = InnoDB;
+CREATE TABLE Desempeno_Academico (
 
--- 2. Tabla Materias
-CREATE TABLE Materias (
-    id_materia INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    nombre_materia VARCHAR(50) NOT NULL,
-    grupo VARCHAR(50) NOT NULL
-) ENGINE = InnoDB;
+    -- Identificacion
+    id_alumno INT AUTO_INCREMENT PRIMARY KEY,
 
--- 3. Tabla intermedia Alumnos_Materias 
-CREATE TABLE Alumnos_Materias (
-    id_alumno INT NOT NULL,
-    id_materia INT NOT NULL,
-    parcial_1 DECIMAL(4, 2) CHECK (parcial_1 BETWEEN 0 AND 10),
-    parcial_2 DECIMAL(4, 2) CHECK (parcial_2 BETWEEN 0 AND 10),
-    parcial_3 DECIMAL(4, 2) CHECK (parcial_3 BETWEEN 0 AND 10),
-    total_clases INT NOT NULL CHECK (total_clases >= 0),
-    asistencias INT NOT NULL CHECK (asistencias >= 0),
-    porcentaje_asistencias DECIMAL(5, 2) GENERATED ALWAYS AS (
-        ROUND((asistencias / NULLIF(total_clases, 0)) * 100, 2)
-    ) STORED,
-    total_participaciones INT NOT NULL CHECK (total_participaciones >= 0),
-    participaciones INT NOT NULL CHECK (participaciones >= 0),
-    porcentaje_participaciones DECIMAL(5, 2) GENERATED ALWAYS AS (
-        ROUND((participaciones / NULLIF(total_participaciones, 0)) * 100, 2)
-    ) STORED,
-    total_tareas INT NOT NULL CHECK (total_tareas >= 0),
-    tareas INT NOT NULL CHECK (tareas >= 0),
-    porcentaje_tareas DECIMAL(5, 2) GENERATED ALWAYS AS (
-        ROUND((tareas / NULLIF(total_tareas, 0)) * 100, 2)
-    ) STORED,
-    recursa BOOLEAN NOT NULL DEFAULT 0,
-    notas BOOLEAN NOT NULL DEFAULT 0,
-    PRIMARY KEY (id_alumno, id_materia),
-    FOREIGN KEY (id_alumno) REFERENCES Alumnos (id_alumno)
-        ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (id_materia) REFERENCES Materias (id_materia)
-        ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB;
+    -- Factores de contexto
+    horas_trabajo INT NOT NULL
+        CHECK (horas_trabajo BETWEEN 0 AND 48),
+
+    traslado_minutos INT NOT NULL
+        CHECK (traslado_minutos BETWEEN 0 AND 180),
+
+    cantidad_materias INT NOT NULL
+        CHECK (cantidad_materias BETWEEN 1 AND 6),
+
+    recursa BOOLEAN NOT NULL
+        CHECK (recursa IN (0, 1)),
+
+    -- Primer parcial
+    parcial_1 DECIMAL(4,2) DEFAULT NULL
+        CHECK (parcial_1 BETWEEN 0 AND 10),
+
+    asistencia_1 DECIMAL(5,4) DEFAULT NULL
+        CHECK (asistencia_1 BETWEEN 0 AND 1),
+
+    tareas_1 DECIMAL(5,4) DEFAULT NULL
+        CHECK (tareas_1 BETWEEN 0 AND 1),
+
+    participaciones_1 DECIMAL(5,4) DEFAULT NULL
+        CHECK (participaciones_1 BETWEEN 0 AND 1),
+
+    notas_1 BOOLEAN DEFAULT NULL
+        CHECK (notas_1 IN (0, 1)),
+
+    -- Segundo parcial
+    parcial_2 DECIMAL(4,2) DEFAULT NULL
+        CHECK (parcial_2 BETWEEN 0 AND 10),
+
+    asistencia_2 DECIMAL(5,4) DEFAULT NULL
+        CHECK (asistencia_2 BETWEEN 0 AND 1),
+
+    tareas_2 DECIMAL(5,4) DEFAULT NULL
+        CHECK (tareas_2 BETWEEN 0 AND 1),
+
+    participaciones_2 DECIMAL(5,4) DEFAULT NULL
+        CHECK (participaciones_2 BETWEEN 0 AND 1),
+
+    notas_2 BOOLEAN DEFAULT NULL
+        CHECK (notas_2 IN (0, 1)),
+
+    -- Tercer parcial
+    parcial_3 DECIMAL(4,2) DEFAULT NULL
+        CHECK (parcial_3 BETWEEN 0 AND 10),
+
+    asistencia_3 DECIMAL(5,4) DEFAULT NULL
+        CHECK (asistencia_3 BETWEEN 0 AND 1),
+
+    tareas_3 DECIMAL(5,4) DEFAULT NULL
+        CHECK (tareas_3 BETWEEN 0 AND 1),
+
+    participaciones_3 DECIMAL(5,4) DEFAULT NULL
+        CHECK (participaciones_3 BETWEEN 0 AND 1),
+
+    notas_3 BOOLEAN DEFAULT NULL
+        CHECK (notas_3 IN (0, 1)),
+
+    -- Variables calculadas (no almacenadas)
+    promedio_final DECIMAL(8,6)
+        GENERATED ALWAYS AS (
+            (parcial_1 + parcial_2 + parcial_3) / 3
+        ) VIRTUAL,
+
+    reprobado BOOLEAN
+        GENERATED ALWAYS AS (
+            CASE
+                WHEN parcial_1 IS NULL
+                  OR parcial_2 IS NULL
+                  OR parcial_3 IS NULL THEN NULL
+                WHEN parcial_1 + parcial_2 + parcial_3 < 18 THEN 1
+                ELSE 0
+            END
+        ) VIRTUAL
+
+);
