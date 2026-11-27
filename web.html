@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Registro y Medición de Alumnos</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: #eef0f3;
+    color: #1a1a1a;
+    font-family: "Segoe UI", Calibri, Carlito, "Liberation Sans", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  .barra-superior {
+    background: #fff;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    border-bottom: 1px solid #e4e4e4;
+  }
+
+  .barra-superior .marca {
+    font-weight: 700;
+    font-size: 15px;
+    color: #111;
+  }
+
+  .contenido {
+    width: min(1100px, calc(100% - 164px));
+    margin: 0 auto;
+    padding: 12px 0 8px;
+  }
+
+  h1 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #111;
+  }
+
+  .subtitulo {
+    margin-top: 4px;
+    font-size: 15px;
+    color: #1a1a1a;
+  }
+
+  form { margin-top: 10px; }
+
+  .tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+    align-items: start;
+  }
+
+  .tarjeta {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10), 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 16px;
+  }
+
+  .tarjeta h2 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 8px;
+  }
+
+  .tarjeta h2 svg {
+    width: 18px;
+    height: 18px;
+    fill: #111;
+    flex-shrink: 0;
+  }
+
+  .campo { margin-bottom: 6px; }
+
+  .campo:last-child { margin-bottom: 0; }
+
+  label.etiqueta,
+  .grupo-radio legend {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 3px;
+    overflow-wrap: break-word;
+  }
+
+  .grupo-radio {
+    border: 0;
+    min-width: 0;
+  }
+
+  .grupo-radio legend {
+    width: 100%;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  select {
+    width: 100%;
+    height: 26px;
+    border: 1px solid #a5a5a5;
+    border-radius: 6px;
+    padding: 0 8px;
+    font-size: 13px;
+    font-family: inherit;
+    color: #1a1a1a;
+    background-color: #fff;
+  }
+
+  input[type="text"]:focus-visible,
+  input[type="number"]:focus-visible,
+  select:focus-visible,
+  input[type="radio"]:focus-visible,
+  button:focus-visible {
+    outline: 2px solid #2481ab;
+    outline-offset: 1px;
+  }
+
+  input::placeholder {
+    color: #6b6b6b;
+    opacity: 1;
+  }
+
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    padding-right: 28px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='none' stroke='%235c5c5c' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round' d='M2.5 4.5L6 8l3.5-3.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 12px;
+  }
+
+  select.sin-valor { color: #5c5c5c; }
+  select option { color: #1a1a1a; }
+
+  .fila-2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px 10px;
+  }
+
+  .fila-2 .campo { margin-bottom: 0; }
+
+  .fila-2 .etiqueta,
+  .fila-2 .grupo-radio legend {
+    white-space: nowrap;
+    font-size: 12px;
+  }
+
+  .opciones {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    height: 26px;
+  }
+
+  .opciones label {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    color: #111;
+    cursor: pointer;
+    font-weight: 400;
+  }
+
+  .opciones input[type="radio"] {
+    width: 13px;
+    height: 13px;
+    margin: 0;
+    accent-color: #333;
+    cursor: pointer;
+  }
+
+  .acciones {
+    margin-top: 8px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.10), 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .acciones button {
+    height: 28px;
+    border-radius: 8px;
+    padding: 0 16px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 400;
+    cursor: pointer;
+    border: 1px solid transparent;
+    line-height: 26px;
+  }
+
+  .btn-enviar {
+    background: #2481ab;
+    color: #fff;
+    border-color: #2481ab;
+  }
+
+  .btn-enviar:hover { background: #1f7096; }
+
+  .btn-procesar {
+    background: #219097;
+    color: #fff;
+    border-color: #219097;
+    box-shadow: 0 0 0 3px #d4fbfd;
+  }
+
+  .btn-procesar:hover { background: #1c7c82; }
+
+  .btn-limpiar {
+    background: #ececec;
+    color: #222;
+    border-color: #dcdcdc;
+  }
+
+  .btn-limpiar:hover { background: #e2e2e2; }
+
+  @media (max-width: 799px) {
+    .contenido { width: calc(100% - 32px); padding: 16px 0 24px; }
+    .tarjetas { grid-template-columns: 1fr; }
+    .fila-2 { grid-template-columns: 1fr; }
+    .fila-2 .etiqueta,
+    .fila-2 .grupo-radio legend {
+      white-space: normal;
+      font-size: 13px;
+    }
+  }
+</style>
+</head>
+<body>
+  <header class="barra-superior">
+    <div class="marca">Proyecto</div>
+  </header>
+
+  <main class="contenido">
+    <h1>Registro y Medición de Alumnos</h1>
+    <p class="subtitulo">Captura de datos para cálculo de rendimiento (No se guardan en BD)</p>
+
+    <form id="formulario" action="#" method="get" onsubmit="return false;">
+      <div class="tarjetas">
+        <section class="tarjeta" aria-labelledby="titulo-alumno">
+          <h2 id="titulo-alumno">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2.5c-3.4 0-10 1.7-10 5V22h20v-2.5c0-3.3-6.6-5-10-5z"/>
+            </svg>
+            Datos del Alumno
+          </h2>
+
+          <div class="campo">
+            <label class="etiqueta" for="boleta">Boleta</label>
+            <input type="text" id="boleta" name="boleta" maxlength="20" inputmode="numeric" placeholder="Boleta" autocomplete="off">
+          </div>
+
+          <div class="campo">
+            <label class="etiqueta" for="nombre">Nombre Completo</label>
+            <input type="text" id="nombre" name="nombre" maxlength="100" placeholder="Nombre Completo" autocomplete="name">
+          </div>
+
+          <div class="campo">
+            <label class="etiqueta" for="carrera">Carrera</label>
+            <select id="carrera" name="carrera" class="sin-valor">
+              <option value="" disabled selected>Carrera</option>
+              <option value="Licenciatura en Física y Matemáticas">Licenciatura en Física y Matemáticas</option>
+              <option value="Licenciatura en Ingeniería Matemática">Licenciatura en Ingeniería Matemática</option>
+              <option value="Licenciatura en Matemática Algorítmica">Licenciatura en Matemática Algorítmica</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label class="etiqueta" for="total-materias">Total de Materias</label>
+            <input type="number" id="total-materias" name="total_materias" min="0" step="1" placeholder="0">
+          </div>
+
+          <div class="campo">
+            <label class="etiqueta" for="cantidad-materias">Materias Cursadas</label>
+            <input type="number" id="cantidad-materias" name="cantidad_materias" min="0" step="1" placeholder="0">
+          </div>
+
+          <div class="fila-2">
+            <fieldset class="grupo-radio">
+              <legend>¿Trabaja?</legend>
+              <div class="opciones">
+                <label for="trabaja-si"><input type="radio" id="trabaja-si" name="trabaja" value="1"> Sí</label>
+                <label for="trabaja-no"><input type="radio" id="trabaja-no" name="trabaja" value="0"> No</label>
+              </div>
+            </fieldset>
+            <fieldset class="grupo-radio">
+              <legend>¿Tiene traslado?</legend>
+              <div class="opciones">
+                <label for="traslado-si"><input type="radio" id="traslado-si" name="traslado" value="1"> Sí</label>
+                <label for="traslado-no"><input type="radio" id="traslado-no" name="traslado" value="0"> No</label>
+              </div>
+            </fieldset>
+          </div>
+        </section>
+
+        <section class="tarjeta" aria-labelledby="titulo-materia">
+          <h2 id="titulo-materia">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path fill-rule="evenodd" d="M6.2 2.2h11.6c1.15 0 2.2.95 2.2 2.15v15.3c0 1.2-1.05 2.15-2.2 2.15H6.2c-1.15 0-2.2-.95-2.2-2.15V4.35c0-1.2 1.05-2.15 2.2-2.15zm2.5 5.7h6.6v1.8H8.7V7.9zm0 3.5h6.6v1.8H8.7v-1.8zM7.2 16.9h9.6v1.2H7.2v-1.2z"/>
+            </svg>
+            Datos de la Materia
+          </h2>
+
+          <div class="campo">
+            <label class="etiqueta" for="nombre-materia">Nombre de la Materia</label>
+            <input type="text" id="nombre-materia" name="nombre_materia" maxlength="50" placeholder="Nombre de la Materia" autocomplete="off">
+          </div>
+
+          <div class="campo">
+            <label class="etiqueta" for="grupo">Grupo</label>
+            <input type="text" id="grupo" name="grupo" maxlength="50" placeholder="Grupo" autocomplete="off">
+          </div>
+
+          <div class="fila-2">
+            <fieldset class="grupo-radio">
+              <legend>¿Recursa?</legend>
+              <div class="opciones">
+                <label for="recursa-si"><input type="radio" id="recursa-si" name="recursa" value="1"> Sí</label>
+                <label for="recursa-no"><input type="radio" id="recursa-no" name="recursa" value="0"> No</label>
+              </div>
+            </fieldset>
+            <fieldset class="grupo-radio">
+              <legend>¿Tiene notas?</legend>
+              <div class="opciones">
+                <label for="notas-si"><input type="radio" id="notas-si" name="notas" value="1"> Sí</label>
+                <label for="notas-no"><input type="radio" id="notas-no" name="notas" value="0"> No</label>
+              </div>
+            </fieldset>
+          </div>
+        </section>
+
+        <section class="tarjeta" aria-labelledby="titulo-rendimiento">
+          <h2 id="titulo-rendimiento">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+            </svg>
+            Rendimiento y Asistencia
+          </h2>
+
+          <div class="campo">
+            <label class="etiqueta" for="parcial-1">Parcial 1</label>
+            <input type="number" id="parcial-1" name="parcial_1" min="0" max="10" step="0.01" placeholder="e.g., 8.5">
+          </div>
+
+          <div class="campo">
+            <label class="etiqueta" for="parcial-2">Parcial 2</label>
+            <input type="number" id="parcial-2" name="parcial_2" min="0" max="10" step="0.01" placeholder="e.g., 8.5">
+          </div>
+
+          <div class="campo">
+            <label class="etiqueta" for="parcial-3">Parcial 3</label>
+            <input type="number" id="parcial-3" name="parcial_3" min="0" max="10" step="0.01" placeholder="e.g., 8.5">
+          </div>
+
+          <div class="fila-2">
+            <div class="campo">
+              <label class="etiqueta" for="total-clases">Clases Totales</label>
+              <input type="number" id="total-clases" name="total_clases" min="0" step="1" placeholder="0">
+            </div>
+            <div class="campo">
+              <label class="etiqueta" for="asistencias">Asistencias</label>
+              <input type="number" id="asistencias" name="asistencias" min="0" step="1" placeholder="0">
+            </div>
+            <div class="campo">
+              <label class="etiqueta" for="total-participaciones">Participaciones Totales</label>
+              <input type="number" id="total-participaciones" name="total_participaciones" min="0" step="1" placeholder="0">
+            </div>
+            <div class="campo">
+              <label class="etiqueta" for="participaciones">Participaciones</label>
+              <input type="number" id="participaciones" name="participaciones" min="0" step="1" placeholder="0">
+            </div>
+            <div class="campo">
+              <label class="etiqueta" for="total-tareas">Tareas Totales</label>
+              <input type="number" id="total-tareas" name="total_tareas" min="0" step="1" placeholder="0">
+            </div>
+            <div class="campo">
+              <label class="etiqueta" for="tareas">Tareas Entregadas</label>
+              <input type="number" id="tareas" name="tareas" min="0" step="1" placeholder="0">
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="acciones">
+        <button type="button" class="btn-enviar">Enviar Datos para Cálculo</button>
+        <button type="button" class="btn-procesar">Procesar Datos</button>
+        <button type="reset" class="btn-limpiar">Limpiar Formulario</button>
+      </div>
+    </form>
+  </main>
+
+  <script>
+    (function () {
+      var form = document.getElementById("formulario");
+      var carrera = document.getElementById("carrera");
+
+      function actualizarCarrera() {
+        if (carrera.value === "") {
+          carrera.classList.add("sin-valor");
+        } else {
+          carrera.classList.remove("sin-valor");
+        }
+      }
+
+      carrera.addEventListener("change", actualizarCarrera);
+      form.addEventListener("reset", function () {
+        setTimeout(actualizarCarrera, 0);
+      });
+    })();
+  </script>
+</body>
+</html>
